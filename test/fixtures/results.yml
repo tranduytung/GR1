@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  math: 1
+  literature: 1
+  english: 1
+  physical: MyString
+  chemistry: 1
+  biological: 1
+  history: 1
+  geography: 1
+  examinee_id: 
+
+two:
+  math: 1
+  literature: 1
+  english: 1
+  physical: MyString
+  chemistry: 1
+  biological: 1
+  history: 1
+  geography: 1
+  examinee_id: 

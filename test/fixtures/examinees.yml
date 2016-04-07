@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  password: MyString
+  people_id: MyString
+  graduated: false
+  exam1: MyString
+  exam2: MyString
+  exam3: MyString
+  exam4: MyString
+  score: 1
+  year: 1
+  cluster_id: 
+
+two:
+  name: MyString
+  password: MyString
+  people_id: MyString
+  graduated: false
+  exam1: MyString
+  exam2: MyString
+  exam3: MyString
+  exam4: MyString
+  score: 1
+  year: 1
+  cluster_id: 
