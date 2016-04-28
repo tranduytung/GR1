@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   	put "clusters" => "clusters/registrations#update", :as => "cluster_registration"
   end
 
+  resources :clusters
+
   root to: "static_pages#home"
 
   get "home" => "static_pages#home"
