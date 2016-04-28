@@ -1,14 +1,19 @@
 5.times do |n|
 	name = Faker::Name.name
-	code = Faker::Code.ean(base = 9)
+	code = Faker::Code.ean(base = 8)
 	year = 2015
+	email = "example-#{n+1}@railstutorial.org"
+	password = "12345678"
 	Cluster.create!(name: name,
 	code: code,
+	email: email,
+	password: password,
+	password_confirmation: password,
 	year: year)
 end
 
 examer = Cluster.order(:created_at).take(5)
-20.times do
+2.times do
 examer.each { |examer|
 name = Faker::Name.name
 password = "123456"
@@ -87,7 +92,7 @@ GroupExam.create!(
 	)
 
 major = University.order(:created_at)
-10.times do
+2.times do
 major.each{ |major|
 	name = Faker::Name.name
 	year = 2015
