@@ -1,11 +1,18 @@
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
-Ma so cua ban la: <%= current_cluster.code %>
+
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
-  
+
   <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name, autofocus: true %>
+    Name: <%= current_examinee.name %>
+  </div>
+
+  <div class="field">
+    Chung Minh Thu: <%= current_examinee.people_id %>
+  </div>
+
+  <div class="field">
+    Ma So Du Thi: <%= current_examinee.student_id %>
   </div>
 
   <div class="field">
@@ -20,6 +27,26 @@ Ma so cua ban la: <%= current_cluster.code %>
   <div class="field">
     <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
     <%= f.password_field :password, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :phone %><br />
+    <%= f.text_field :phone, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :home_town %><br />
+    <%= f.text_field :home_town, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :hight_school %><br />
+    <%= f.text_field :hight_school, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :birthday %><br />
+    <%= f.date_field :birthday, autofocus: true %>
   </div>
 
   <div class="field">

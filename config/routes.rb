@@ -1,5 +1,18 @@
 Rails.application.routes.draw do
 
+  devise_for :examinees, :controllers => {
+    :passwords => "examinees/passwords",
+    :confirmations => "examinees/confirmations",
+    :registrations => "examinees/registrations",
+    :sessions => "examinees/sessions",
+    :mailer => "examinees/mailer"
+  }, :skip => [:registrations]
+
+  devise_scope :examinee do
+  	get "examinees/edit" => "examinees/registrations#edit", :as => "edit_examinee_registration"
+  	put "examinees" => "examinees/registrations#update", :as => "examinee_registration"
+  end
+
   devise_for :clusters, :controllers => {
     :passwords => "clusters/passwords",
     :confirmations => "clusters/confirmations",
@@ -9,7 +22,7 @@ Rails.application.routes.draw do
   }, :skip => [:registrations]
 
   devise_scope :cluster do
-  	get "clusters/edit/new" => "clusters/registrations#edit", :as => "edit_cluster_registration"
+  	get "clusters/edit" => "clusters/registrations#edit", :as => "edit_cluster_registration"
   	put "clusters" => "clusters/registrations#update", :as => "cluster_registration"
   end
 

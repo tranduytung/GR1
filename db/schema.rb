@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160428002205) do
+ActiveRecord::Schema.define(version: 20160428040056) do
 
   create_table "clusters", force: :cascade do |t|
     t.string   "code"
@@ -36,21 +36,37 @@ ActiveRecord::Schema.define(version: 20160428002205) do
 
   create_table "examinees", force: :cascade do |t|
     t.string   "name"
-    t.string   "password"
     t.string   "people_id"
+    t.string   "student_id"
+    t.string   "phone"
+    t.string   "home_town"
+    t.string   "hight_school"
+    t.datetime "birthday",                                      null: false
     t.boolean  "graduated"
-    t.string   "exam1",      default: "math"
-    t.string   "exam2",      default: "literature"
-    t.string   "exam3",      default: "english"
+    t.string   "exam1",                  default: "math"
+    t.string   "exam2",                  default: "literature"
+    t.string   "exam3",                  default: "english"
     t.string   "exam4"
-    t.integer  "score"
+    t.integer  "graduate_score"
     t.integer  "year"
     t.integer  "cluster_id"
-    t.datetime "created_at",                        null: false
-    t.datetime "updated_at",                        null: false
+    t.datetime "created_at",                                    null: false
+    t.datetime "updated_at",                                    null: false
+    t.string   "email",                  default: "",           null: false
+    t.string   "encrypted_password",     default: "",           null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,            null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
   end
 
   add_index "examinees", ["cluster_id"], name: "index_examinees_on_cluster_id"
+  add_index "examinees", ["email"], name: "index_examinees_on_email", unique: true
+  add_index "examinees", ["reset_password_token"], name: "index_examinees_on_reset_password_token", unique: true
 
   create_table "group_exams", force: :cascade do |t|
     t.string   "exam1"

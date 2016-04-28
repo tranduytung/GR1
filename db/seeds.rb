@@ -13,24 +13,38 @@
 end
 
 examer = Cluster.order(:created_at).take(5)
-2.times do
+m = 0
+2.times do |n|
 examer.each { |examer|
-name = Faker::Name.name
-password = "123456"
-people_id = Faker::Code.ean(base = 9)
-exam4 = "physical"
-score = rand(10)
-year = 2015
-
-examer.examinees.create!(
+  m = m+1
+  name = Faker::Name.name
+  email = "example-#{m}@railstutorial.org"
+  password = "12345678"
+  people_id = Faker::Code.ean(base = 8)
+  student_id = Faker::Code.ean(base = 8)
+  phone = "1234567890"
+  home_town = Faker::Lorem.sentence(5)
+  hight_school = Faker::Lorem.sentence(5)
+  birthday = Time.now
+  exam4 = "physical"
+  graduate_score = rand(10)
+  year = 2015
+  examer.examinees.create!(
 	name: name,
+	email: email,
 	password: password,
+	password_confirmation: password,
 	people_id: people_id,
+	student_id: student_id,
+	phone: phone,
+	home_town: home_town,
+	hight_school: hight_school,
+	birthday: birthday,
 	graduated: true,
 	exam4: exam4,
-	score: score,
+	graduate_score: graduate_score,
 	year: year
-		) }
+		)}
 end
 
 
