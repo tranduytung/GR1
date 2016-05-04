@@ -2,7 +2,8 @@ class Examinee < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable,
+         :authentication_keys => [:people_id]
   belongs_to :cluster
   has_one :result, :dependent => :destroy
   has_many :registers, :dependent => :destroy
@@ -21,4 +22,5 @@ class Examinee < ActiveRecord::Base
   validates :exam4, presence: true
   validates :graduate_score, presence: true
   validates :year, presence: true
+
 end

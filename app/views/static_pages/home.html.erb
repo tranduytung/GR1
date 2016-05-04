@@ -6,7 +6,7 @@
   </h2>
 </div>
 <% if cluster_signed_in? %>
-<%= current_cluster.nil? %>
+<%= current_cluster.name %>
 <%= current_cluster.code %>
 
 <% end %>
@@ -14,4 +14,3 @@
 <% if examinee_signed_in? %>
 <%= current_examinee.name %>
 <% end %>
-<%= session %>

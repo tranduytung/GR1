@@ -29,3 +29,6 @@ en:
   contact: "Contact"
   develop_by: "The Develop by Tung"
   wellcome: "Welcome to the GR1"
+  message:
+    logged_in_successful: "You logged in successful"
+    logged_in_with_other_account: "You logged in with this account"

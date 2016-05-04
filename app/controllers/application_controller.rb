@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
   def session_exist?
     if (!current_cluster.nil? || !current_examinee.nil?)
-      flash[:success] = t "message.log_in"
+      flash[:success] = t "message.logged_in_with_other_account"
       redirect_to root_path
     end
   end
