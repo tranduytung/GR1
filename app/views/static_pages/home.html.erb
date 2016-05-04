@@ -9,3 +9,7 @@
 <%= current_cluster.name %>
 <%= current_cluster.code %>
 <% end %>
+
+<% if examinee_signed_in? %>
+<%= current_examinee.name %>
+<% end %>

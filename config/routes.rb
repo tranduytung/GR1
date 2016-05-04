@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'examinees/show'
+
   devise_for :examinees, :controllers => {
     :passwords => "examinees/passwords",
     :confirmations => "examinees/confirmations",
@@ -26,7 +28,8 @@ Rails.application.routes.draw do
   	put "clusters" => "clusters/registrations#update", :as => "cluster_registration"
   end
 
-  resources :clusters
+  resources :clusters, only: [:index, :show]
+  resources :examinees, only: [:index, :show]
 
   root to: "static_pages#home"
 
