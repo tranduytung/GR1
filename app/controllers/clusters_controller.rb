@@ -5,7 +5,7 @@ class ClustersController < ApplicationController
   end
 
   def show
-  	@cluster = Cluster.find params[:id]
+    @cluster = Cluster.find params[:id]
   end
   
 end

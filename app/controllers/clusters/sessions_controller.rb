@@ -1,6 +1,7 @@
 class Clusters::SessionsController < Devise::SessionsController
   before_action :configure_sign_in_params, only: [:create]
-
+  before_action :session_exist?, only: [:new]
+  
   # GET /resource/sign_in
   def new
     super
@@ -8,7 +9,7 @@ class Clusters::SessionsController < Devise::SessionsController
 
   # POST /resource/sign_in
   def create
-    super
+    redirect_to current_cluster
   end
 
   # DELETE /resource/sign_out
