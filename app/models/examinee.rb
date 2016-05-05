@@ -22,5 +22,4 @@ class Examinee < ActiveRecord::Base
   validates :exam4, presence: true
   validates :graduate_score, presence: true
   validates :year, presence: true
-
 end

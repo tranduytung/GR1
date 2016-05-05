@@ -3,13 +3,60 @@
   <aside class="col-md-4">
     <section class="user_info">
       <h1>
-        <%= @examinee.name %>
+        Name: <%= @examinee.name %>
       </h1>
+      <div class="field">
+      Chung Minh Thu: <%= current_examinee.people_id %>
+      </div>
+      <div class="field">
+      Ma So Du Thi: <%= current_examinee.student_id %>
+      </div>
+      <div class="field">
+      email: <%= current_examinee.email %>
+      </div>
+      <div class="field">
+      phone: <%= current_examinee.phone %>
+      </div>
+      <div class="field">
+      birthday: <%= current_examinee.birthday %>
+      </div>
+      <div class="field">
+      home_town: <%= current_examinee.home_town %>
+      </div>
+      <div class="field">
+      hight_school: <%= current_examinee.hight_school %>
+      </div>
     </section>
   </aside>
-  <div class="col-md-8">
-    Thong tin
-    <%= @examinee.graduate_score%>
+  <div class="col-md-7">
+    <h1>Diem thi</h1>
+    <div class="field">
+    Diem tot nghiep: <%= @examinee.graduate_score%>
+    </div>
+    <div class="field">
+    Toan: <%= @result.math %>
+    </div>
+    <div class="field">
+    Van: <%= @result.literature %>
+    </div>
+    <div class="field">
+    Anh: <%= @result.english %>
+    </div>
+    <div class="field">
+    Ly: <%= @result.physical %>
+    </div>
+    <div class="field">
+    Hoa: <%= @result.chemistry %>
+    </div>
+    <div class="field">
+    Sinh: <%= @result.biological %>
+    </div>
+    <div class="field">
+    Su: <%= @result.history %>
+    </div>
+    <div class="field">
+    Dia: <%= @result.geography %>
+    </div>
   </div>
 </div>
   
