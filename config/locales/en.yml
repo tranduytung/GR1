@@ -32,3 +32,4 @@ en:
   message:
     logged_in_successful: "You logged in successful"
     logged_in_with_other_account: "You logged in with this account"
+    edit_examinee_successful: "Edit profile successful"
