@@ -1,0 +1,18 @@
+ <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th class="center"><%= t :exam %></th>
+        <th class="center"><%= t :point %></th>
+        <th class="center"><%= t :note %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @exam_all.each do |exam| %>
+        <tr>
+          <td class="center"><%= exam.name %></td>
+          <td class="center"><%= @result.find_exam exam.name.downcase %></td>
+          <td class="center"></td>
+        </tr>
+      <% end %>
+    </tbody>
+</table>

@@ -7,12 +7,15 @@ class ExamineesController < ApplicationController
     @result = @examinee.result
     @group_graduated_exam = GroupGraduatedExam. find_by(
       id: @examinee.group_graduated_exam_id)
-    @exam = Array.new(20)
-    @exam1 = Exam.find_by id: @group_graduated_exam.exam_id_1
-    @exam2 = Exam.find_by id: @group_graduated_exam.exam_id_2
-    @exam3 = Exam.find_by id: @group_graduated_exam.exam_id_3
-    @exam4 = Exam.find_by id: @group_graduated_exam.exam_id_4
-    @exam = [@exam1, @exam2]
+    @exam_graduated_all = Array.new
+    @exam_graduated_all << (Exam.find_by id: @group_graduated_exam.exam_id_1)
+    @exam_graduated_all << (Exam.find_by id: @group_graduated_exam.exam_id_2)
+    @exam_graduated_all << (Exam.find_by id: @group_graduated_exam.exam_id_3)
+    @exam_graduated_all << (Exam.find_by id: @group_graduated_exam.exam_id_4)
+    @exam_all = Array.new
+    Exam.all.each do |ex|
+      @exam_all << ex
+    end
   end
 
   private

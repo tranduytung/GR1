@@ -1,45 +1,13 @@
 <% provide(:title, @examinee.name) %>
 <div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
-      <h1>
-        Name: <%= @examinee.name %>
-      </h1>
-      <div class="field">
-      Chung Minh Thu: <%= current_examinee.people_id %>
-      </div>
-      <div class="field">
-      Ma So Du Thi: <%= current_examinee.student_id %>
-      </div>
-      <div class="field">
-      email: <%= current_examinee.email %>
-      </div>
-      <div class="field">
-      phone: <%= current_examinee.phone %>
-      </div>
-      <div class="field">
-      birthday: <%= current_examinee.birthday %>
-      </div>
-      <div class="field">
-      home_town: <%= current_examinee.home_town %>
-      </div>
-      <div class="field">
-      hight_school: <%= current_examinee.hight_school %>
-      </div>
-    </section>
+  <aside class="col-md-5">
+    <%= render "shared/user_info" %>
   </aside>
   <div class="col-md-7">
-    <h1>Diem thi</h1>
-    <div class="field">
-    Diem tot nghiep: <%= @examinee.graduate_score%>
-    </div>
-    <div class="field">
-    Toan: <%= @result.math %>
-    </div>
-    <div class="field">
-    Mon xet tuyen: <%= name = @exam1.name.downcase %>
-    <%= @result.find_exam  @exam1.name.downcase %>
-    </div>
+    <h1><%= t :result %></h1>
+    <%= render "shared/result_form" %>
+    <h1><%= t :result_graduated %></h1>
+    <%= render "shared/result_graduated_form" %>
   </div>
 </div>
   
