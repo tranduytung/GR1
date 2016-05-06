@@ -26,7 +26,7 @@ examer.each { |examer|
   home_town = Faker::Lorem.sentence(5)
   hight_school = Faker::Lorem.sentence(5)
   birthday = Time.now
-  exam4 = "physical"
+  group_exam = rand(3) + 1
   graduate_score = rand(10)
   year = 2015
   examer.examinees.create!(
@@ -41,7 +41,7 @@ examer.each { |examer|
 	hight_school: hight_school,
 	birthday: birthday,
 	graduated: true,
-	exam4: exam4,
+	group_graduated_exam_id: group_exam,
 	graduate_score: graduate_score,
 	year: year
 		)}
@@ -158,3 +158,14 @@ registe.registers.create!(
 		)
 }
 
+exam = ["Math", "Literature", "English", "Physical", "Chemistry",
+  "Biological", "History", "Geography"]
+
+exam.each{ |exam|
+  Exam.create! name: exam
+}
+
+GroupGraduatedExam.create! exam_id_1: 1, exam_id_2: 2, exam_id_3: 3, exam_id_4: 4
+GroupGraduatedExam.create! exam_id_1: 1, exam_id_2: 2, exam_id_3: 3, exam_id_4: 5
+GroupGraduatedExam.create! exam_id_1: 1, exam_id_2: 2, exam_id_3: 3, exam_id_4: 6
+GroupGraduatedExam.create! exam_id_1: 1, exam_id_2: 2, exam_id_3: 3, exam_id_4: 7

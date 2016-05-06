@@ -37,25 +37,8 @@
     Toan: <%= @result.math %>
     </div>
     <div class="field">
-    Van: <%= @result.literature %>
-    </div>
-    <div class="field">
-    Anh: <%= @result.english %>
-    </div>
-    <div class="field">
-    Ly: <%= @result.physical %>
-    </div>
-    <div class="field">
-    Hoa: <%= @result.chemistry %>
-    </div>
-    <div class="field">
-    Sinh: <%= @result.biological %>
-    </div>
-    <div class="field">
-    Su: <%= @result.history %>
-    </div>
-    <div class="field">
-    Dia: <%= @result.geography %>
+    Mon xet tuyen: <%= name = @exam1.name.downcase %>
+    <%= @result.find_exam  @exam1.name.downcase %>
     </div>
   </div>
 </div>

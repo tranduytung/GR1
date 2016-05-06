@@ -5,6 +5,7 @@ class Examinee < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :authentication_keys => [:people_id]
   belongs_to :cluster
+  belongs_to :group_graduated_exam
   has_one :result, :dependent => :destroy
   has_many :registers, :dependent => :destroy
   has_one :talent_point, :dependent => :destroy
@@ -16,10 +17,6 @@ class Examinee < ActiveRecord::Base
   validates :hight_school, presence: true, length: {maximum: 150}
   validates :birthday, presence: true
   validates :graduated, default: false
-  validates :exam1, presence: true
-  validates :exam2, presence: true
-  validates :exam3, presence: true
-  validates :exam4, presence: true
   validates :graduate_score, presence: true
   validates :year, presence: true
 end
