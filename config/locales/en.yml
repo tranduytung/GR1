@@ -43,10 +43,10 @@ en:
   point: "Point"
   note: "Note"
   coefficient: "Coefficient"
+  map: "Map"
 
   message:
     logged_in_successful: "You logged in successful"
-    logged_in_with_other_account: "You logged in with this account"
     edit_examinee_successful: "Edit profile successful"
     please_log_in: "Please Log in"
-    loged_in_with_other_account: "You are logged in with other account. Please log out to continue"
+    logged_in_with_other_account: "You are logged in with other account. Please log out to continue"

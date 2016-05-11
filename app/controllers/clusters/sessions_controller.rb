@@ -9,7 +9,8 @@ class Clusters::SessionsController < Devise::SessionsController
 
   # POST /resource/sign_in
   def create
-    redirect_to current_cluster
+    super
+    # redirect_to current_cluster
   end
 
   # DELETE /resource/sign_out

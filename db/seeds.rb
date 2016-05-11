@@ -2,11 +2,19 @@
 	name = Faker::Name.name
 	code = Faker::Code.ean(base = 8)
 	year = 2015
+	phone = "1234567890"
+	test_day = Time.now
+	address = Faker::Lorem.sentence(5)
+	map = "<iframe src='https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14899.03084548334!2d105.8430389!3d21.0023472!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0000000000000000%3A0x55e92a5b07a97d03!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBCw6FjaCBraG9hIEjDoCBO4buZaQ!5e0!3m2!1svi!2s!4v1462604999901' width='600' height='450' frameborder='0' style='border:0' allowfullscreen></iframe>"
 	email = "example-#{n+1}@railstutorial.org"
 	password = "12345678"
 	Cluster.create!(name: name,
 	code: code,
+	address: address,
+	phone: phone,
+	test_day: test_day,
 	email: email,
+	map: map,
 	password: password,
 	password_confirmation: password,
 	year: year)

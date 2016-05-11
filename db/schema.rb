@@ -16,6 +16,10 @@ ActiveRecord::Schema.define(version: 20160505022711) do
   create_table "clusters", force: :cascade do |t|
     t.string   "code"
     t.string   "name"
+    t.string   "phone"
+    t.string   "address"
+    t.string   "map"
+    t.datetime "test_day",                            null: false
     t.integer  "year"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
