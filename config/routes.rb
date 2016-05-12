@@ -29,7 +29,7 @@ Rails.application.routes.draw do
   end
 
   resources :clusters, only: [:index, :show] do
-    resources :examinees, only: [:index, :show, :edit, :update]
+    resources :examinees, only: [:index, :show, :edit, :update, :destroy]
   end
 
   root to: "static_pages#home"

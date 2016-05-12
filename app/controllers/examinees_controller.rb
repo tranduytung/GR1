@@ -31,11 +31,19 @@ class ExamineesController < ApplicationController
     @cluster = Cluster.find_by id: params[:cluster_id]
     @examinee = Examinee.find params[:id]
     if @examinee.update_attributes(examinee_params)
-        flash[:success] = "Update examinee"
-        redirect_to [@cluster,@examinee]
-      else
-        render "edit"
-      end
+      flash[:success] = "Update examinee"
+      redirect_to [@cluster,@examinee]
+    else
+      render "edit"
+    end
+  end
+
+  def destroy
+    @cluster = Cluster.find_by id: params[:cluster_id]
+    @examinee = Examinee.find params[:id]
+    @examinee.destroy
+    flash[:success] = t "message.examinee_deleted"
+    redirect_to cluster_examinees_path
   end
 
   private

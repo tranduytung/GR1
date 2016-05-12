@@ -11,5 +11,6 @@ class CreateClusters < ActiveRecord::Migration
 
       t.timestamps null: false
     end
+    add_index :clusters, :code, unique: true
   end
 end

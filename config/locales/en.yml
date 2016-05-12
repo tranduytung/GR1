@@ -59,3 +59,7 @@ en:
     logged_in_with_other_account: "You are logged in with other account. Please log out to continue"
     you_are_not_cluster_correct: "You are not cluster of examinee"
     you_are_not_current_examinee: "You are not current examinee"
+    examinee_deleted: "Delete examinee successful"
+
+  warning:
+    delete: "You sure?"

@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20160505022711) do
     t.string   "last_sign_in_ip"
   end
 
+  add_index "clusters", ["code"], name: "index_clusters_on_code", unique: true
   add_index "clusters", ["email"], name: "index_clusters_on_email", unique: true
   add_index "clusters", ["reset_password_token"], name: "index_clusters_on_reset_password_token", unique: true
 
@@ -68,6 +69,7 @@ ActiveRecord::Schema.define(version: 20160505022711) do
   add_index "examinees", ["cluster_id"], name: "index_examinees_on_cluster_id"
   add_index "examinees", ["email"], name: "index_examinees_on_email", unique: true
   add_index "examinees", ["group_graduated_exam_id"], name: "index_examinees_on_group_graduated_exam_id"
+  add_index "examinees", ["people_id"], name: "index_examinees_on_people_id", unique: true
   add_index "examinees", ["reset_password_token"], name: "index_examinees_on_reset_password_token", unique: true
 
   create_table "exams", force: :cascade do |t|

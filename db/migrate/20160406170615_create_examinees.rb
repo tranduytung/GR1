@@ -16,5 +16,6 @@ class CreateExaminees < ActiveRecord::Migration
 
       t.timestamps null: false
     end
+    add_index :examinees, :people_id, unique: true
   end
 end

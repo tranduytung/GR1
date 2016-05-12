@@ -2,6 +2,7 @@
 <h2>Edit prifile</h2>
 
 <%= form_for [@cluster, @examinee] do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
 
   <div class="field">
     <%= f.label :name %><br />
@@ -12,7 +13,6 @@
     <%= f.label :people_id do %>
       <% t :people_id%>
     <%end%>
-    <br />
     <%= f.text_field :people_id, autofocus: true %>
   </div>
 
