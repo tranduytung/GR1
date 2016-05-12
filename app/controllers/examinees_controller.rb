@@ -1,6 +1,10 @@
 class ExamineesController < ApplicationController
-  before_action :logged_in_examinee, only: [:show]
-  before_action :correct_examinee, only: [:show]
+  before_action :correct_examinee_or_cluster, only: [:show]
+  before_action :corrent_cluster, only: [:index]
+  def index
+    @cluster = Cluster.find_by id: params[:cluster_id]
+    @examinees = @cluster.examinees
+  end
 
   def show
     @examinee = Examinee.find params[:id]
@@ -20,11 +24,37 @@ class ExamineesController < ApplicationController
 
   private
 
-  def correct_examinee
+  def correct_examinee_or_cluster
     @examinee = Examinee.find params[:id]
-    unless current_examinee? @examinee
-      flash[:danger] = t "message.loged_in_with_other_account"
-      redirect_to root_url 
+    @cluster = Cluster.find_by id: params[:cluster_id]
+    if current_examinee.nil?
+      if current_cluster.nil?
+        flash[:danger] = t "message.please_log_in"
+        redirect_to root_path
+      else
+        unless current_cluster? @cluster
+          flash[:danger] = t "message.you_are_not_cluster_correct"
+          redirect_to root_path
+        else
+          unless @examinee.cluster == @cluster
+            flash[:danger] = t "message.you_are_not_cluster_correct"
+            redirect_to root_path
+          end
+        end
+      end
+    else
+      unless current_examinee? @examinee
+        flash[:danger] = t "message.you_are_not_current_examinee"
+        redirect_to root_path
+      end
+    end
+  end
+
+  def corrent_cluster
+    @cluster = Cluster.find_by id: params[:cluster_id]
+    unless current_cluster? @cluster
+      flash[:danger] = t "message.you_are_not_cluster_correct"
+      redirect_to root_path
     end
   end
 

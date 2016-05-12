@@ -39,6 +39,7 @@ en:
   cluster: "Cluster"
   log_in: "Log in"
   examinee: "Examinee"
+  all_examinees: "All Examinees"
   exam: "Exam"
   point: "Point"
   note: "Note"
@@ -53,3 +54,5 @@ en:
     edit_examinee_successful: "Edit profile successful"
     please_log_in: "Please Log in"
     logged_in_with_other_account: "You are logged in with other account. Please log out to continue"
+    you_are_not_cluster_correct: "You are not cluster of examinee"
+    you_are_not_current_examinee: "You are not current examinee"

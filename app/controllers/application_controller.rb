@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   include ExamineesHelper
+  include ClustersHelper
 
   def session_exist?
     if ( !current_cluster.nil? || !current_examinee.nil? )

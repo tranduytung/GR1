@@ -5,25 +5,28 @@
   <hr>
   <div class="list-group">
     <div class="list-group-item">
-      <span class="glyphicon glyphicon-user"></span> People ID: <%= current_examinee.people_id %>
+      <span class=" glyphicon glyphicon-asterisk"></span> Cluster: <%= @examinee.cluster.name %>
     </div>
     <div class="list-group-item">
-      <span class="glyphicon glyphicon-credit-card"></span> Student ID: <%= current_examinee.student_id %>
+      <span class="glyphicon glyphicon-user"></span> People ID: <%= @examinee.people_id %>
     </div>
     <div class="list-group-item">
-      <span class="glyphicon glyphicon-envelope"></span> Email: <%= current_examinee.email %>
+      <span class="glyphicon glyphicon-credit-card"></span> Student ID: <%= @examinee.student_id %>
     </div>
     <div class="list-group-item">
-      <span class=" glyphicon glyphicon-earphone"></span> Phone: <%= current_examinee.phone %>
+      <span class="glyphicon glyphicon-envelope"></span> Email: <%= @examinee.email %>
     </div>
     <div class="list-group-item">
-      <span class="glyphicon glyphicon-envelope"></span> Birthday: <%= current_examinee.birthday %>
+      <span class=" glyphicon glyphicon-earphone"></span> Phone: <%= @examinee.phone %>
     </div>
     <div class="list-group-item">
-      <span class="glyphicon glyphicon-home"></span> Home_town: <%= current_examinee.home_town %>
+      <span class="glyphicon glyphicon-envelope"></span> Birthday: <%= @examinee.birthday %>
     </div>
     <div class="list-group-item">
-      <span class="glyphicon glyphicon-book"></span> Hight_school: <%= current_examinee.hight_school %>
+      <span class="glyphicon glyphicon-home"></span> Home_town: <%= @examinee.home_town %>
+    </div>
+    <div class="list-group-item">
+      <span class="glyphicon glyphicon-book"></span> Hight_school: <%= @examinee.hight_school %>
     </div>
   </div>
   <hr>

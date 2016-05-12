@@ -11,6 +11,8 @@
             </a>
             <ul class="dropdown-menu">
               <li><%= link_to t(:all_clusters), clusters_path %></li>
+              <li><%= link_to t(:all_examinee),
+                cluster_examinees_path(current_cluster) %></li>
               <li><%= link_to t(:profile), current_cluster %></li>
               <li><%= link_to t(:edit_profile), edit_cluster_registration_path %></li>
               <li class="divider"></li>
@@ -37,7 +39,7 @@
               <%= t :account %><b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
-              <li><%= link_to t(:profile), current_examinee %></li>
+              <li><%= link_to t(:profile), cluster_examinee_path(current_examinee, current_examinee.cluster_id) %></li>
               <li><%= link_to t(:edit_profile), edit_examinee_registration_path %></li>
               <li class="divider"></li>
               <li>
