@@ -48,6 +48,9 @@ en:
   not_map_for_object: "Object has'nt map"
   manage: "Manage"
   add_map_for_cluster: "Add map for cluster"
+  people_id: "People ID"
+  student_id: "Student ID"
+  edit: "Edit"
 
   message:
     logged_in_successful: "You logged in successful"

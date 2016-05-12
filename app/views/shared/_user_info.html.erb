@@ -3,6 +3,16 @@
     Name: <%= @examinee.name %>
   </h1>
   <hr>
+  <% if current_cluster %>
+    <%= link_to edit_cluster_examinee_path(current_cluster, @examinee),
+      class: "btn btn-info btn-block" do %>
+      <span><%= t :edit %></span>
+    <% end %>
+  <% else %>
+    <%= link_to edit_examinee_registration_path, class: "btn btn-info btn-block" do %>
+      <span><%= t :edit %></span>
+    <% end %>
+  <% end %>
   <div class="list-group">
     <div class="list-group-item">
       <span class=" glyphicon glyphicon-asterisk"></span> Cluster: <%= @examinee.cluster.name %>
@@ -28,10 +38,5 @@
     <div class="list-group-item">
       <span class="glyphicon glyphicon-book"></span> Hight_school: <%= @examinee.hight_school %>
     </div>
-  </div>
-  <hr>
-  <div>
-  <h2>Graduated Total</h2>
-    <%= render "shared/result_graduated"%>
   </div>
 </section>

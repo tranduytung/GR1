@@ -4,6 +4,6 @@ module ExamineesHelper
   end
 
   def current_examinee? examinee
-    examinee == current_examinee
+    current_examinee == examinee
   end
 end

@@ -22,11 +22,27 @@ class ExamineesController < ApplicationController
     end
   end
 
+  def edit
+    @cluster = Cluster.find_by id: params[:cluster_id]
+    @examinee = Examinee.find params[:id]
+  end
+
+  def update
+    @cluster = Cluster.find_by id: params[:cluster_id]
+    @examinee = Examinee.find params[:id]
+    if @examinee.update_attributes(examinee_params)
+        flash[:success] = "Update examinee"
+        redirect_to [@cluster,@examinee]
+      else
+        render "edit"
+      end
+  end
+
   private
 
   def correct_examinee_or_cluster
-    @examinee = Examinee.find params[:id]
     @cluster = Cluster.find_by id: params[:cluster_id]
+    @examinee = Examinee.find params[:id]
     if current_examinee.nil?
       if current_cluster.nil?
         flash[:danger] = t "message.please_log_in"
@@ -56,6 +72,11 @@ class ExamineesController < ApplicationController
       flash[:danger] = t "message.you_are_not_cluster_correct"
       redirect_to root_path
     end
+  end
+
+  def examinee_params
+    params.require(:examinee).permit(:name, :people_id, :student_id,
+      :email, :phone, :home_town, :hight_school, :birthday)
   end
 
 end

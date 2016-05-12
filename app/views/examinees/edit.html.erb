@@ -1,0 +1,57 @@
+<% provide(:title, @examinee.name) %>
+<h2>Edit prifile</h2>
+
+<%= form_for [@cluster, @examinee] do |f| %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :people_id do %>
+      <% t :people_id%>
+    <%end%>
+    <br />
+    <%= f.text_field :people_id, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :student_id do %>
+      <% t :student_id%>
+    <%end%>
+    <br />
+    <%= f.text_field :student_id, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :phone %><br />
+    <%= f.text_field :phone, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :home_town %><br />
+    <%= f.text_field :home_town, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :hight_school %><br />
+    <%= f.text_field :hight_school, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :birthday %><br />
+    <%= f.date_field :birthday, autofocus: true %>
+  </div>
+
+  <%= f.submit t(:edit), class: "btn btn-primary" %>
+
+<% end %>
+
+
+<%= link_to "Back", :back %>
