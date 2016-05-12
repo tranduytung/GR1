@@ -44,6 +44,8 @@ en:
   note: "Note"
   coefficient: "Coefficient"
   map: "Map"
+  not_map_for_object: "Object has'nt map"
+  manage: "Manage"
 
   message:
     logged_in_successful: "You logged in successful"

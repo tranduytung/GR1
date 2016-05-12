@@ -10,5 +10,4 @@ class Cluster < ActiveRecord::Base
   validates :year, presence:true
   validates :phone, presence: true, length: {maximum: 11, minimum: 10}
   validates :test_day, presence: true
-  validates :map, presence: true
 end
