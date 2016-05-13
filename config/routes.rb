@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'results/edit'
+
   get 'examinees/show'
 
   devise_for :examinees, :controllers => {
@@ -29,7 +31,9 @@ Rails.application.routes.draw do
   end
 
   resources :clusters, only: [:index, :show] do
-    resources :examinees, only: [:index, :show, :edit, :update, :destroy]
+    resources :examinees, only: [:index, :show, :edit, :update, :destroy] do
+      resources :results, only: [:edit, :update]
+    end
   end
 
   root to: "static_pages#home"

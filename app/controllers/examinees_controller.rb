@@ -74,14 +74,6 @@ class ExamineesController < ApplicationController
     end
   end
 
-  def corrent_cluster
-    @cluster = Cluster.find_by id: params[:cluster_id]
-    unless current_cluster? @cluster
-      flash[:danger] = t "message.you_are_not_cluster_correct"
-      redirect_to root_path
-    end
-  end
-
   def examinee_params
     params.require(:examinee).permit(:name, :people_id, :student_id,
       :email, :phone, :home_town, :hight_school, :birthday)

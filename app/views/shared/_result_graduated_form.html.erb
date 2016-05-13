@@ -3,7 +3,6 @@
       <tr>
         <th class="center"><%= t :exam %></th>
         <th class="center"><%= t :point %></th>
-        <th class="center"><%= t :coefficient %></th>
       </tr>
     </thead>
     <tbody>
@@ -11,7 +10,6 @@
         <tr>
           <td class="center"><%= exam.name %></td>
           <td class="center"><%= @result.find_exam exam.name.downcase %></td>
-          <td class="center">1</td>
         </tr>
       <% end %>
     </tbody>

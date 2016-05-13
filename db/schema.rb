@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 20160505022711) do
     t.string   "hight_school"
     t.datetime "birthday",                             null: false
     t.boolean  "graduated"
-    t.integer  "graduate_score"
+    t.float    "graduate_score"
     t.integer  "year"
     t.integer  "cluster_id"
     t.integer  "group_graduated_exam_id"
@@ -127,17 +127,17 @@ ActiveRecord::Schema.define(version: 20160505022711) do
   add_index "registers", ["major_id"], name: "index_registers_on_major_id"
 
   create_table "results", force: :cascade do |t|
-    t.integer  "math",        default: 0
-    t.integer  "literature",  default: 0
-    t.integer  "english",     default: 0
-    t.integer  "physical",    default: 0
-    t.integer  "chemistry",   default: 0
-    t.integer  "biological",  default: 0
-    t.integer  "history",     default: 0
-    t.integer  "geography",   default: 0
+    t.float    "math",        default: 0.0
+    t.float    "literature",  default: 0.0
+    t.float    "english",     default: 0.0
+    t.float    "physical",    default: 0.0
+    t.float    "chemistry",   default: 0.0
+    t.float    "biological",  default: 0.0
+    t.float    "history",     default: 0.0
+    t.float    "geography",   default: 0.0
     t.integer  "examinee_id"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
   add_index "results", ["examinee_id"], name: "index_results_on_examinee_id"

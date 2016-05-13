@@ -51,6 +51,7 @@ en:
   people_id: "People ID"
   student_id: "Student ID"
   edit: "Edit"
+  edit_result: "Edit Resut"
 
   message:
     logged_in_successful: "You logged in successful"
@@ -60,6 +61,7 @@ en:
     you_are_not_cluster_correct: "You are not cluster of examinee"
     you_are_not_current_examinee: "You are not current examinee"
     examinee_deleted: "Delete examinee successful"
+    you_are_not_examinee_correct: "Not connect"
 
   warning:
     delete: "You sure?"
