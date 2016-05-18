@@ -11,15 +11,8 @@ class ExamineesController < ApplicationController
     @result = @examinee.result
     @group_graduated_exam = GroupGraduatedExam. find_by(
       id: @examinee.group_graduated_exam_id)
-    @exam_graduated_all = Array.new
-    @exam_graduated_all << (Exam.find_by id: @group_graduated_exam.exam_id_1)
-    @exam_graduated_all << (Exam.find_by id: @group_graduated_exam.exam_id_2)
-    @exam_graduated_all << (Exam.find_by id: @group_graduated_exam.exam_id_3)
-    @exam_graduated_all << (Exam.find_by id: @group_graduated_exam.exam_id_4)
-    @exam_all = Array.new
-    Exam.all.each do |ex|
-      @exam_all << ex
-    end
+    @exam_graduated_all = @group_graduated_exam.to_exam_graduated
+    @exam_all = Exam.all
   end
 
   def edit

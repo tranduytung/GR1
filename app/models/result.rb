@@ -13,11 +13,7 @@ class Result < ActiveRecord::Base
     @total = 0
     @group_graduated_exam = GroupGraduatedExam. find_by(
       id: self.examinee.group_graduated_exam_id)
-    @exam_graduated_all = Array.new
-    @exam_graduated_all << (Exam.find_by id: @group_graduated_exam.exam_id_1)
-    @exam_graduated_all << (Exam.find_by id: @group_graduated_exam.exam_id_2)
-    @exam_graduated_all << (Exam.find_by id: @group_graduated_exam.exam_id_3)
-    @exam_graduated_all << (Exam.find_by id: @group_graduated_exam.exam_id_4)
+    @exam_graduated_all = @group_graduated_exam.to_exam_graduated
     @exam_graduated_all.each do |exam|
       @total += self.send exam.name.downcase
     end
