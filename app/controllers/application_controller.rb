@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
   end
 
   def logged_in_examinee
-    unless examinee_logged_in?
+    unless user_signed_in?
       flash[:danger] = t "message.please_log_in"
       redirect_to new_examinee_session_path
     end

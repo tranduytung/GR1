@@ -67,3 +67,7 @@ en:
   examinee:
     edit: "Edit"
     class_name: "Examinee"
+
+  admin:
+    edit: "Edit"
+    class_name: "Admin"
