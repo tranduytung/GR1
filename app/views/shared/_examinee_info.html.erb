@@ -4,37 +4,11 @@
   </h1>
   <hr>
 
-  <% if current_cluster %>
-  <div class="dropdown">
-    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-      <%= t :manage %><b class="caret"></b>
-    </a>
-    <ul class="dropdown-menu">
-    <li>
-      <%= link_to edit_cluster_examinee_path(current_cluster, @examinee) do %>
-      <span><%= t :edit %></span>
-    <% end %>
-    </li>
-    <li class="divider"></li>
-      <li>
-        <%= link_to "", method: :delete, data: {confirm: t("warning.delete")} do %>
-      <span><%= t :delete %></span>
-    <% end %>
-      </li>
-    </ul>
-  </div>
-  <% else %>
-    <%= link_to edit_examinee_registration_path,
-      class: "btn btn-info btn-block" do %>
-      <span><%= t :edit %></span>
-    <% end %>
+  <%= link_to edit_examinee_registration_path, class: "btn btn-info btn-block" do %>
+    <span><%= t :edit %></span>
   <% end %>
 
   <div class="list-group">
-    <div class="list-group-item">
-      <span class=" glyphicon glyphicon-asterisk"></span>
-      Cluster: <%= @examinee.cluster.name %>
-    </div>
     <div class="list-group-item">
       <span class="glyphicon glyphicon-user"></span>
       People ID: <%= @examinee.people_id %>

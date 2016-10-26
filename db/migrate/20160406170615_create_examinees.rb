@@ -11,7 +11,6 @@ class CreateExaminees < ActiveRecord::Migration
       t.boolean :graduated
       t.float :graduate_score
       t.integer :year
-      t.references :cluster, index: true, foreign_key: true
       t.references :group_graduated_exam, index: true, foreign_key: true
 
       t.timestamps null: false

@@ -13,32 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20160505022711) do
 
-  create_table "clusters", force: :cascade do |t|
-    t.string   "code"
-    t.string   "name"
-    t.string   "phone"
-    t.string   "address"
-    t.string   "map"
-    t.datetime "test_day",                            null: false
-    t.integer  "year"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-  end
-
-  add_index "clusters", ["code"], name: "index_clusters_on_code", unique: true
-  add_index "clusters", ["email"], name: "index_clusters_on_email", unique: true
-  add_index "clusters", ["reset_password_token"], name: "index_clusters_on_reset_password_token", unique: true
-
   create_table "examinees", force: :cascade do |t|
     t.string   "name"
     t.string   "people_id"
@@ -50,7 +24,6 @@ ActiveRecord::Schema.define(version: 20160505022711) do
     t.boolean  "graduated"
     t.float    "graduate_score"
     t.integer  "year"
-    t.integer  "cluster_id"
     t.integer  "group_graduated_exam_id"
     t.datetime "created_at",                           null: false
     t.datetime "updated_at",                           null: false
@@ -66,7 +39,6 @@ ActiveRecord::Schema.define(version: 20160505022711) do
     t.string   "last_sign_in_ip"
   end
 
-  add_index "examinees", ["cluster_id"], name: "index_examinees_on_cluster_id"
   add_index "examinees", ["email"], name: "index_examinees_on_email", unique: true
   add_index "examinees", ["group_graduated_exam_id"], name: "index_examinees_on_group_graduated_exam_id"
   add_index "examinees", ["people_id"], name: "index_examinees_on_people_id", unique: true
