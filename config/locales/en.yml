@@ -38,7 +38,6 @@ en:
   log_out: "Log out"
   cluster: "Cluster"
   log_in: "Log in"
-  examinee: "Examinee"
   all_examinees: "All Examinees"
   exam: "Exam"
   point: "Point"
@@ -65,3 +64,6 @@ en:
 
   warning:
     delete: "You sure?"
+  examinee:
+    edit: "Edit"
+    class_name: "Examinee"
