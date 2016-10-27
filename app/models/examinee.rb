@@ -14,11 +14,18 @@ class Examinee < ActiveRecord::Base
   validates :people_id, presence: true, length: {maximum: 11},
     uniqueness: {case_sensitive: false}
   validates :student_id, presence: true, length: {is: 8}
-  validates :phone, presence: true, length: {minimum: 10, maximum: 11}
-  validates :home_town, presence: true, length: {maximum: 150}
-  validates :hight_school, presence: true, length: {maximum: 150}
+  validates :phone, length: {minimum: 10, maximum: 11}, allow_blank: true
+  validates :home_town, length: {maximum: 150}, allow_blank: true
+  validates :hight_school, length: {maximum: 150}, allow_blank: true
   validates :birthday, presence: true
   validates :graduated, default: false
-  validates :graduate_score, presence: true
   validates :year, presence: true
+
+  def password_required?
+    super && new_record?
+  end
+
+  def update_with_password params, *options
+    encrypted_password.blank? ? update_attributes(params, *options) : super
+  end
 end

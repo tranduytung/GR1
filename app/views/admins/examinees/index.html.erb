@@ -1,0 +1,23 @@
+<% provide :title, t("examinee.all") %>
+<div class="row">
+  <h1><%= t "examinee.all" %></h1>
+  <hr/>
+    <%= link_to t("admin.examinee.new"), new_admins_examinee_path,
+      class: "btn btn-success icon-trash icon-white" %>
+  <hr/>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th class="center"><%= t "examinee.name" %></th>
+        <th class="center"><%= t "examinee.email" %></th>
+        <th class="center", colspan="3"><%= t "admin.actions" %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @examinees %>
+    </tbody>
+  </table>
+  <div class="text-center">
+    <%= paginate @examinees %>
+  </div>
+</div>
