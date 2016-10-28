@@ -12,6 +12,12 @@ gem "turbolinks"
 gem "jbuilder", "~> 2.0"
 gem "sdoc", "~> 0.4.0", group: :doc
 gem "devise"
+gem "cancancan"
+gem "kaminari"
+gem "kaminari-bootstrap", "~> 3.0.1"
+gem "momentjs-rails", ">= 2.9.0"
+gem "bootstrap3-datetimepicker-rails", "~> 4.17.42"
+
 group :development, :test do
   gem "byebug"
 end

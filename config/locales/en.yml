@@ -67,7 +67,24 @@ en:
   examinee:
     edit: "Edit"
     class_name: "Examinee"
+    all: "All Examinees"
+    name: "Name"
+    email: "Email"
 
   admin:
     edit: "Edit"
     class_name: "Admin"
+    actions: "Actions"
+    edit: "Edit"
+    delete: "Delete"
+    show: "Show"
+    confirm: "Are you sure?"
+    examinee:
+      new: "New Examinee"
+      edit: "Edit Examinee"
+      add_success: "Add Successful"
+      add_fail: "Add Fail"
+      edit_success: "Edit Examinee Successful"
+      edit_failed: "Edit Examinee Fail"
+      delete_success: "Delete Examinee Successful"
+      delete_fail: "Delete Examinee Fail"

@@ -1,0 +1,17 @@
+<tr>
+  <td class="center"><%= examinee.name %></td>
+  <td class="center"><%= examinee.email %></td>
+  <td>
+    <%= link_to t("admin.show"), admins_examinee_path(examinee),
+      class: "btn btn-info icon-trash icon-white" %>
+  </td>
+  <td>
+    <%= link_to t("admin.edit"), edit_admins_examinee_path(examinee),
+      class: "btn btn-info icon-trash icon-white" %>
+  </td>
+  <td>
+    <%= link_to t("admin.delete"), admins_examinee_path(examinee),
+      method: :delete, data: {confirm: t("admin.confirm")},
+      class: "btn btn-danger icon-trash icon-white" %>
+  </td>
+</tr>

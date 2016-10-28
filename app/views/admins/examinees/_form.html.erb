@@ -1,0 +1,42 @@
+<%= form_for [:admins, @examinee] do |f| %>
+  <%= render "shared/error_messages", object: @examinee %>
+
+  <%= f.label :people_id %>
+  <%= f.text_field :people_id, autofocus: true, class: "form-control" %>
+
+  <%= f.label :student_id %>
+  <%= f.text_field :student_id, autofocus: true, class: "form-control" %>
+
+  <%= f.label :year %>
+  <%= f.text_field :year, class:'form-control year-search' %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name, autofocus: true, class: "form-control" %>
+
+  <%= f.label :email %>
+  <%= f.email_field :email, autofocus: true, class: "form-control" %>
+
+  <%= f.label :phone %>
+  <%= f.text_field :phone, autofocus: true, class: "form-control" %>
+
+  <%= f.label :home_town %>
+  <%= f.text_field :home_town, autofocus: true, class: "form-control" %>
+
+  <%= f.label :hight_school %>
+  <%= f.text_field :hight_school, autofocus: true, class: "form-control" %>
+
+  <%= f.label :birthday %>
+  <%= f.text_field :birthday, class: "form-control date-search" %>
+
+  <%= f.label :password %>
+  <%= f.password_field :password, autocomplete: "off",
+  class: "form-control" %>
+
+  <%= f.label :password_confirmation %>
+  <%= f.password_field :password_confirmation, autocomplete: "off",
+  class: "form-control" %>
+
+  <div class="actions">
+    <%= f.submit t("admin.examinee.new"), class: "btn btn-primary" %>
+  </div>
+<% end %>
