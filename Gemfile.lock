@@ -30,6 +30,7 @@ GEM
       activemodel (= 4.2.5.1)
       activesupport (= 4.2.5.1)
       arel (~> 6.0)
+    activerecord-reset-pk-sequence (0.2.0)
     activesupport (4.2.5.1)
       i18n (~> 0.7)
       json (~> 1.7, >= 1.7.7)
@@ -37,6 +38,13 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     arel (6.0.3)
+    axlsx (2.0.1)
+      htmlentities (~> 4.3.1)
+      nokogiri (>= 1.4.1)
+      rubyzip (~> 1.0.0)
+    axlsx_rails (0.5.0)
+      actionpack (>= 3.1)
+      axlsx (>= 2.0.1)
     bcrypt (3.1.11)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
@@ -68,6 +76,7 @@ GEM
       i18n (~> 0.5)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
+    htmlentities (4.3.4)
     i18n (0.7.0)
     jbuilder (2.4.1)
       activesupport (>= 3.0.0, < 5.1)
@@ -130,6 +139,7 @@ GEM
       json (~> 1.4)
     responders (2.1.2)
       railties (>= 4.2.0, < 5.1)
+    rubyzip (1.0.0)
     sass (3.4.22)
     sass-rails (5.0.4)
       railties (>= 4.0.0, < 5.0)
@@ -170,6 +180,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activerecord-reset-pk-sequence
+  axlsx (~> 2.0)
+  axlsx_rails
   bootstrap-sass
   bootstrap3-datetimepicker-rails (~> 4.17.42)
   byebug

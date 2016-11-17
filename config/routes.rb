@@ -35,7 +35,11 @@ Rails.application.routes.draw do
   get "home" => "static_pages#home"
 
   namespace :admins do
-    resources :examinees
+    resources :examinees do
+      collection {get :export_file_csv}
+      collection {post :import_file_csv}
+      collection {get :export_file_excel}
+    end
   end
 
 end
