@@ -59,7 +59,7 @@ nu_name = ["Hoài An"," Thu An"," Thúy An"," Xuân An"," Vĩnh An"," Thụy An"
 "Ánh Xuân"," Dạ Xuân"," Hồng Xuân"," Hương Xuân"," Kim Xuân"," Minh Xuân"," Mỹ Xuân"," Nghi Xuân"," Thanh Xuân"," Thi Xuân"," Tuyết Xuân"," Vĩnh Xuân"," Chiều Xuân"," Hà Xuân"," Cẩm Xuân",
 "Thái Yên"," An Yên"," Xuân Yên"," Di Yên"," Hà Yên"," Hải Yên"," Thảo Yên"," Kim Yên"," Thanh Yên"," Ngọc Yên"," Mỹ Yên",
 "Bạch Yến"," Cẩm Yến"," Dạ Yến"," Hải Yến"," Hoàng Yến"," Kim Yến"," Minh Yến"," Mỹ Yến"," Ngọc Yến"," Nhã Yến"," Phụng Yến"," Phi Yến"," Thi Yến"," Xuân Yến"]
-100.times do |n|
+10.times do |n|
   email = "example-#{n+1}@railstutorial.org"
   password = "123456"
   n = n.to_s
