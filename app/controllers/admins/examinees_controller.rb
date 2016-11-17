@@ -49,6 +49,47 @@ class Admins::ExamineesController < ApplicationController
     redirect_to admins_examinees_path
   end
 
+  def import_file_csv
+    if params[:file].nil?
+      flash[:alert] = t "admin.examinee.file_nil"
+      redirect_to admins_examinees_path
+    elsif File.extname(params[:file].original_filename) != ".csv"
+      flash[:danger] = t "app.flash.file_format_invalid"
+      redirect_to admins_examinees_path
+    else
+      begin
+        Examinee.transaction do
+          Examinee.delete_all
+          Examinee.reset_pk_sequence
+          Examinee.import(params[:file])
+          notice = t 'admin.examinee.import_csv'
+          redirect_to :back, notice: notice
+        end
+      rescue => err
+        flash[:danger] = err.to_s
+        redirect_to admins_examinees_path
+      end
+    end
+  end
+
+  def export_file_csv
+    @examinees = Examinee.all
+    @date = Date.today.to_date
+    respond_to do |format|
+      format.html
+      format.csv {send_data @examinees.to_csv, filename: "examinees_#{@date}.csv"}
+    end
+  end
+
+  def export_file_excel
+    @examinees = Examinee.all
+    @date = Date.today.to_date
+    respond_to do |format|
+      format.html
+      format.xlsx {render xlsx: 'export_file_excel', filename: "examinees_#{@date}.xlsx"}
+    end
+  end
+
   private
   def examinee_params
     params.require(:examinee).permit :people_id, :student_id, :name, :email,

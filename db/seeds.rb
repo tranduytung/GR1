@@ -132,20 +132,6 @@ resu.create_result!(
   password: password)
 end
 
-
-tal = Examinee.order(:created_at).take(10)
-tal.each { |resu|
-tal_name = "art"
-tal_point = rand(10)
-university_id = "1"
-#byebug
-resu.create_talent_point!(
-  tal_name: tal_name,
-  tal_point: tal_point,
-  university_id: university_id
-    )
-}
-
 GroupExam.create!(
   exam1: "math",
   exam2: "literature",

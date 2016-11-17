@@ -17,6 +17,9 @@ gem "kaminari"
 gem "kaminari-bootstrap", "~> 3.0.1"
 gem "momentjs-rails", ">= 2.9.0"
 gem "bootstrap3-datetimepicker-rails", "~> 4.17.42"
+gem 'axlsx', '~> 2.0'
+gem "axlsx_rails"
+gem 'activerecord-reset-pk-sequence'
 
 group :development, :test do
   gem "byebug"
