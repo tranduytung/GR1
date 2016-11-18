@@ -22,8 +22,10 @@ class ApplicationController < ActionController::Base
   def current_ability
     if admin_signed_in?
       @current_ability ||= Ability.new(current_admin)
-    else
+    elsif examinee_signed_in?
       @current_ability ||= Ability.new(current_examinee)
+    else
+      current_ability ||= Ability.new(current_university)
     end
   end
 end
