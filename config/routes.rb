@@ -1,5 +1,15 @@
 Rails.application.routes.draw do
 
+  get 'majors/index'
+
+  get 'majors/show'
+
+  get 'majors/edit'
+
+  get 'majors/new'
+
+  get 'universities/show'
+
   get 'results/edit'
   get 'examinees/show'
 
@@ -29,7 +39,23 @@ Rails.application.routes.draw do
     put "admins" => "admins/registrations#update", :as => "admin_registration"
   end
 
+  devise_for :universities, :controllers => {
+    :passwords => "universities/passwords",
+    :confirmations => "universities/confirmations",
+    :registrations => "universities/registrations",
+    :sessions => "universities/sessions",
+    :mailer => "universities/mailer"
+  }, :skip => [:registrations]
+
+  devise_scope :university do
+    get "universities/edit" => "universities/registrations#edit", :as => "edit_university_registration"
+    put "universities" => "universities/registrations#update", :as => "university_registration"
+  end
+
   resources :examinees, only: [:show]
+  resources :universities, only: [:show] do
+    resources :majors
+  end
 
   root to: "static_pages#home"
   get "home" => "static_pages#home"
