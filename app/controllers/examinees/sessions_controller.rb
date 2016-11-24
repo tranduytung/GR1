@@ -10,8 +10,6 @@ class Examinees::SessionsController < Devise::SessionsController
   # POST /resource/sign_in
   def create
     super
-    # flash[:success] = t "message.logged_in_successful"
-    # redirect_to current_examinee
   end
 
   # DELETE /resource/sign_out

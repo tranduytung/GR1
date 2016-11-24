@@ -1,7 +1,47 @@
 <div class="center jumbotron">
-  <h1><%= t :wellcome%></h1>
-  <h2>This is the home page for the
-    <a href="http://www.railstutorial.org/">Ruby on Rails Tutorial</a>
-    sample application.
-  </h2>
+  <h1>Tim kiem diem thi</h1>
+  <input type="text" name="FirstName" placeholder="Nhap ma so bao danh cua thi sinh" class="form-controll">
+  <input type="submit" value="Tim kiem">
 </div>
+<div class="row">
+  <div class="col-sm-6">
+    <input type="submit" value="Xem thong ke Tot Nghiep">
+  </div>
+  <div class="col-sm-6">
+    <input type="submit" value="Xem thong ke Tuyen sinh">
+  </div>
+</div>
+<% if examinee_signed_in? %>
+    <div class="col-sm-6">
+      <input type="submit" value="Xem tu van chon truong">
+    </div>
+    <div class="col-sm-6">
+      <input type="submit" value="Dang ki vao truong dai hoc">
+    </div>
+<% end %>
+<style>
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+</style>
