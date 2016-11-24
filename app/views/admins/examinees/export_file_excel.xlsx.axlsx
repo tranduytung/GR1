@@ -1,11 +1,13 @@
 wb = xlsx_package.workbook
 wb.add_worksheet(name: "Examinee") do |sheet|
-    sheet.add_row ["name", "people_id", "student_id", "phone", "email",
+    sheet.add_row ["id", "name", "people_id", "student_id", "phone", "email",
       "home_town", "hight_school", "birthday", "graduated", "graduate_score",
-      "year", "math",  "literature", "english", "physical", "chemistry",
-      "biological", "history", "geography"]
+      "year", "group_graduated_exam_id", "math",  "literature", "english",
+      "physical", "chemistry", "biological", "history", "geography"]
     @examinees.each do |examinee|
-        sheet.add_row [examinee.name,
+        sheet.add_row [
+          examinee.id,
+          examinee.name,
           examinee.people_id,
           examinee.student_id,
           examinee.phone,
@@ -16,6 +18,7 @@ wb.add_worksheet(name: "Examinee") do |sheet|
           examinee.graduated? ? "Yes" : "No",
           examinee.graduate_score,
           examinee.year,
+          examinee.group_graduated_exam_id,
           examinee.result.math,
           examinee.result.literature,
           examinee.result.english,

@@ -64,6 +64,7 @@ Rails.application.routes.draw do
     resources :examinees do
       collection {get :export_file_csv}
       collection {post :import_file_csv}
+      collection {post :import_file_excel}
       collection {get :export_file_excel}
     end
   end
