@@ -59,18 +59,30 @@ nu_name = ["Hoài An"," Thu An"," Thúy An"," Xuân An"," Vĩnh An"," Thụy An"
 "Ánh Xuân"," Dạ Xuân"," Hồng Xuân"," Hương Xuân"," Kim Xuân"," Minh Xuân"," Mỹ Xuân"," Nghi Xuân"," Thanh Xuân"," Thi Xuân"," Tuyết Xuân"," Vĩnh Xuân"," Chiều Xuân"," Hà Xuân"," Cẩm Xuân",
 "Thái Yên"," An Yên"," Xuân Yên"," Di Yên"," Hà Yên"," Hải Yên"," Thảo Yên"," Kim Yên"," Thanh Yên"," Ngọc Yên"," Mỹ Yên",
 "Bạch Yến"," Cẩm Yến"," Dạ Yến"," Hải Yến"," Hoàng Yến"," Kim Yến"," Minh Yến"," Mỹ Yến"," Ngọc Yến"," Nhã Yến"," Phụng Yến"," Phi Yến"," Thi Yến"," Xuân Yến"]
-10.times do |n|
-  email = "example-#{n+1}@railstutorial.org"
+
+tinh = ["An Giang","Bà Rịa - Vũng Tàu","Bắc Giang","Bắc Kạn","Bạc Liêu","Bắc Ninh",
+  "Bến Tre","Bình Định","Bình Dương","Bình Phước","Bình Thuận","Cà Mau","Cao Bằng",
+  "Đắk Lắk","Đắk Nông","Điện Biên","Đồng Nai","Đồng Tháp","Gia Lai","Hà Giang",
+  "Hà Nam","Hà Tĩnh","Hải Dương","Hậu Giang","Hòa Bình","Hưng Yên","Khánh Hòa",
+  "Kiên Giang","Kon Tum","Lai Châu","Lâm Đồng","Lạng Sơn","Lào Cai","Long An",
+  "Nam Định","Nghệ An","Ninh Bình","Ninh Thuận","Phú Thọ","Quảng Bình  Quảng Nam",
+  "Quảng Ngãi","Quảng Ninh","Quảng Trị","Sóc Trăng","Sơn La","Tây Ninh","Thái Bình",
+  "Thái Nguyên","Thanh Hóa","Thừa Thiên Huế","Tiền Giang","Trà Vinh","Tuyên Quang",
+  "Vĩnh Long","Vĩnh Phúc","Yên Bái","Phú Yên","Cần Thơ","Đà Nẵng","Hải Phòng",
+  "Hà Nội","TP HCM"]
+
+10.times do |m|
+  email = "example-#{m+1}@railstutorial.org"
   password = "123456"
-  n = n.to_s
+  n = m.to_s
   while n.length < 8
     n = "0" + n
   end
   people_id = n
   student_id = n
   phone = "1234567890"
-  home_town = Faker::Lorem.sentence(5)
-  hight_school = Faker::Lorem.sentence(5)
+  home_town = tinh[rand(62)]
+  hight_school = ("Trường Trung học phổ thông chuyên "|| "Trường Trung học phổ thông")+home_town
   birthday = Time.now
   group_exam = rand(3) + 1
   graduate_score = rand(10)
@@ -98,6 +110,7 @@ nu_name = ["Hoài An"," Thu An"," Thúy An"," Xuân An"," Vĩnh An"," Thụy An"
   graduate_score: graduate_score,
   year: year
     )
+  puts "Tao thanh cong hoc sinh #{m+1}"
 end
 
 

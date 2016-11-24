@@ -1,17 +1,18 @@
 <% provide :title, t("examinee.all") %>
 <div class="row">
   <h1><%= t "examinee.all" %></h1>
+  <%= link_to "export_csv", export_file_excel_admins_examinees_path(format: 'xlsx') %>
   <hr/>
   <%= link_to t("Thong Ke"), "",
       class: "btn btn-success icon-trash icon-white" %>
   <hr/>
-  <%= form_tag import_file_csv_admins_examinees_path, class:'form-inline', multipart: true do %>
+  <%= form_tag import_file_excel_admins_examinees_path, class:'form-inline', multipart: true do %>
       <div class="form-group">
-        <%= label_tag 'select_file_csv', nil, class: 'sr-only' %>
+        <%= label_tag 'select_file_excel', nil, class: 'sr-only' %>
         <%= file_field_tag :file , class: 'btn btn-default' %>
       </div>
       <div class="form-group">
-        <%= label_tag 'importcsv', nil, class: 'sr-only' %>
+        <%= label_tag 'import_excel', nil, class: 'sr-only' %>
         <%= submit_tag "Import Excel" , class: 'btn btn-default' %>
       </div>
   <% end %>

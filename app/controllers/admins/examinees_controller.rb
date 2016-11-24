@@ -61,7 +61,7 @@ class Admins::ExamineesController < ApplicationController
         Examinee.transaction do
           Examinee.delete_all
           Examinee.reset_pk_sequence
-          Examinee.import(params[:file])
+          Examinee.import_csv(params[:file])
           notice = t 'admin.examinee.import_csv'
           redirect_to :back, notice: notice
         end
@@ -87,6 +87,26 @@ class Admins::ExamineesController < ApplicationController
     respond_to do |format|
       format.html
       format.xlsx {render xlsx: 'export_file_excel', filename: "examinees_#{@date}.xlsx"}
+    end
+  end
+
+  def import_file_excel
+    if params[:file].nil?
+      flash[:alert] = t "admin.examinee.file_nil"
+      redirect_to admins_examinees_path
+    else
+      begin
+        Examinee.transaction do
+          # Examinee.delete_all
+          # Examinee.reset_pk_sequence
+          Examinee.import(params[:file])
+          notice = t 'admin.examinee.import_csv'
+          redirect_to :back, notice: notice
+        end
+      rescue => err
+        flash[:danger] = err.to_s
+        redirect_to admins_examinees_path
+      end
     end
   end
 
