@@ -22,6 +22,8 @@ gem "axlsx_rails"
 gem 'activerecord-reset-pk-sequence'
 gem "roo"
 gem "iconv"
+gem "ransack"
+gem "chartkick"
 
 group :development, :test do
   gem "byebug"

@@ -71,13 +71,14 @@ tinh = ["An Giang","Bà Rịa - Vũng Tàu","Bắc Giang","Bắc Kạn","Bạc L
   "Vĩnh Long","Vĩnh Phúc","Yên Bái","Phú Yên","Cần Thơ","Đà Nẵng","Hải Phòng",
   "Hà Nội","TP HCM"]
 
-10.times do |m|
+1000.times do |m|
   email = "example-#{m+1}@railstutorial.org"
   password = "123456"
   n = m.to_s
-  while n.length < 8
+  while n.length < 7
     n = "0" + n
   end
+  n = "A"+n
   people_id = n
   student_id = n
   phone = "1234567890"
@@ -89,6 +90,11 @@ tinh = ["An Giang","Bà Rịa - Vũng Tàu","Bắc Giang","Bắc Kạn","Bạc L
   year = 2015
   gender = ["boy", "women"]
   dender_user = gender[rand(2)]
+  if graduate_score >= 5
+    graduated = true
+  else
+    graduated = false
+  end
   if dender_user == "boy"
     name = ho[rand(16)] + nam_name[rand(758)]
   else
@@ -105,7 +111,7 @@ tinh = ["An Giang","Bà Rịa - Vũng Tàu","Bắc Giang","Bắc Kạn","Bạc L
   home_town: home_town,
   hight_school: hight_school,
   birthday: birthday,
-  graduated: true,
+  graduated: graduated,
   group_graduated_exam_id: group_exam,
   graduate_score: graduate_score,
   year: year
