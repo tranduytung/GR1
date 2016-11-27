@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'search/index'
+
   get 'majors/index'
 
   get 'majors/show'
@@ -67,6 +69,14 @@ Rails.application.routes.draw do
       collection {post :import_file_excel}
       collection {get :export_file_excel}
     end
+  end
+
+  resources :searchs, only: :index
+  resources :charts do
+    collection {get :graduated}
+    collection {get :graduate_score}
+    collection {get :graduate}
+    collection {get :home_town}
   end
 
 end

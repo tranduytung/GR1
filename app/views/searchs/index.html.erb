@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="col-md-offset-2 col-md-10">
+    <table class="table table-bordered center">
+      <thead>
+        <tr>
+          <th class="center"><%= "Student Id" %></th>
+          <th class="center"><%= "People Id" %></th>
+          <th class="center"><%= "Name" %></th>
+          <th class="center"><%= "Graduate Score" %></th>
+          <th class="center"><%= "Home Town" %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% unless @examinees.empty? %>
+          <% @examinees.each do |examinee| %>
+            <tr>
+              <td><%= examinee.student_id %></td>
+              <td><%= examinee.people_id %></td>
+              <td><%= examinee.name %></td>
+              <td><%= examinee.graduate_score %></td>
+              <td><%= examinee.home_town %></td>
+            </tr>
+          <% end %>
+        <% end %>
+      </tbody>
+    </table>
+    <div class="text-center">
+      <%= paginate @examinees %>
+    </div>
+  </div>
+</div>

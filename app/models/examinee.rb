@@ -59,6 +59,11 @@ class Examinee < ActiveRecord::Base
       examinee.attributes = row.to_hash.slice(*accessible_attributes)
       examinee.attributes["pasword"] = examinee.people_id
       examinee.attributes["password_confirmation"] = examinee.people_id
+      if row["graduated"] == "Yes"
+        examinee.graduated = true
+      else
+        examinee.graduated = false
+      end
       examinee.save!
       result = examinee.result || Result.new
       result.examinee_id = examinee.id

@@ -97,8 +97,9 @@ class Admins::ExamineesController < ApplicationController
     else
       begin
         Examinee.transaction do
-          # Examinee.delete_all
-          # Examinee.reset_pk_sequence
+          Examinee.destroy_all
+          Examinee.reset_pk_sequence
+          Result.reset_pk_sequence
           Examinee.import(params[:file])
           notice = t 'admin.examinee.import_csv'
           redirect_to :back, notice: notice
