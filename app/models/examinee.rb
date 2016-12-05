@@ -74,9 +74,9 @@ class Examinee < ActiveRecord::Base
 
   def self.open_spreadsheet(file)
     case File.extname(file.original_filename)
-      when '.csv' then Roo::Csv.new(file.path, nil, :ignore)
-      when '.xls' then Roo::Excel.new(file.path, nil, :ignore)
-      when '.xlsx' then Roo::Excelx.new(file.path, nil, :ignore)
+      when '.csv' then Roo::Csv.new(file.path, packed: nil, file_warning: :ignore)
+      when '.xls' then Roo::Excel.new(file.path, packed: nil, file_warning: :ignore)
+      when '.xlsx' then Roo::Excelx.new(file.path, packed: nil, file_warning: :ignore)
     else
       raise "Unknown file type: #{file.original_filename}"
     end
@@ -85,6 +85,7 @@ class Examinee < ActiveRecord::Base
   def self.accessible_attributes
     ["name", "people_id", "student_id", "phone", "email", "home_town",
       "hight_school", "birthday", "graduated", "graduate_score", "year",
+      "priority_point", "encourage_point", "average_point",
       "group_graduated_exam_id"]
   end
   def self.result_attributes

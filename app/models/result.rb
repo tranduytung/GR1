@@ -17,6 +17,19 @@ class Result < ActiveRecord::Base
     @exam_graduated_all.each do |exam|
       @total += self.send exam.name.downcase
     end
-    return (@total.fdiv(@exam_graduated_all.length))
+    @graduate_score = ((@total + self.examinee.encourage_point)/4 +
+      self.examinee.average_point)/2 + self.examinee.priority_point
+    return @graduate_score
+  end
+
+  def check_graduted
+    @group_graduated_exam = GroupGraduatedExam. find_by(
+      id: self.examinee.group_graduated_exam_id)
+    @exam_graduated_all = @group_graduated_exam.to_exam_graduated
+    @exam_graduated_all.each do |exam|
+      return false if (self.send exam.name.downcase) <= 1
+    end
+    return false if self.examinee.graduate_score < 5
+    return true
   end
 end

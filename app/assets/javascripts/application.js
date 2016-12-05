@@ -17,3 +17,6 @@
 //= require_tree .
 //= require moment
 //= require bootstrap-datetimepicker
+//= require fusioncharts/fusioncharts
+//= require fusioncharts/fusioncharts.charts
+//= require fusioncharts/themes/fusioncharts.theme.fint

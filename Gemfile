@@ -24,6 +24,8 @@ gem "roo"
 gem "iconv"
 gem "ransack"
 gem "chartkick"
+gem 'fusioncharts-rails'
+gem 'config'
 
 group :development, :test do
   gem "byebug"

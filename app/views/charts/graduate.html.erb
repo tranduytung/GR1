@@ -1,13 +1,5 @@
-<div>
-<h1>Bieu do tot nghiep</h1>
-<%= pie_chart graduated_charts_path %>
-</div>
+<%= link_to "Ti le tot nghiep", by_graduated_charts_path, class: "btn btn-success" %>
+<%= link_to "Thong ke so thi sinh du thi theo vung", by_home_town_charts_path, class: "btn btn-success" %>
+<%= link_to "Thong ke theo diem tot nghiep", by_graduate_score_charts_path, class: "btn btn-success" %>
+<%= link_to "Thong ke theo diem tung mon", by_exam_score_charts_path, class: "btn btn-success" %>
 
-<div>
-  <h1>Bieu do diem</h1>
-  <%= bar_chart graduate_score_charts_path, height: "500px" %>
-</div>
-<div class="center">
-  <h1>Bieu do theo vung</h1>
-  <%= column_chart home_town_charts_path, height: "500px", width: "1200px" %>
-</div>

@@ -74,9 +74,21 @@ Rails.application.routes.draw do
   resources :searchs, only: :index
   resources :charts do
     collection {get :graduated}
+    collection {get :by_graduated}
     collection {get :graduate_score}
+    collection {get :by_graduate_score}
     collection {get :graduate}
     collection {get :home_town}
+    collection {get :by_home_town}
+    collection {get :math}
+    collection {get :literature}
+    collection {get :english}
+    collection {get :physical}
+    collection {get :chemistry}
+    collection {get :biological}
+    collection {get :history}
+    collection {get :geography}
+    collection {get :by_exam_score}
   end
 
 end
