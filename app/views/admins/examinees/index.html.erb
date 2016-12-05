@@ -1,7 +1,7 @@
 <% provide :title, t("examinee.all") %>
 <div class="row">
   <h1><%= t "examinee.all" %></h1>
-
+  <%= link_to "export_csv", export_file_excel_admins_examinees_path(format: 'xlsx') %>
   <hr/>
   <%= link_to t("Thong Ke"), "",
       class: "btn btn-success icon-trash icon-white" %>

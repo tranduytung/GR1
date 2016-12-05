@@ -1,17 +1,3 @@
-<div class="center jumbotron">
-  <h1>Tim kiem diem thi</h1>
-    <% @examinees = Examinee.all %>
-    <% @search = @examinees.ransack params[:q] %>
-    <%= search_form_for @search, url: searchs_path, method: :get do |f| %>
-      <%= f.text_field :people_id_cont, placeholder: "input_people_id",
-        class: "form-control" %>
-      <%= f.text_field :student_id_cont, placeholder: "input_student",
-        class: "form-control" %>
-      <%= f.text_field :name_cont, placeholder: "input_name",
-        class: "form-control" %>
-      <%= f.submit "Tim Kiem", class: "btn btn-default"%>
-    <% end %>
-</div>
 <div class="row">
   <div class="col-sm-6">
     <%= link_to "Thong Ke", graduate_charts_path, class: "btn btn-success" %>

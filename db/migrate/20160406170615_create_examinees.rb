@@ -9,7 +9,10 @@ class CreateExaminees < ActiveRecord::Migration
       t.string :hight_school
       t.datetime :birthday, :null => false
       t.boolean :graduated
-      t.float :graduate_score
+      t.float :graduate_score, default: 0
+      t.float :priority_point, default: 0
+      t.float :encourage_point, default: 0
+      t.float :average_point, default: 0
       t.integer :year
       t.references :group_graduated_exam, index: true, foreign_key: true
 
