@@ -10,8 +10,6 @@ Rails.application.routes.draw do
 
   get 'majors/new'
 
-  get 'universities/show'
-
   get 'results/edit'
   get 'examinees/show'
 
@@ -54,10 +52,22 @@ Rails.application.routes.draw do
     put "universities" => "universities/registrations#update", :as => "university_registration"
   end
 
+  namespace :universities do
+    resources :majors do
+      collection {get :export_file_excel}
+      collection {post :import_file_excel}
+    end
+    resources :major_group_exams do
+      collection {get :export_file_excel}
+      collection {post :import_file_excel}
+    end
+  end
+
   resources :examinees, only: [:show]
   resources :universities, only: [:show] do
-    resources :majors
+    resources :majors, only: :index
   end
+
 
   root to: "static_pages#home"
   get "home" => "static_pages#home"

@@ -1,3 +1,5 @@
+Result.delete_all
+Result.reset_pk_sequence
 a = 0
 res = Examinee.order(:created_at)
 res.each { |resu|

@@ -9,6 +9,9 @@ class Ability
       can :read, :all
     when Admin
       can :manage, :all
+    when University
+      can :manage, Major
+      can :manage, MajorGroupExam
     end
   end
 end
