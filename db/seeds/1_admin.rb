@@ -1,3 +1,5 @@
+Admin.delete_all
+Admin.reset_pk_sequence
 Admin.create(
   name: "Admin",
   email: "admin@gmail.com",

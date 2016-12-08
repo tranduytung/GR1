@@ -1,18 +1,18 @@
-Admin.delete_all
-Admin.reset_pk_sequence
-Examinee.delete_all
-Examinee.reset_pk_sequence
-Result.delete_all
-Result.reset_pk_sequence
-University.delete_all
-University.reset_pk_sequence
-GroupExam.delete_all
-GroupExam.reset_pk_sequence
-GroupGraduatedExam.delete_all
-GroupGraduatedExam.reset_pk_sequence
-Major.delete_all
-Major.reset_pk_sequence
-Register.delete_all
-Register.reset_pk_sequence
-Exam.delete_all
-Exam.reset_pk_sequence
+# Admin.delete_all
+# Admin.reset_pk_sequence
+# Examinee.delete_all
+# Examinee.reset_pk_sequence
+# Result.delete_all
+# Result.reset_pk_sequence
+# University.delete_all
+# University.reset_pk_sequence
+# GroupExam.delete_all
+# GroupExam.reset_pk_sequence
+# GroupGraduatedExam.delete_all
+# GroupGraduatedExam.reset_pk_sequence
+# Major.delete_all
+# Major.reset_pk_sequence
+# Register.delete_all
+# Register.reset_pk_sequence
+# Exam.delete_all
+# Exam.reset_pk_sequence

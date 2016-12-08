@@ -1,0 +1,13 @@
+wb = xlsx_package.workbook
+wb.add_worksheet(name: "Major") do |sheet|
+    sheet.add_row ["code", "name", "year", "target"]
+    @majors.each do |major|
+      major.major_infos.each do |major_info|
+        sheet.add_row [
+          major.code,
+          major_info.name,
+          major.year,
+          major.target]
+        end
+    end
+end

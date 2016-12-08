@@ -6,6 +6,7 @@ class University < ActiveRecord::Base
           authentication_keys: [:code]
   has_many :examinees
   has_many :majors, :dependent => :destroy
+  has_many :major_group_exams, through: :majors
   validates :name, presence: true
   validates :code, presence: true
   validates :password, presence:true

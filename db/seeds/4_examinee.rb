@@ -65,8 +65,9 @@ tinh = ["An Giang","Bà Rịa - Vũng Tàu","Bắc Giang","Bắc Kạn","Bạc L
   "Vĩnh Long","Vĩnh Phúc","Yên Bái","Phú Yên","Cần Thơ","Đà Nẵng","Hải Phòng",
   "Hà Nội","TP HCM"]
 
-
-20000.times do |m|
+Examinee.delete_all
+Examinee.reset_pk_sequence
+10.times do |m|
   email = "example-#{m+1}@railstutorial.org"
   password = "123456"
   n = m.to_s

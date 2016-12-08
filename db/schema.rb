@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161117153752) do
+ActiveRecord::Schema.define(version: 20161205130647) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "name"
@@ -74,11 +74,16 @@ ActiveRecord::Schema.define(version: 20161117153752) do
   end
 
   create_table "group_exams", force: :cascade do |t|
-    t.string   "exam1"
-    t.string   "exam2"
-    t.string   "exam3"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "math",       default: 0
+    t.integer  "literature", default: 0
+    t.integer  "english",    default: 0
+    t.integer  "physical",   default: 0
+    t.integer  "chemistry",  default: 0
+    t.integer  "biological", default: 0
+    t.integer  "history",    default: 0
+    t.integer  "geography",  default: 0
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "group_graduated_exams", force: :cascade do |t|
@@ -90,11 +95,30 @@ ActiveRecord::Schema.define(version: 20161117153752) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "major_group_exams", force: :cascade do |t|
+    t.integer  "major_id"
+    t.integer  "group_exam_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "major_group_exams", ["group_exam_id"], name: "index_major_group_exams_on_group_exam_id"
+  add_index "major_group_exams", ["major_id"], name: "index_major_group_exams_on_major_id"
+
+  create_table "major_infos", force: :cascade do |t|
+    t.integer  "major_id"
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "major_infos", ["major_id"], name: "index_major_infos_on_major_id"
+
   create_table "majors", force: :cascade do |t|
     t.integer  "university_id"
-    t.integer  "group_exam_id"
-    t.string   "name"
+    t.string   "code"
     t.integer  "year"
+    t.integer  "target"
     t.integer  "benchmark1"
     t.integer  "benchmark2"
     t.integer  "benchmark3"
@@ -106,7 +130,6 @@ ActiveRecord::Schema.define(version: 20161117153752) do
     t.integer  "last_year_benchmark"
   end
 
-  add_index "majors", ["group_exam_id"], name: "index_majors_on_group_exam_id"
   add_index "majors", ["university_id"], name: "index_majors_on_university_id"
 
   create_table "registers", force: :cascade do |t|
@@ -136,18 +159,6 @@ ActiveRecord::Schema.define(version: 20161117153752) do
   end
 
   add_index "results", ["examinee_id"], name: "index_results_on_examinee_id"
-
-  create_table "talent_points", force: :cascade do |t|
-    t.integer  "examinee_id"
-    t.integer  "university_id"
-    t.string   "tal_name"
-    t.integer  "tal_point"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-  end
-
-  add_index "talent_points", ["examinee_id"], name: "index_talent_points_on_examinee_id"
-  add_index "talent_points", ["university_id"], name: "index_talent_points_on_university_id"
 
   create_table "universities", force: :cascade do |t|
     t.string   "name"
