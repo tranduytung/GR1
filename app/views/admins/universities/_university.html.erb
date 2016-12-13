@@ -1,0 +1,8 @@
+<tr>
+  <td class="center"><%= university.code %></td>
+  <td class="center"><%= university.name %></td>
+  <td>
+    <%= link_to t("admin.show"), admins_university_path(university),
+      class: "btn btn-info icon-trash icon-white" %>
+  </td>
+</tr>

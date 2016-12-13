@@ -1,0 +1,34 @@
+<% provide :title, t("all") %>
+<div class="row">
+<!--   <%= link_to "export_excel", export_file_excel_admins_universities_path(format: 'xlsx') %> -->
+  <hr/>
+  <%= link_to t("Thong Ke"), "",
+      class: "btn btn-success icon-trash icon-white" %>
+  <hr/>
+  <%= form_tag import_file_excel_admins_universities_path, class:'form-inline', multipart: true do %>
+      <div class="form-group">
+        <%= label_tag 'select_file_excel', nil, class: 'sr-only' %>
+        <%= file_field_tag :file , class: 'btn btn-default' %>
+      </div>
+      <div class="form-group">
+        <%= label_tag 'import_excel', nil, class: 'sr-only' %>
+        <%= submit_tag "Import Excel" , class: 'btn btn-default' %>
+      </div>
+  <% end %>
+  <hr/>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th class="center"><%= t "examinee.code" %></th>
+        <th class="center"><%= t "examinee.name" %></th>
+        <th class="center"><%= t "admin.actions" %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @universities %>
+    </tbody>
+  </table>
+  <div class="text-center">
+    <%= paginate @universities %>
+  </div>
+</div>

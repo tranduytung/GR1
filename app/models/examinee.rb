@@ -57,8 +57,8 @@ class Examinee < ActiveRecord::Base
       row = Hash[[header, spreadsheet.row(i)].transpose]
       examinee = find_by_id(row["id"]) || new
       examinee.attributes = row.to_hash.slice(*accessible_attributes)
-      examinee.attributes["pasword"] = examinee.people_id
-      examinee.attributes["password_confirmation"] = examinee.people_id
+      examinee.password = examinee.people_id
+      examinee.password_confirmation = examinee.people_id
       if row["graduated"] == "Yes"
         examinee.graduated = true
       else
