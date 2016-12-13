@@ -4,6 +4,9 @@ class CreateUniversities < ActiveRecord::Migration
       t.string :name
       t.string :code
       t.string :password
+      t.string :phone
+      t.string :address
+      t.string :web_site
 
       t.timestamps null: false
     end
