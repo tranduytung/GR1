@@ -1,12 +1,15 @@
 class Major < ActiveRecord::Base
+
   belongs_to :university
   has_many :registers, :dependent => :destroy
   has_many :major_group_exams, :dependent => :destroy
   has_many :major_infos, :dependent => :destroy
   validates :year, presence: true
-  # validates :benchmark1, presence: true
-  # validates :deadline1, presence: true
-  # validates :last_year_benchmark, presence: true
+  validates :code, presence: true
+  validate :major_infos_name
+
+  accepts_nested_attributes_for :major_infos, allow_destroy: true
+  accepts_nested_attributes_for :major_group_exams, allow_destroy: true
 
   def self.import(file, university_id)
     spreadsheet = open_spreadsheet(file)
@@ -35,7 +38,14 @@ class Major < ActiveRecord::Base
       raise "Unknown file type: #{file.original_filename}"
     end
   end
+  private
 
+  def major_infos_name
+    major_infos.each do |major_info|
+      if major_info.name.blank? && !major_info.destroy
+      end
+    end
+  end
   def self.accessible_attributes
     ["code", "target", "year"]
   end
