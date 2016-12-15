@@ -1,7 +1,7 @@
 class MajorsController < ApplicationController
   def index
     @university = University.find_by id: params[:university_id]
-    @majors = @university.majors
+    @majors = @university.majors.includes(:major_infos)
   end
 
   def show

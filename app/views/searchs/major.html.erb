@@ -1,0 +1,33 @@
+<div class="row">
+  <div class="col-md-offset-2 col-md-10">
+    <%= render "search_form" %>
+    <% unless @majors.empty? %>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th class="center"><%= t "examinee.code" %></th>
+            <th class="center"><%= t "examinee.name" %></th>
+            <th class="center"><%= t "examinee.major" %></th>
+            <th class="center"><%= t "admin.actions" %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @majors.each do |major_info| %>
+            <tr>
+              <td class="center"><%= major_info.university.code %></td>
+              <td class="center"><%= link_to major_info.university.name,
+                 university_path(major_info.university) %></td>
+              <td class="center"><%= major_info.name %></td>
+              <td><%= link_to t("admin.show"), university_path(major_info.
+                university), class: "btn btn-info icon-trash icon-white" %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <div class="text-center">
+        <%= paginate @majors %>
+      </div>
+    <% end %>
+  </div>
+</div>

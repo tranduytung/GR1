@@ -2,7 +2,7 @@ class Universities::MajorsController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @majors = current_university.majors
+    @majors = current_university.majors.includes(:major_infos)
   end
 
   def show

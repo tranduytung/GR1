@@ -86,7 +86,9 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :searchs, only: :index
+  resources :searchs do
+    collection {get :major}
+  end
   resources :charts do
     collection {get :graduated}
     collection {get :by_graduated}
