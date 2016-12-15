@@ -1,11 +1,10 @@
 class SearchsController < ApplicationController
-  def index
-    @examinees = Examinee.all
-    @search = @examinees.ransack params[:q]
+  def major
+    @search = MajorInfo.all.ransack params[:q]
     if params[:q].nil?
-      @examinees = @examinees.page(params[:page]).per 10
+      @majors = []
     else
-      @examinees = @search.result.page(params[:page]).per 10
+      @majors = @search.result.page(params[:page]).per 10
     end
   end
 end
