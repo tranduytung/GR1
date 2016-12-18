@@ -1,2 +1,71 @@
-<h1>Majors#show</h1>
-<p>Find me in app/views/majors/show.html.erb</p>
+<div class="col-md-6">
+  <div class="well">
+    Code: <%= @major.code %>
+  </div>
+  <div class="well">
+    Year: <%= @major.year %>
+  </div>
+  <div class="well">
+    Target: <%= @major.target %>
+  </div>
+  <div class="well">
+    Diem NV 1: <%= @major.benchmark1 %><br>
+    Han nop hs: <%= @major.deadline1 %><br>
+    <% if examinee_signed_in? && !@major.deadline1.nil? && Time.now <= @major.deadline1%>
+      <%= link_to "Dang ki", "", class: "btn btn-primary"%>
+    <% end %>
+  </div>
+  <div class="well">
+    Diem NV 2: <%= @major.benchmark2 %><br>
+    Han nop hs: <%= @major.deadline2 %>
+  </div>
+  <div class="well">
+    Diem NV 3: <%= @major.benchmark3 %><br>
+    Han nop hs: <%= @major.deadline3 %>
+  </div>
+</div>
+<div class="col-md-6">
+  <table class="table table-bordered table-striped table-condensed major-table">
+    <thead>
+      <tr>
+        <th class="center">STT</th>
+        <th class="center"><%= t "product.name" %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @major.major_infos.each_with_index do |major_info, index| %>
+        <tr class="well">
+          <td><%= index+1 %></td>
+          <td><%= major_info.name %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<div class="col-md-6">
+  <table class="table table-bordered table-striped table-condensed major-table">
+    <thead>
+      <tr>
+        <th class="center">STT</th>
+        <th class="center"><%= t "product.group_exam" %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% a = 0 %>
+      <% @major.major_group_exams.each_with_index do |major_group_exam, index| %>
+      <% group_exam = GroupExam.find_by id: major_group_exam.group_exam_id %>
+        <tr class="well">
+          <td><%= index+1 %></td>
+          <td><%= (t("math")+"(#{group_exam.math})") unless group_exam.math == 0 %>
+      <%= (t("literature")+"(#{group_exam.literature})") unless group_exam.literature == 0 %>
+      <%= (t("english")+"(#{group_exam.english})") unless group_exam.english == 0 %>
+      <%= (t("physical")+"(#{group_exam.physical})") unless group_exam.physical == 0 %>
+      <%= (t("chemistry")+"(#{group_exam.chemistry})") unless group_exam.chemistry == 0 %>
+      <%= (t("biological")+"(#{group_exam.biological})") unless group_exam.biological == 0 %>
+      <%= (t("history")+"(#{group_exam.history})") unless group_exam.history == 0 %>
+      <%= (t("geography")+"(#{group_exam.geography})") unless group_exam.geography == 0 %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

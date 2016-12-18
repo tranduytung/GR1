@@ -8,9 +8,6 @@ class CreateMajors < ActiveRecord::Migration
       t.integer :benchmark1
       t.integer :benchmark2
       t.integer :benchmark3
-      t.datetime :deadline1
-      t.datetime :deadline2
-      t.datetime :deadline3
 
       t.timestamps null: false
     end

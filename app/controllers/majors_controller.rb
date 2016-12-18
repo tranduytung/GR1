@@ -5,6 +5,7 @@ class MajorsController < ApplicationController
   end
 
   def show
+    @major = Major.find_by id: params[:id]
   end
 
   def edit
