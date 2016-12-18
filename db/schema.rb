@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161205130647) do
+ActiveRecord::Schema.define(version: 20161218140909) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "name"
@@ -131,6 +131,18 @@ ActiveRecord::Schema.define(version: 20161205130647) do
   end
 
   add_index "majors", ["university_id"], name: "index_majors_on_university_id"
+
+  create_table "register_times", force: :cascade do |t|
+    t.integer  "year"
+    t.datetime "start_aspiration_1"
+    t.datetime "end_aspiration_1"
+    t.datetime "start_aspiration_2"
+    t.datetime "end_aspiration_2"
+    t.datetime "start_aspiration_3"
+    t.datetime "end_aspiration_3"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
 
   create_table "registers", force: :cascade do |t|
     t.integer  "examinee_id"

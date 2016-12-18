@@ -66,7 +66,7 @@ Rails.application.routes.draw do
   resources :examinees, only: [:show]
   resources :universities, only: [:show, :index]
   resources :universities, only: [:show] do
-    resources :majors, only: :index
+    resources :majors, only: [:index, :show]
   end
 
 
@@ -84,6 +84,7 @@ Rails.application.routes.draw do
       collection {post :import_file_excel}
       collection {get :export_file_excel}
     end
+    resources :register_times, only: [:edit, :update]
   end
 
   resources :searchs do

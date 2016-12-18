@@ -8,6 +8,9 @@ class Universities::MajorsController < ApplicationController
   def show
   end
 
+  def edit
+  end
+
   def update
     if @major.update_attributes major_params
       flash[:success] = t "admin.examinee.edit_success"
@@ -59,7 +62,7 @@ class Universities::MajorsController < ApplicationController
   private
   def major_params
     params.require(:major).permit(:code, :target, :benchmark1, :benchmark2,
-      :benchmark3, :deadline1, :deadline2, :deadline3, major_infos_attributes:
-      [:id, :name, :_destroy])
+      :benchmark3, :deadline1, :deadline2, :deadline3,
+      major_infos_attributes: [:id, :name, :_destroy])
   end
 end

@@ -18,8 +18,8 @@
               <td class="center"><%= link_to major_info.university.name,
                  university_path(major_info.university) %></td>
               <td class="center"><%= major_info.name %></td>
-              <td><%= link_to t("admin.show"), university_path(major_info.
-                university), class: "btn btn-info icon-trash icon-white" %>
+              <td><%= link_to "Show", university_major_path(
+                major_info.university, major_info.major), class: "btn btn-primary"%>
               </td>
             </tr>
           <% end %>

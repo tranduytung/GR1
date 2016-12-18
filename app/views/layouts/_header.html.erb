@@ -10,6 +10,8 @@
               <%= t :account %><b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
+              <% @register_time = RegisterTime.find_by year: Time.now.year %>
+              <li><%= link_to "Manage time register", edit_admins_register_time_path(@register_time) %></li>
               <li><%= link_to t(:profile), "" %></li>
               <li><%= link_to t(:edit_profile), edit_admin_registration_path %></li>
               <li class="divider"></li>
