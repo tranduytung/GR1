@@ -122,9 +122,7 @@ ActiveRecord::Schema.define(version: 20161218140909) do
     t.integer  "benchmark1"
     t.integer  "benchmark2"
     t.integer  "benchmark3"
-    t.datetime "deadline1"
-    t.datetime "deadline2"
-    t.datetime "deadline3"
+    t.integer  "register_status"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
     t.integer  "last_year_benchmark"
@@ -147,10 +145,11 @@ ActiveRecord::Schema.define(version: 20161218140909) do
   create_table "registers", force: :cascade do |t|
     t.integer  "examinee_id"
     t.integer  "major_id"
-    t.boolean  "status"
+    t.integer  "status",      default: 0
+    t.integer  "aspiration"
     t.integer  "year"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
 
   add_index "registers", ["examinee_id"], name: "index_registers_on_examinee_id"

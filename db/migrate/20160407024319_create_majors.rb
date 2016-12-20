@@ -8,6 +8,7 @@ class CreateMajors < ActiveRecord::Migration
       t.integer :benchmark1
       t.integer :benchmark2
       t.integer :benchmark3
+      t.integer :register_status
 
       t.timestamps null: false
     end

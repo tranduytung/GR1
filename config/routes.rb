@@ -63,7 +63,9 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :examinees, only: [:show]
+  resources :examinees, only: :show do
+    resources :registers
+  end
   resources :universities, only: [:show, :index]
   resources :universities, only: [:show] do
     resources :majors, only: [:index, :show]

@@ -1,0 +1,11 @@
+<tr>
+  <td><%= link_to ff.object.major.code,
+    university_major_path(ff.object.major.university, ff.object.major) %></td>
+  <td><%= link_to ff.object.major.university.name,
+    university_path(ff.object.major.university) %></td>
+  <td><%= ff.object.major.target %></td>
+  <td><%= t(ff.object.status) %></td>
+  <%= ff.hidden_field :_destroy, class: 'check-remove' %>
+  <%= ff.hidden_field :major_id, value: ff.object.major.id %>
+  <td><%= link_to t(:remove), '#', class: 'remove_row' %></td>
+</tr>
