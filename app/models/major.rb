@@ -8,6 +8,8 @@ class Major < ActiveRecord::Base
   validates :code, presence: true
   validate :major_infos_name
 
+  enum register_status: {end: 0, aspiration_1: 1, aspiration_2: 2, aspiration_3: 3}
+
   accepts_nested_attributes_for :major_infos, allow_destroy: true
   accepts_nested_attributes_for :major_group_exams, allow_destroy: true
 

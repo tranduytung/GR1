@@ -11,6 +11,7 @@ d310101 = neu.majors.create(
   benchmark1: rand(10)+17,
   benchmark2: rand(10)+10,
   benchmark3: rand(10)+5,
+  register_status: 1,
   last_year_benchmark: rand(10)+10
 )
 d310101.major_infos.create(
@@ -31,6 +32,7 @@ d310104 = neu.majors.create(
   benchmark1: rand(10)+17,
   benchmark2: rand(10)+10,
   benchmark3: rand(10)+5,
+  register_status: 1,
   last_year_benchmark: rand(10)+10
 )
 d310104.major_infos.create(
@@ -52,6 +54,7 @@ d310106 = neu.majors.create(
   benchmark1: rand(10)+17,
   benchmark2: rand(10)+10,
   benchmark3: rand(10)+5,
+  register_status: 1,
   last_year_benchmark: rand(10)+10
 )
 d310106.major_infos.create(
@@ -73,6 +76,7 @@ d340101 = neu.majors.create(
   benchmark1: rand(10)+17,
   benchmark2: rand(10)+10,
   benchmark3: rand(10)+5,
+  register_status: 1,
   last_year_benchmark: rand(10)+10
 )
 d340101.major_infos.create(
@@ -94,6 +98,7 @@ d340107 = neu.majors.create(
   benchmark1: rand(10)+17,
   benchmark2: rand(10)+10,
   benchmark3: rand(10)+5,
+  register_status: 1,
   last_year_benchmark: rand(10)+10
 )
 d340107.major_infos.create(
@@ -115,6 +120,7 @@ d340103 = neu.majors.create(
   benchmark1: rand(10)+17,
   benchmark2: rand(10)+10,
   benchmark3: rand(10)+5,
+  register_status: 1,
   last_year_benchmark: rand(10)+10
 )
 d340103.major_infos.create(
@@ -136,6 +142,7 @@ d340404 = neu.majors.create(
   benchmark1: rand(10)+17,
   benchmark2: rand(10)+10,
   benchmark3: rand(10)+5,
+  register_status: 1,
   last_year_benchmark: rand(10)+10
 )
 d340404.major_infos.create(
@@ -158,6 +165,7 @@ d340120 = neu.majors.create(
   benchmark1: rand(10)+17,
   benchmark2: rand(10)+10,
   benchmark3: rand(10)+5,
+  register_status: 1,
   last_year_benchmark: rand(10)+10
 )
 d340120.major_infos.create(
@@ -179,6 +187,7 @@ d340121 = neu.majors.create(
   benchmark1: rand(10)+17,
   benchmark2: rand(10)+10,
   benchmark3: rand(10)+5,
+  register_status: 1,
   last_year_benchmark: rand(10)+10
 )
 d340121.major_infos.create(
@@ -200,6 +209,7 @@ d340201 = neu.majors.create(
   benchmark1: rand(10)+17,
   benchmark2: rand(10)+10,
   benchmark3: rand(10)+5,
+  register_status: 1,
   last_year_benchmark: rand(10)+10
 )
 d340201.major_infos.create(
@@ -221,6 +231,7 @@ d340202 = neu.majors.create(
   benchmark1: rand(10)+17,
   benchmark2: rand(10)+10,
   benchmark3: rand(10)+5,
+  register_status: 1,
   last_year_benchmark: rand(10)+10
 )
 d340202.major_infos.create(
@@ -242,6 +253,7 @@ d340301 = neu.majors.create(
   benchmark1: rand(10)+17,
   benchmark2: rand(10)+10,
   benchmark3: rand(10)+5,
+  register_status: 1,
   last_year_benchmark: rand(10)+10
 )
 d340301.major_infos.create(
@@ -263,6 +275,7 @@ d340115 = neu.majors.create(
   benchmark1: rand(10)+17,
   benchmark2: rand(10)+10,
   benchmark3: rand(10)+5,
+  register_status: 1,
   last_year_benchmark: rand(10)+10
 )
 d340115.major_infos.create(
@@ -284,6 +297,7 @@ d340116 = neu.majors.create(
   benchmark1: rand(10)+17,
   benchmark2: rand(10)+10,
   benchmark3: rand(10)+5,
+  register_status: 1,
   last_year_benchmark: rand(10)+10
 )
 d340116.major_infos.create(
@@ -305,6 +319,7 @@ d340405 = neu.majors.create(
   benchmark1: rand(10)+17,
   benchmark2: rand(10)+10,
   benchmark3: rand(10)+5,
+  register_status: 1,
   last_year_benchmark: rand(10)+10
 )
 d340405.major_infos.create(
@@ -326,6 +341,7 @@ d380101 = neu.majors.create(
   benchmark1: rand(10)+17,
   benchmark2: rand(10)+10,
   benchmark3: rand(10)+5,
+  register_status: 1,
   last_year_benchmark: rand(10)+10
 )
 d380101.major_infos.create(
@@ -346,6 +362,7 @@ d480101 = neu.majors.create(
   benchmark1: rand(10)+17,
   benchmark2: rand(10)+10,
   benchmark3: rand(10)+5,
+  register_status: 1,
   last_year_benchmark: rand(10)+10
 )
 d480101.major_infos.create(
@@ -366,6 +383,7 @@ d620115 = neu.majors.create(
   benchmark1: rand(10)+17,
   benchmark2: rand(10)+10,
   benchmark3: rand(10)+5,
+  register_status: 1,
   last_year_benchmark: rand(10)+10
 )
 d620115.major_infos.create(
@@ -387,6 +405,7 @@ d110105 = neu.majors.create(
   benchmark1: rand(10)+17,
   benchmark2: rand(10)+10,
   benchmark3: rand(10)+5,
+  register_status: 1,
   last_year_benchmark: rand(10)+10
 )
 d110105.major_infos.create(
@@ -408,6 +427,7 @@ d110106 = neu.majors.create(
   benchmark1: rand(10)+17,
   benchmark2: rand(10)+10,
   benchmark3: rand(10)+5,
+  register_status: 1,
   last_year_benchmark: rand(10)+10
 )
 d110106.major_infos.create(
@@ -429,6 +449,7 @@ d110107 = neu.majors.create(
   benchmark1: rand(10)+17,
   benchmark2: rand(10)+10,
   benchmark3: rand(10)+5,
+  register_status: 1,
   last_year_benchmark: rand(10)+10
 )
 d110107.major_infos.create(
@@ -450,6 +471,7 @@ d110109 = neu.majors.create(
   benchmark1: rand(10)+17,
   benchmark2: rand(10)+10,
   benchmark3: rand(10)+5,
+  register_status: 1,
   last_year_benchmark: rand(10)+10
 )
 d110109.major_infos.create(
@@ -471,6 +493,7 @@ d310103 = neu.majors.create(
   benchmark1: rand(10)+17,
   benchmark2: rand(10)+10,
   benchmark3: rand(10)+5,
+  register_status: 1,
   last_year_benchmark: rand(10)+10
 )
 d310103.major_infos.create(
@@ -492,6 +515,7 @@ d220201 = neu.majors.create(
   benchmark1: rand(10)+17,
   benchmark2: rand(10)+10,
   benchmark3: rand(10)+5,
+  register_status: 1,
   last_year_benchmark: rand(10)+10
 )
 d220201.major_infos.create(

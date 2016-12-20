@@ -6,7 +6,10 @@ class Ability
     case user
     when Examinee
       can [:edit, :update, :show], Examinee, id: user.id
-      can :read, :all
+      can :read, University
+      can :read, Major
+      can :manage, Register if user.graduated
+      can :read, Register if user.graduated
     when Admin
       can :manage, :all
     when University

@@ -40,4 +40,8 @@ module ApplicationHelper
     end
     link_to(name, '', class: "add_fields", data: { id: id, fields: fields.gsub("\n", "")})
   end
+
+  def register_time
+    @register_time = RegisterTime.find_by year: Time.now.year
+  end
 end

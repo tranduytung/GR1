@@ -10,18 +10,31 @@
   </div>
   <div class="well">
     Diem NV 1: <%= @major.benchmark1 %><br>
-    Han nop hs: <%= @major.deadline1 %><br>
-    <% if examinee_signed_in? && !@major.deadline1.nil? && Time.now <= @major.deadline1%>
-      <%= link_to "Dang ki", "", class: "btn btn-primary"%>
+    Han nop hs: <%= %><br>
+    <% if examinee_signed_in? && !register_time.start_aspiration_1.nil? &&
+      Time.now >= register_time.start_aspiration_1 &&
+      Time.now <= register_time.end_aspiration_1 %>
+      <%= link_to "Dang ki", new_examinee_register_path(current_examinee,
+        major_id: @major, aspiration: 1), class: "btn btn-primary" %>
     <% end %>
   </div>
   <div class="well">
     Diem NV 2: <%= @major.benchmark2 %><br>
-    Han nop hs: <%= @major.deadline2 %>
+    Han nop hs: <%=  %>
+    <% if examinee_signed_in? && !register_time.start_aspiration_2.nil? &&
+      Time.now >= register_time.start_aspiration_2 &&
+      Time.now <= register_time.end_aspiration_2 %>
+      <%= link_to "Dang ki", "", class: "btn btn-primary" %>
+    <% end %>
   </div>
   <div class="well">
     Diem NV 3: <%= @major.benchmark3 %><br>
-    Han nop hs: <%= @major.deadline3 %>
+    Han nop hs: <%=  %>
+    <% if examinee_signed_in? && !register_time.start_aspiration_3.nil? &&
+      Time.now >= register_time.start_aspiration_3 &&
+      Time.now <= register_time.end_aspiration_3 %>
+      <%= link_to "Dang ki", "", class: "btn btn-primary" %>
+    <% end %>
   </div>
 </div>
 <div class="col-md-6">

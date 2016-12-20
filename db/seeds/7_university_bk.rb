@@ -1,12 +1,3 @@
-University.delete_all
-University.reset_pk_sequence
-Major.delete_all
-Major.reset_pk_sequence
-MajorInfo.delete_all
-MajorInfo.reset_pk_sequence
-MajorGroupExam.delete_all
-MajorGroupExam.reset_pk_sequence
-
 bka = University.create!(
   name: "Trường Đại học Bách khoa Hà Nội",
   code: "BKA",
@@ -20,9 +11,7 @@ kt11 = bka.majors.create(
   benchmark1: rand(10)+17,
   benchmark2: rand(10)+10,
   benchmark3: rand(10)+5,
-  deadline1: DateTime.new(2015, 8, 1, 12, 00),
-  deadline2: DateTime.new(2015, 8, 1, 12, 00),
-  deadline3: DateTime.new(2015, 8, 1, 12, 00),
+  register_status: 1,
   last_year_benchmark: rand(10)+10
 )
 kt11.major_infos.create(
@@ -41,9 +30,7 @@ kt12 = bka.majors.create(
   benchmark1: rand(10)+17,
   benchmark2: rand(10)+10,
   benchmark3: rand(10)+5,
-  deadline1: DateTime.new(2015, 8, 1, 12, 00),
-  deadline2: DateTime.new(2015, 8, 1, 12, 00),
-  deadline3: DateTime.new(2015, 8, 1, 12, 00),
+  register_status: 1,
   last_year_benchmark: rand(10)+10
 )
 kt12.major_infos.create(
@@ -66,9 +53,7 @@ kt13 = bka.majors.create(
   benchmark1: rand(10)+17,
   benchmark2: rand(10)+10,
   benchmark3: rand(10)+5,
-  deadline1: DateTime.new(2015, 8, 1, 12, 00),
-  deadline2: DateTime.new(2015, 8, 1, 12, 00),
-  deadline3: DateTime.new(2015, 8, 1, 12, 00),
+  register_status: 1,
   last_year_benchmark: rand(10)+10
 )
 kt13.major_infos.create(
@@ -87,9 +72,7 @@ kt14 = bka.majors.create(
   benchmark1: rand(10)+17,
   benchmark2: rand(10)+10,
   benchmark3: rand(10)+5,
-  deadline1: DateTime.new(2015, 8, 1, 12, 00),
-  deadline2: DateTime.new(2015, 8, 1, 12, 00),
-  deadline3: DateTime.new(2015, 8, 1, 12, 00),
+  register_status: 1,
   last_year_benchmark: rand(10)+10
 )
 kt14.major_infos.create(
@@ -110,9 +93,7 @@ cn1 = bka.majors.create(
   benchmark1: rand(10)+17,
   benchmark2: rand(10)+10,
   benchmark3: rand(10)+5,
-  deadline1: DateTime.new(2015, 8, 1, 12, 00),
-  deadline2: DateTime.new(2015, 8, 1, 12, 00),
-  deadline3: DateTime.new(2015, 8, 1, 12, 00),
+  register_status: 1,
   last_year_benchmark: rand(10)+10
 )
 cn1.major_infos.create(
@@ -135,9 +116,7 @@ kt21 = bka.majors.create(
   benchmark1: rand(10)+17,
   benchmark2: rand(10)+10,
   benchmark3: rand(10)+5,
-  deadline1: DateTime.new(2015, 8, 1, 12, 00),
-  deadline2: DateTime.new(2015, 8, 1, 12, 00),
-  deadline3: DateTime.new(2015, 8, 1, 12, 00),
+  register_status: 1,
   last_year_benchmark: rand(10)+10
 )
 kt21.major_infos.create(
@@ -156,9 +135,7 @@ kt22 = bka.majors.create(
   benchmark1: rand(10)+17,
   benchmark2: rand(10)+10,
   benchmark3: rand(10)+5,
-  deadline1: DateTime.new(2015, 8, 1, 12, 00),
-  deadline2: DateTime.new(2015, 8, 1, 12, 00),
-  deadline3: DateTime.new(2015, 8, 1, 12, 00),
+  register_status: 1,
   last_year_benchmark: rand(10)+10
 )
 kt22.major_infos.create(
@@ -187,9 +164,7 @@ kt23 = bka.majors.create(
   benchmark1: rand(10)+17,
   benchmark2: rand(10)+10,
   benchmark3: rand(10)+5,
-  deadline1: DateTime.new(2015, 8, 1, 12, 00),
-  deadline2: DateTime.new(2015, 8, 1, 12, 00),
-  deadline3: DateTime.new(2015, 8, 1, 12, 00),
+  register_status: 1,
   last_year_benchmark: rand(10)+10
 )
 kt23.major_infos.create(
@@ -210,9 +185,7 @@ kt24 = bka.majors.create(
   benchmark1: rand(10)+17,
   benchmark2: rand(10)+10,
   benchmark3: rand(10)+5,
-  deadline1: DateTime.new(2015, 8, 1, 12, 00),
-  deadline2: DateTime.new(2015, 8, 1, 12, 00),
-  deadline3: DateTime.new(2015, 8, 1, 12, 00),
+  register_status: 1,
   last_year_benchmark: rand(10)+10
 )
 kt24.major_infos.create(
@@ -233,9 +206,7 @@ cn2 = bka.majors.create(
   benchmark1: rand(10)+17,
   benchmark2: rand(10)+10,
   benchmark3: rand(10)+5,
-  deadline1: DateTime.new(2015, 8, 1, 12, 00),
-  deadline2: DateTime.new(2015, 8, 1, 12, 00),
-  deadline3: DateTime.new(2015, 8, 1, 12, 00),
+  register_status: 1,
   last_year_benchmark: rand(10)+10
 )
 cn2.major_infos.create(
@@ -260,9 +231,7 @@ kt31 = bka.majors.create(
   benchmark1: rand(10)+17,
   benchmark2: rand(10)+10,
   benchmark3: rand(10)+5,
-  deadline1: DateTime.new(2015, 8, 1, 12, 00),
-  deadline2: DateTime.new(2015, 8, 1, 12, 00),
-  deadline3: DateTime.new(2015, 8, 1, 12, 00),
+  register_status: 1,
   last_year_benchmark: rand(10)+10
 )
 kt31.major_infos.create(
@@ -292,9 +261,7 @@ kt32 = bka.majors.create(
   benchmark1: rand(10)+17,
   benchmark2: rand(10)+10,
   benchmark3: rand(10)+5,
-  deadline1: DateTime.new(2015, 8, 1, 12, 00),
-  deadline2: DateTime.new(2015, 8, 1, 12, 00),
-  deadline3: DateTime.new(2015, 8, 1, 12, 00),
+  register_status: 1,
   last_year_benchmark: rand(10)+10
 )
 kt32.major_infos.create(
@@ -316,9 +283,7 @@ kt33 = bka.majors.create(
   benchmark1: rand(10)+17,
   benchmark2: rand(10)+10,
   benchmark3: rand(10)+5,
-  deadline1: DateTime.new(2015, 8, 1, 12, 00),
-  deadline2: DateTime.new(2015, 8, 1, 12, 00),
-  deadline3: DateTime.new(2015, 8, 1, 12, 00),
+  register_status: 1,
   last_year_benchmark: rand(10)+10
 )
 kt33.major_infos.create(
@@ -339,9 +304,7 @@ cn3 = bka.majors.create(
   benchmark1: rand(10)+17,
   benchmark2: rand(10)+10,
   benchmark3: rand(10)+5,
-  deadline1: DateTime.new(2015, 8, 1, 12, 00),
-  deadline2: DateTime.new(2015, 8, 1, 12, 00),
-  deadline3: DateTime.new(2015, 8, 1, 12, 00),
+  register_status: 1,
   last_year_benchmark: rand(10)+10
 )
 cn3.major_infos.create(
@@ -363,9 +326,7 @@ kt41 = bka.majors.create(
   benchmark1: rand(10)+17,
   benchmark2: rand(10)+10,
   benchmark3: rand(10)+5,
-  deadline1: DateTime.new(2015, 8, 1, 12, 00),
-  deadline2: DateTime.new(2015, 8, 1, 12, 00),
-  deadline3: DateTime.new(2015, 8, 1, 12, 00),
+  register_status: 1,
   last_year_benchmark: rand(10)+10
 )
 kt41.major_infos.create(
@@ -388,9 +349,7 @@ kt42 = bka.majors.create(
   benchmark1: rand(10)+17,
   benchmark2: rand(10)+10,
   benchmark3: rand(10)+5,
-  deadline1: DateTime.new(2015, 8, 1, 12, 00),
-  deadline2: DateTime.new(2015, 8, 1, 12, 00),
-  deadline3: DateTime.new(2015, 8, 1, 12, 00),
+  register_status: 1,
   last_year_benchmark: rand(10)+10
 )
 kt42.major_infos.create(
@@ -408,9 +367,7 @@ kt51 = bka.majors.create(
   benchmark1: rand(10)+17,
   benchmark2: rand(10)+10,
   benchmark3: rand(10)+5,
-  deadline1: DateTime.new(2015, 8, 1, 12, 00),
-  deadline2: DateTime.new(2015, 8, 1, 12, 00),
-  deadline3: DateTime.new(2015, 8, 1, 12, 00),
+  register_status: 1,
   last_year_benchmark: rand(10)+10
 )
 kt51.major_infos.create(
@@ -428,9 +385,7 @@ kt52 = bka.majors.create(
   benchmark1: rand(10)+17,
   benchmark2: rand(10)+10,
   benchmark3: rand(10)+5,
-  deadline1: DateTime.new(2015, 8, 1, 12, 00),
-  deadline2: DateTime.new(2015, 8, 1, 12, 00),
-  deadline3: DateTime.new(2015, 8, 1, 12, 00),
+  register_status: 1,
   last_year_benchmark: rand(10)+10
 )
 kt52.major_infos.create(
@@ -449,9 +404,7 @@ kq1 = bka.majors.create(
   benchmark1: rand(10)+17,
   benchmark2: rand(10)+10,
   benchmark3: rand(10)+5,
-  deadline1: DateTime.new(2015, 8, 1, 12, 00),
-  deadline2: DateTime.new(2015, 8, 1, 12, 00),
-  deadline3: DateTime.new(2015, 8, 1, 12, 00),
+  register_status: 1,
   last_year_benchmark: rand(10)+10
 )
 kq1.major_infos.create(
@@ -474,9 +427,7 @@ kq2 = bka.majors.create(
   benchmark1: rand(10)+17,
   benchmark2: rand(10)+10,
   benchmark3: rand(10)+5,
-  deadline1: DateTime.new(2015, 8, 1, 12, 00),
-  deadline2: DateTime.new(2015, 8, 1, 12, 00),
-  deadline3: DateTime.new(2015, 8, 1, 12, 00),
+  register_status: 1,
   last_year_benchmark: rand(10)+10
 )
 kq2.major_infos.create(
@@ -497,9 +448,7 @@ kq3 = bka.majors.create(
   benchmark1: rand(10)+17,
   benchmark2: rand(10)+10,
   benchmark3: rand(10)+5,
-  deadline1: DateTime.new(2015, 8, 1, 12, 00),
-  deadline2: DateTime.new(2015, 8, 1, 12, 00),
-  deadline3: DateTime.new(2015, 8, 1, 12, 00),
+  register_status: 1,
   last_year_benchmark: rand(10)+10
 )
 kq3.major_infos.create(
@@ -522,9 +471,7 @@ ta1 = bka.majors.create(
   benchmark1: rand(10)+17,
   benchmark2: rand(10)+10,
   benchmark3: rand(10)+5,
-  deadline1: DateTime.new(2015, 8, 1, 12, 00),
-  deadline2: DateTime.new(2015, 8, 1, 12, 00),
-  deadline3: DateTime.new(2015, 8, 1, 12, 00),
+  register_status: 1,
   last_year_benchmark: rand(10)+10
 )
 ta1.major_infos.create(
@@ -539,9 +486,7 @@ ta2 = bka.majors.create(
   benchmark1: rand(10)+17,
   benchmark2: rand(10)+10,
   benchmark3: rand(10)+5,
-  deadline1: DateTime.new(2015, 8, 1, 12, 00),
-  deadline2: DateTime.new(2015, 8, 1, 12, 00),
-  deadline3: DateTime.new(2015, 8, 1, 12, 00),
+  register_status: 1,
   last_year_benchmark: rand(10)+10
 )
 ta2.major_infos.create(
@@ -556,9 +501,7 @@ tt1 = bka.majors.create(
   benchmark1: rand(10)+17,
   benchmark2: rand(10)+10,
   benchmark3: rand(10)+5,
-  deadline1: DateTime.new(2015, 8, 1, 12, 00),
-  deadline2: DateTime.new(2015, 8, 1, 12, 00),
-  deadline3: DateTime.new(2015, 8, 1, 12, 00),
+  register_status: 1,
   last_year_benchmark: rand(10)+10
 )
 tt1.major_infos.create(
@@ -576,9 +519,7 @@ tt2 = bka.majors.create(
   benchmark1: rand(10)+17,
   benchmark2: rand(10)+10,
   benchmark3: rand(10)+5,
-  deadline1: DateTime.new(2015, 8, 1, 12, 00),
-  deadline2: DateTime.new(2015, 8, 1, 12, 00),
-  deadline3: DateTime.new(2015, 8, 1, 12, 00),
+  register_status: 1,
   last_year_benchmark: rand(10)+10
 )
 tt2.major_infos.create(
@@ -596,9 +537,7 @@ tt3 = bka.majors.create(
   benchmark1: rand(10)+17,
   benchmark2: rand(10)+10,
   benchmark3: rand(10)+5,
-  deadline1: DateTime.new(2015, 8, 1, 12, 00),
-  deadline2: DateTime.new(2015, 8, 1, 12, 00),
-  deadline3: DateTime.new(2015, 8, 1, 12, 00),
+  register_status: 1,
   last_year_benchmark: rand(10)+10
 )
 tt3.major_infos.create(
@@ -616,9 +555,7 @@ tt4 = bka.majors.create(
   benchmark1: rand(10)+17,
   benchmark2: rand(10)+10,
   benchmark3: rand(10)+5,
-  deadline1: DateTime.new(2015, 8, 1, 12, 00),
-  deadline2: DateTime.new(2015, 8, 1, 12, 00),
-  deadline3: DateTime.new(2015, 8, 1, 12, 00),
+  register_status: 1,
   last_year_benchmark: rand(10)+10
 )
 tt4.major_infos.create(
@@ -636,9 +573,7 @@ tt5 = bka.majors.create(
   benchmark1: rand(10)+17,
   benchmark2: rand(10)+10,
   benchmark3: rand(10)+5,
-  deadline1: DateTime.new(2015, 8, 1, 12, 00),
-  deadline2: DateTime.new(2015, 8, 1, 12, 00),
-  deadline3: DateTime.new(2015, 8, 1, 12, 00),
+  register_status: 1,
   last_year_benchmark: rand(10)+10
 )
 tt5.major_infos.create(
@@ -658,9 +593,7 @@ qt11 = bka.majors.create(
   benchmark1: rand(10)+17,
   benchmark2: rand(10)+10,
   benchmark3: rand(10)+5,
-  deadline1: DateTime.new(2015, 8, 1, 12, 00),
-  deadline2: DateTime.new(2015, 8, 1, 12, 00),
-  deadline3: DateTime.new(2015, 8, 1, 12, 00),
+  register_status: 1,
   last_year_benchmark: rand(10)+10
 )
 qt11.major_infos.create(
@@ -681,9 +614,7 @@ qt12 = bka.majors.create(
   benchmark1: rand(10)+17,
   benchmark2: rand(10)+10,
   benchmark3: rand(10)+5,
-  deadline1: DateTime.new(2015, 8, 1, 12, 00),
-  deadline2: DateTime.new(2015, 8, 1, 12, 00),
-  deadline3: DateTime.new(2015, 8, 1, 12, 00),
+  register_status: 1,
   last_year_benchmark: rand(10)+10
 )
 qt12.major_infos.create(
@@ -704,9 +635,7 @@ qt13 = bka.majors.create(
   benchmark1: rand(10)+17,
   benchmark2: rand(10)+10,
   benchmark3: rand(10)+5,
-  deadline1: DateTime.new(2015, 8, 1, 12, 00),
-  deadline2: DateTime.new(2015, 8, 1, 12, 00),
-  deadline3: DateTime.new(2015, 8, 1, 12, 00),
+  register_status: 1,
   last_year_benchmark: rand(10)+10
 )
 qt13.major_infos.create(
@@ -727,9 +656,7 @@ qt14 = bka.majors.create(
   benchmark1: rand(10)+17,
   benchmark2: rand(10)+10,
   benchmark3: rand(10)+5,
-  deadline1: DateTime.new(2015, 8, 1, 12, 00),
-  deadline2: DateTime.new(2015, 8, 1, 12, 00),
-  deadline3: DateTime.new(2015, 8, 1, 12, 00),
+  register_status: 1,
   last_year_benchmark: rand(10)+10
 )
 qt14.major_infos.create(
@@ -750,9 +677,7 @@ qt15 = bka.majors.create(
   benchmark1: rand(10)+17,
   benchmark2: rand(10)+10,
   benchmark3: rand(10)+5,
-  deadline1: DateTime.new(2015, 8, 1, 12, 00),
-  deadline2: DateTime.new(2015, 8, 1, 12, 00),
-  deadline3: DateTime.new(2015, 8, 1, 12, 00),
+  register_status: 1,
   last_year_benchmark: rand(10)+10
 )
 qt15.major_infos.create(
@@ -773,9 +698,7 @@ qt21 = bka.majors.create(
   benchmark1: rand(10)+17,
   benchmark2: rand(10)+10,
   benchmark3: rand(10)+5,
-  deadline1: DateTime.new(2015, 8, 1, 12, 00),
-  deadline2: DateTime.new(2015, 8, 1, 12, 00),
-  deadline3: DateTime.new(2015, 8, 1, 12, 00),
+  register_status: 1,
   last_year_benchmark: rand(10)+10
 )
 qt21.major_infos.create(
@@ -796,9 +719,7 @@ qt31 = bka.majors.create(
   benchmark1: rand(10)+17,
   benchmark2: rand(10)+10,
   benchmark3: rand(10)+5,
-  deadline1: DateTime.new(2015, 8, 1, 12, 00),
-  deadline2: DateTime.new(2015, 8, 1, 12, 00),
-  deadline3: DateTime.new(2015, 8, 1, 12, 00),
+  register_status: 1,
   last_year_benchmark: rand(10)+10
 )
 qt31.major_infos.create(
@@ -819,9 +740,7 @@ qt32 = bka.majors.create(
   benchmark1: rand(10)+17,
   benchmark2: rand(10)+10,
   benchmark3: rand(10)+5,
-  deadline1: DateTime.new(2015, 8, 1, 12, 00),
-  deadline2: DateTime.new(2015, 8, 1, 12, 00),
-  deadline3: DateTime.new(2015, 8, 1, 12, 00),
+  register_status: 1,
   last_year_benchmark: rand(10)+10
 )
 qt32.major_infos.create(
@@ -842,9 +761,7 @@ qt33 = bka.majors.create(
   benchmark1: rand(10)+17,
   benchmark2: rand(10)+10,
   benchmark3: rand(10)+5,
-  deadline1: DateTime.new(2015, 8, 1, 12, 00),
-  deadline2: DateTime.new(2015, 8, 1, 12, 00),
-  deadline3: DateTime.new(2015, 8, 1, 12, 00),
+  register_status: 1,
   last_year_benchmark: rand(10)+10
 )
 qt33.major_infos.create(
@@ -865,9 +782,7 @@ qt34 = bka.majors.create(
   benchmark1: rand(10)+17,
   benchmark2: rand(10)+10,
   benchmark3: rand(10)+5,
-  deadline1: DateTime.new(2015, 8, 1, 12, 00),
-  deadline2: DateTime.new(2015, 8, 1, 12, 00),
-  deadline3: DateTime.new(2015, 8, 1, 12, 00),
+  register_status: 1,
   last_year_benchmark: rand(10)+10
 )
 qt34.major_infos.create(

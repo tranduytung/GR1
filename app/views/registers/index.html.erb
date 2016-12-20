@@ -1,0 +1,24 @@
+<%= javascript_include_tag 'register' %>
+<div class="bg-white">
+<h1>Dang ki NV1</h1>
+<%= form_for @current_examinee, url: examinee_registers_path, method: :get do |f| %>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th class="center"><%= "Major Code" %></th>
+        <th class="center"><%= "University" %></th>
+        <th class="center"><%= "Target" %></th>
+        <th class="center"><%= "Status" %></th>
+        <th class="center"><%= t "product.action" %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= f.fields_for :registers do |register| %>
+        <%= render "register_fields", ff: register %>
+      <% end %>
+    </tbody>
+  </table>
+  <hr>
+    <%= f.submit t("cart.buy"), class: "btn btn-primary" %>
+<% end %>
+</div>

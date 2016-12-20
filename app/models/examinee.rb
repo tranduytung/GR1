@@ -8,6 +8,7 @@ class Examinee < ActiveRecord::Base
   belongs_to :group_graduated_exam
   has_one :result, dependent: :destroy
   has_many :registers, dependent: :destroy
+  accepts_nested_attributes_for :registers, allow_destroy: true
 
   # validates :name, presence: true, length: {maximum: 150}
   # validates :people_id, presence: true, length: {maximum: 11},
