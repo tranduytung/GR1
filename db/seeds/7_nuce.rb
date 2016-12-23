@@ -14,7 +14,7 @@ nuce = University.create!(
   password_confirmation: "123456")
 a123456 = nuce.majors.create(
   code: "A123456",
-  year: 2016,
+  year: 2017,
   target: 750,
   benchmark1: rand(10)+17,
   benchmark2: rand(10)+10,

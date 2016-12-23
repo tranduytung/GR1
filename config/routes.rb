@@ -61,6 +61,7 @@ Rails.application.routes.draw do
       collection {get :export_file_excel}
       collection {post :import_file_excel}
     end
+    resources :registers
   end
 
   resources :examinees, only: :show do

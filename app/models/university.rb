@@ -8,6 +8,7 @@ class University < ActiveRecord::Base
   has_many :majors, :dependent => :destroy
   has_many :major_group_exams, through: :majors
   has_many :major_infos, through: :majors
+  has_many :registers, through: :majors
   validates :name, presence: true
   validates :code, presence: true
   # validates :password, presence:true

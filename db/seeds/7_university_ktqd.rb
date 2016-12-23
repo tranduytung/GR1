@@ -6,7 +6,7 @@ neu = University.create!(
   password_confirmation: "123456")
 d310101 = neu.majors.create(
   code: "D310101",
-  year: 2016,
+  year: 2017,
   target: 750,
   benchmark1: rand(10)+17,
   benchmark2: rand(10)+10,
@@ -27,7 +27,7 @@ d310101.major_group_exams.create(
   )
 d310104 = neu.majors.create(
   code: "D310104",
-  year: 2016,
+  year: 2017,
   target: 200,
   benchmark1: rand(10)+17,
   benchmark2: rand(10)+10,
@@ -49,7 +49,7 @@ d310104.major_group_exams.create(
 
 d310106 = neu.majors.create(
   code: "D310106",
-  year: 2016,
+  year: 2017,
   target: 120,
   benchmark1: rand(10)+17,
   benchmark2: rand(10)+10,
@@ -71,7 +71,7 @@ d310106.major_group_exams.create(
 
 d340101 = neu.majors.create(
   code: "D340101",
-  year: 2016,
+  year: 2017,
   target: 300,
   benchmark1: rand(10)+17,
   benchmark2: rand(10)+10,
@@ -93,7 +93,7 @@ d340101.major_group_exams.create(
 
 d340107 = neu.majors.create(
   code: "D340107",
-  year: 2016,
+  year: 2017,
   target: 70,
   benchmark1: rand(10)+17,
   benchmark2: rand(10)+10,
@@ -115,7 +115,7 @@ d340107.major_group_exams.create(
 
 d340103 = neu.majors.create(
   code: "D340103",
-  year: 2016,
+  year: 2017,
   target: 120,
   benchmark1: rand(10)+17,
   benchmark2: rand(10)+10,
@@ -137,7 +137,7 @@ d340103.major_group_exams.create(
 
 d340404 = neu.majors.create(
   code: "D340404",
-  year: 2016,
+  year: 2017,
   target: 120,
   benchmark1: rand(10)+17,
   benchmark2: rand(10)+10,
@@ -160,7 +160,7 @@ d340404.major_group_exams.create(
 
 d340120 = neu.majors.create(
   code: "D340120",
-  year: 2016,
+  year: 2017,
   target: 140,
   benchmark1: rand(10)+17,
   benchmark2: rand(10)+10,
@@ -182,7 +182,7 @@ d340120.major_group_exams.create(
 
 d340121 = neu.majors.create(
   code: "D340121",
-  year: 2016,
+  year: 2017,
   target: 170,
   benchmark1: rand(10)+17,
   benchmark2: rand(10)+10,
@@ -204,7 +204,7 @@ d340121.major_group_exams.create(
 
 d340201 = neu.majors.create(
   code: "D340201",
-  year: 2016,
+  year: 2017,
   target: 520,
   benchmark1: rand(10)+17,
   benchmark2: rand(10)+10,
@@ -226,7 +226,7 @@ d340201.major_group_exams.create(
 
 d340202 = neu.majors.create(
   code: "D340202",
-  year: 2016,
+  year: 2017,
   target: 140,
   benchmark1: rand(10)+17,
   benchmark2: rand(10)+10,
@@ -248,7 +248,7 @@ d340202.major_group_exams.create(
 
 d340301 = neu.majors.create(
   code: "D340301",
-  year: 2016,
+  year: 2017,
   target: 400,
   benchmark1: rand(10)+17,
   benchmark2: rand(10)+10,
@@ -270,7 +270,7 @@ d340301.major_group_exams.create(
 
 d340115 = neu.majors.create(
   code: "D340115",
-  year: 2016,
+  year: 2017,
   target: 200,
   benchmark1: rand(10)+17,
   benchmark2: rand(10)+10,
@@ -292,7 +292,7 @@ d340115.major_group_exams.create(
 
 d340116 = neu.majors.create(
   code: "D340116",
-  year: 2016,
+  year: 2017,
   target: 130,
   benchmark1: rand(10)+17,
   benchmark2: rand(10)+10,
@@ -314,7 +314,7 @@ d340116.major_group_exams.create(
 
 d340405 = neu.majors.create(
   code: "D340405",
-  year: 2016,
+  year: 2017,
   target: 120,
   benchmark1: rand(10)+17,
   benchmark2: rand(10)+10,
@@ -336,7 +336,7 @@ d340405.major_group_exams.create(
 
 d380101 = neu.majors.create(
   code: "D380101",
-  year: 2016,
+  year: 2017,
   target: 120,
   benchmark1: rand(10)+17,
   benchmark2: rand(10)+10,
@@ -357,7 +357,7 @@ d380101.major_group_exams.create(
   )
 d480101 = neu.majors.create(
   code: "D480101",
-  year: 2016,
+  year: 2017,
   target: 120,
   benchmark1: rand(10)+17,
   benchmark2: rand(10)+10,
@@ -378,7 +378,7 @@ d380101.major_group_exams.create(
   )
 d620115 = neu.majors.create(
   code: "D620115",
-  year: 2016,
+  year: 2017,
   target: 90,
   benchmark1: rand(10)+17,
   benchmark2: rand(10)+10,
@@ -400,7 +400,7 @@ d620115.major_group_exams.create(
 
 d110105 = neu.majors.create(
   code: "D110105",
-  year: 2016,
+  year: 2017,
   target: 120,
   benchmark1: rand(10)+17,
   benchmark2: rand(10)+10,
@@ -422,7 +422,7 @@ d110105.major_group_exams.create(
 
 d110106 = neu.majors.create(
   code: "D110106",
-  year: 2016,
+  year: 2017,
   target: 120,
   benchmark1: rand(10)+17,
   benchmark2: rand(10)+10,
@@ -444,7 +444,7 @@ d110106.major_group_exams.create(
 
 d110107 = neu.majors.create(
   code: "D110107",
-  year: 2016,
+  year: 2017,
   target: 80,
   benchmark1: rand(10)+17,
   benchmark2: rand(10)+10,
@@ -466,7 +466,7 @@ d110107.major_group_exams.create(
 
 d110109 = neu.majors.create(
   code: "D110109",
-  year: 2016,
+  year: 2017,
   target: 80,
   benchmark1: rand(10)+17,
   benchmark2: rand(10)+10,
@@ -488,7 +488,7 @@ d110109.major_group_exams.create(
 
 d310103 = neu.majors.create(
   code: "D310103",
-  year: 2016,
+  year: 2017,
   target: 50,
   benchmark1: rand(10)+17,
   benchmark2: rand(10)+10,
@@ -510,7 +510,7 @@ d310103.major_group_exams.create(
 
 d220201 = neu.majors.create(
   code: "D220201",
-  year: 2016,
+  year: 2017,
   target: 120,
   benchmark1: rand(10)+17,
   benchmark2: rand(10)+10,
