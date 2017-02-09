@@ -1,5 +1,5 @@
-# Register.delete_all
-# Register.reset_pk_sequence
+Register.delete_all
+Register.reset_pk_sequence
 # register = Examinee.order(:created_at).take 1
 # register.each {|registe|
 # status = true

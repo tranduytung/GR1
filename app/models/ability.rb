@@ -15,6 +15,7 @@ class Ability
     when University
       can :manage, Major
       can :manage, MajorGroupExam
+      can :manage, Register
     end
   end
 end

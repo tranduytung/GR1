@@ -67,7 +67,9 @@ tinh = ["An Giang","Bà Rịa - Vũng Tàu","Bắc Giang","Bắc Kạn","Bạc L
 
 Examinee.delete_all
 Examinee.reset_pk_sequence
-1.times do |m|
+Result.delete_all
+Result.reset_pk_sequence
+100.times do |m|
   email = "example-#{m+1}@railstutorial.org"
   password = "123456"
   n = m.to_s
@@ -85,7 +87,7 @@ Examinee.reset_pk_sequence
   encourage_point = rand(5)
   priority_point = rand(3)
   average_point = rand(6) + 4
-  year = 2015
+  year = 2017
   gender = ["boy", "women"]
   dender_user = gender[rand(2)]
   if dender_user == "boy"
@@ -93,7 +95,7 @@ Examinee.reset_pk_sequence
   else
     name = ho[rand(16)] + nu_name[rand(704)]
   end
-  Examinee.create!(
+  examinee = Examinee.create!(
   name: name,
   email: email,
   password: password,
@@ -110,5 +112,31 @@ Examinee.reset_pk_sequence
   priority_point: priority_point,
   average_point: average_point
     )
+
+  math = rand(10)
+  literature = rand(10)
+  english = rand(10)
+  physical = rand(10)
+  chemistry = rand(10)
+  biological = rand(10)
+  history = rand(10)
+  geography = rand(10)
+  examinee.create_result!(
+  math: math,
+  literature: literature,
+  english: english,
+  physical: physical,
+  chemistry: chemistry,
+  biological: biological,
+  history: history,
+  geography: geography
+    )
+
+  graduate_score = examinee.result.graduate_score_caculation
+  graduate_score = 10 if graduate_score > 10
+  examinee.update_attributes(
+    graduate_score: graduate_score)
+  examinee.update_attributes(
+    graduated: examinee.result.check_graduted)
   puts "Tao thanh cong hoc sinh #{m+1}"
 end
