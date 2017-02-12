@@ -1,31 +1,18 @@
 <%= form_for [:universities, @major] do |f| %>
   <%= render "shared/error_messages", object: @major %>
   <div class="col-md-6">
-  <%= f.label :code %>
-  <%= f.text_field :code, autofocus: true, class: "form-control" %>
+    <%= f.label :code %>
+    <%= f.text_field :code, autofocus: true, class: "form-control" %>
 
-  <%= f.label :year %>
-  <%= f.text_field :year, autofocus: true, class: "form-control",
-    disabled: true %>
+    <%= f.label :year %>
+    <%= f.text_field :year, autofocus: true, class: "form-control",
+      disabled: true %>
 
-  <%= f.label :target %>
-  <%= f.number_field :target, class:'form-control' %>
+    <%= f.label :target %>
+    <%= f.number_field :target, class:'form-control' %>
 
-  <%= f.label :benchmark1 %>
-  <%= f.number_field :benchmark1, autofocus: true, class: "form-control" %>
-
-  <%= f.label :deadline1 %>
-  <%= f.date_field :deadline1, autofocus: true, class: "form-control" %>
-
-  <%= f.label :benchmark2 %>
-  <%= f.number_field :benchmark2, autofocus: true, class: "form-control" %>
-  <%= f.label :deadline2 %>
-  <%= f.date_field :deadline2, autofocus: true, class: "form-control" %>
-
-  <%= f.label :benchmark3 %>
-  <%= f.number_field :benchmark3, autofocus: true, class: "form-control" %>
-  <%= f.label :deadline3 %>
-  <%= f.date_field :deadline3, autofocus: true, class: "form-control" %>
+    <%= f.label :benchmark1 %>
+    <%= f.number_field :benchmark1, autofocus: true, class: "form-control" %>
   </div>
   <%= f.label :major_infos, "Majors'name" %>
   <div class="col-md-6">

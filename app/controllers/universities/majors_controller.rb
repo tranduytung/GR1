@@ -62,7 +62,6 @@ class Universities::MajorsController < ApplicationController
   private
   def major_params
     params.require(:major).permit(:code, :target, :benchmark1, :benchmark2,
-      :benchmark3, :deadline1, :deadline2, :deadline3,
-      major_infos_attributes: [:id, :name, :_destroy])
+      :benchmark3, major_infos_attributes: [:id, :name, :_destroy])
   end
 end

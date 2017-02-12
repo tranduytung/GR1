@@ -10,15 +10,27 @@
   </div>
   <div class="well">
     Diem NV 1: <%= @major.benchmark1 %><br>
-    Han nop hs: <%= @major.deadline1 %>
+    Han nop hs:
+    <% if !register_time.nil? &&
+      !register_time.start_aspiration_1.nil? %>
+      <%= register_time.start_aspiration_1 %>
+    <% end %>
   </div>
   <div class="well">
     Diem NV 2: <%= @major.benchmark2 %><br>
-    Han nop hs: <%= @major.deadline2 %>
+    Han nop hs:
+    <% if !register_time.nil? &&
+      !register_time.start_aspiration_2.nil? %>
+      <%= register_time.start_aspiration_2 %>
+    <% end %>
   </div>
   <div class="well">
     Diem NV 3: <%= @major.benchmark3 %><br>
-    Han nop hs: <%= @major.deadline3 %>
+    Han nop hs:
+    <% if !register_time.nil? &&
+      !register_time.start_aspiration_3.nil? %>
+      <%= register_time.start_aspiration_3 %>
+    <% end %>
   </div>
 </div>
 <div class="col-md-6">
