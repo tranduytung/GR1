@@ -1,0 +1,14 @@
+<div class="input-group">
+  <%= search_form_for @search, url: universities_registers_path do |f| %>
+    <%= f.label :major_code_cont, "Ma Truong"%>
+    <%= f.text_field :major_code_cont, placeholder:
+      "Nhap ma nganh", class: "form-control" %>
+    <br/>
+    <%= f.label :examinee_people_id_cont, "Ma Thi Sinh"%>
+    <%= f.text_field :examinee_people_id_cont, placeholder:
+      "Nhap ma so thi sinh", class: "form-control" %>
+    <br/>
+    <%= f.submit "Search", class: "btn btn-primary"%>
+  <% end %>
+</div>
+<hr/>
