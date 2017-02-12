@@ -2,7 +2,13 @@ class Universities::RegistersController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @registers = current_university.registers.aspiration_1
+    @search = current_university.registers.ransack params[:q]
+    if params[:q].nil?
+      @registers = current_university.registers.page(params[:page]).per 10
+    else
+      @registers = @search.result.page(params[:page]).per 10
+    end
+    # @registers = current_university.registers.aspiration_1
   end
 
   def export_file_excel
