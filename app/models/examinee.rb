@@ -10,6 +10,8 @@ class Examinee < ActiveRecord::Base
   has_many :registers, dependent: :destroy
   accepts_nested_attributes_for :registers, allow_destroy: true
 
+  enum graduated: {graduated: true, un_graduated: false}
+
   # validates :name, presence: true, length: {maximum: 150}
   # validates :people_id, presence: true, length: {maximum: 11},
   #   uniqueness: {case_sensitive: false}
