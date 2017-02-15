@@ -59,6 +59,7 @@ Rails.application.routes.draw do
     end
     resources :majors, only: :show do
       get :registers, on: :member
+      get :export_registers, on: :member
     end
     resources :major_group_exams do
       collection {get :export_file_excel}

@@ -1,0 +1,15 @@
+wb = xlsx_package.workbook
+wb.add_worksheet(name: "Register") do |sheet|
+  sheet.add_row ["student_id", "student", "major", "status",
+    "aspiration", "year", "created"]
+    @registers.each do |register|
+      sheet.add_row [
+        register.examinee.student_id,
+        register.examinee.name,
+        register.major.code,
+        register.status,
+        register.aspiration,
+        register.year,
+        register.created_at]
+    end
+end

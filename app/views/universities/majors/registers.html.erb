@@ -1,6 +1,7 @@
 <h1>Registers NV1</h1>
 <h3>Number: <%= @major.registers.size %> examinees</h3>
 <h3>Target: <%= @major.target %> examinees</h3>
+<%= link_to "export_csv", export_registers_universities_major_path(@major, format: 'xlsx') %>
 <table class="table table-bordered margin-0">
   <thead>
     <tr>

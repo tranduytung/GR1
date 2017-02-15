@@ -13,7 +13,7 @@ class Ability
     when Admin
       can :manage, :all
     when University
-      can :manage, Major
+      can :manage, Major, university_id: user.id
       can :manage, MajorGroupExam
       can :manage, Register
     end
