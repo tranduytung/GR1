@@ -63,9 +63,9 @@ class Examinee < ActiveRecord::Base
       examinee.password = examinee.people_id
       examinee.password_confirmation = examinee.people_id
       if row["graduated"] == "Yes"
-        examinee.graduated = true
+        examinee["graduated"] = true
       else
-        examinee.graduated = false
+        examinee["graduated"] = false
       end
       examinee.save!
       result = examinee.result || Result.new
@@ -87,7 +87,7 @@ class Examinee < ActiveRecord::Base
 
   def self.accessible_attributes
     ["name", "people_id", "student_id", "phone", "email", "home_town",
-      "hight_school", "birthday", "graduated", "graduate_score", "year",
+      "hight_school", "birthday", "graduate_score", "year",
       "priority_point", "encourage_point", "average_point",
       "group_graduated_exam_id"]
   end
