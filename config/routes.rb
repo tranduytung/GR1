@@ -57,6 +57,9 @@ Rails.application.routes.draw do
       collection {get :export_file_excel}
       collection {post :import_file_excel}
     end
+    resources :majors, only: :show do
+      get :registers, on: :member
+    end
     resources :major_group_exams do
       collection {get :export_file_excel}
       collection {post :import_file_excel}
