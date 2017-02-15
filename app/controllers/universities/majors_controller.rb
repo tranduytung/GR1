@@ -60,8 +60,16 @@ class Universities::MajorsController < ApplicationController
   end
 
   def registers
-    @major = Major.find_by id: params[:id]
     @registers = @major.registers.page(params[:page]).per 10
+  end
+
+  def export_registers
+    @registers = @major.registers
+    @date = Date.today.to_date
+    respond_to do |format|
+      format.html
+      format.xlsx {render xlsx: 'export_registers', filename: "#{current_university.code}_#{@major.code}_#{@date}.xlsx"}
+    end
   end
 
   private
