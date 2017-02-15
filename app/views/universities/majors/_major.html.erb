@@ -34,6 +34,10 @@
     <% end %>
   </td>
   <td>
+    <%= link_to t("major.show_register"), registers_universities_major_path(major),
+      class: "btn btn-info icon-trash icon-white" %>
+  </td>
+  <td>
     <%= link_to t("admin.show"), universities_major_path(major),
       class: "btn btn-info icon-trash icon-white" %>
   </td>

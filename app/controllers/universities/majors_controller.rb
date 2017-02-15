@@ -59,6 +59,11 @@ class Universities::MajorsController < ApplicationController
     end
   end
 
+  def registers
+    @major = Major.find_by id: params[:id]
+    @registers = @major.registers.page(params[:page]).per 10
+  end
+
   private
   def major_params
     params.require(:major).permit(:code, :target, :benchmark1, :benchmark2,
