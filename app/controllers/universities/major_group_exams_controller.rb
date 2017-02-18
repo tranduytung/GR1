@@ -17,7 +17,9 @@ class Universities::MajorGroupExamsController < ApplicationController
     else
       begin
         MajorGroupExam.transaction do
-          current_university.major_group_exams.destroy_all
+          current_university.major_group_exams.each do |major_group_exam|
+            major_group_exam.destroy
+          end
           MajorGroupExam.reset_pk_sequence
           MajorGroupExam.import(params[:file], current_university.id)
           notice = t 'admin.examinee.import_csv'
