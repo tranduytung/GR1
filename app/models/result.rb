@@ -19,7 +19,7 @@ class Result < ActiveRecord::Base
     end
     @graduate_score = ((@total + self.examinee.encourage_point)/4 +
       self.examinee.average_point)/2 + self.examinee.priority_point
-    return @graduate_score
+    return (@graduate_score * 4).round(0).to_f/4
   end
 
   def check_graduted
