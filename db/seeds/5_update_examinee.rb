@@ -9,7 +9,6 @@ def check_graduted result, graduate_score
   return true
 end
 
-CONN = ActiveRecord::Base.connection
 Examinee.transaction do
   graduated_sql = []
   TIMES.times do |m|
@@ -22,7 +21,7 @@ Examinee.transaction do
       graduated = '#{graduated}', updated_at = '#{updated_at}'
       WHERE id = #{examinee.id}"
     CONN.execute sql_3
-    puts "#{m+1}"
+    puts "5 - Update thanh cong examinee #{m+1}"
   end
   puts 'done update'
 end
