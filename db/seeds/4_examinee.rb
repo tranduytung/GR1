@@ -64,79 +64,52 @@ tinh = ["An Giang","Bà Rịa - Vũng Tàu","Bắc Giang","Bắc Kạn","Bạc L
   "Thái Nguyên","Thanh Hóa","Thừa Thiên Huế","Tiền Giang","Trà Vinh","Tuyên Quang",
   "Vĩnh Long","Vĩnh Phúc","Yên Bái","Phú Yên","Cần Thơ","Đà Nẵng","Hải Phòng",
   "Hà Nội","TP HCM"]
-
-Examinee.delete_all
-Examinee.reset_pk_sequence
-Result.delete_all
-Result.reset_pk_sequence
-100.times do |m|
-  email = "example-#{m+1}@railstutorial.org"
+Examinee.transaction do
+  Examinee.delete_all
+  Examinee.reset_pk_sequence
   password = "123456"
-  n = m.to_s
-  while n.length < 7
-    n = "0" + n
-  end
-  n = "A"+n
-  people_id = n
-  student_id = n
   phone = "1234567890"
-  home_town = tinh[rand(62)]
-  hight_school = ("Trường Trung học phổ thông chuyên "|| "Trường Trung học phổ thông")+home_town
   birthday = Time.now
-  group_exam = rand(3) + 1
-  encourage_point = rand(5)
-  priority_point = rand(3)
-  average_point = rand(6) + 4
   year = 2017
   gender = ["boy", "women"]
-  dender_user = gender[rand(2)]
-  if dender_user == "boy"
-    name = ho[rand(16)] + nam_name[rand(758)]
-  else
-    name = ho[rand(16)] + nu_name[rand(704)]
+  TIMES = 100000
+
+  inserts = []
+  TIMES.times do |m|
+    puts m
+    email = "example-#{m+1}@railstutorial.org"
+    n = (m).to_s
+    while n.length < 7
+      n = "0" + n
+    end
+    n = "A"+n
+    people_id = n
+    student_id = n
+    home_town = tinh[rand(62)]
+    hight_school = ("Trường Trung học phổ thông chuyên "|| "Trường Trung học phổ thông")+home_town
+    group_exam = rand(3) + 1
+    encourage_point = rand(3)
+    priority_point = rand(3)
+    average_point = (rand(3..9.5) * 4).round(0).to_f/4
+    created_at = Time.now.to_s(:db)
+    encrypted_password = "$2a$11$d1BsAV0zZMR2/EeFmic5cuHUlqw0F.8o2a0g7iWKA1KSiakjscGei"
+    if gender[rand(2)] == "boy"
+      name = ho[rand(16)] + nam_name[rand(758)]
+    else
+      name = ho[rand(16)] + nu_name[rand(704)]
+    end
+    # byebug
+    inserts.push "('#{name}','#{email}', '#{encrypted_password}', '#{people_id}',
+    '#{student_id}', '#{phone}', '#{home_town}', '#{hight_school}', '#{birthday}',
+    #{year}, #{group_exam}, #{encourage_point}, #{priority_point}, #{average_point},
+    '#{created_at}', 'null')"
   end
-  examinee = Examinee.create!(
-  name: name,
-  email: email,
-  password: password,
-  password_confirmation: password,
-  people_id: people_id,
-  student_id: student_id,
-  phone: phone,
-  home_town: home_town,
-  hight_school: hight_school,
-  birthday: birthday,
-  group_graduated_exam_id: group_exam,
-  year: year,
-  encourage_point: encourage_point,
-  priority_point: priority_point,
-  average_point: average_point
-    )
-
-  math = rand(10)
-  literature = rand(10)
-  english = rand(10)
-  physical = rand(10)
-  chemistry = rand(10)
-  biological = rand(10)
-  history = rand(10)
-  geography = rand(10)
-  examinee.create_result!(
-  math: math,
-  literature: literature,
-  english: english,
-  physical: physical,
-  chemistry: chemistry,
-  biological: biological,
-  history: history,
-  geography: geography
-    )
-
-  graduate_score = examinee.result.graduate_score_caculation
-  graduate_score = 10 if graduate_score > 10
-  examinee.update_attributes(
-    graduate_score: graduate_score)
-  examinee.update_attributes(
-    graduated: examinee.result.check_graduted)
-  puts "Tao thanh cong hoc sinh #{m+1}"
+  sql = "INSERT INTO examinees ('name', 'email', 'encrypted_password',
+          'people_id', 'student_id', 'phone', 'home_town', 'hight_school',
+          'birthday', 'year', 'group_graduated_exam_id', 'encourage_point',
+          'priority_point', 'average_point', 'created_at', 'updated_at')
+          VALUES #{inserts.join(", ")}"
+  CONN = ActiveRecord::Base.connection
+  CONN.execute sql
+  puts 'done examinee'
 end
