@@ -34,4 +34,27 @@ a123456.major_group_exams.create(
   group_exam_id: 1
   )
 
+d580102 = nuce.majors.create(
+  code: "D580102",
+  year: 2017,
+  target: 750,
+  benchmark1: rand(10)+17,
+  benchmark2: rand(10)+10,
+  benchmark3: rand(10)+5,
+  register_status: 1,
+  last_year_benchmark: rand(10)+10
+)
+d580102.major_infos.create(
+  name: "XD")
+d580102.major_group_exams.create(
+  group_exam_id: 2
+  )
+d580102.major_group_exams.create(
+  group_exam_id: 3
+  )
+d580102.major_group_exams.create(
+  group_exam_id: 1
+  )
+
+
 puts("Hoan thanh dai hoc XD")

@@ -72,11 +72,13 @@ Examinee.transaction do
   birthday = Time.now
   year = 2017
   gender = ["boy", "women"]
-  TIMES = 100000
+  sample_user = Admin.first
+  sample_user.password = password
+  encrypted_password = sample_user.encrypted_password
 
   inserts = []
   TIMES.times do |m|
-    puts m
+    puts "4 - Tao thanh cong examinee #{m+1}"
     email = "example-#{m+1}@railstutorial.org"
     n = (m).to_s
     while n.length < 7
@@ -92,7 +94,6 @@ Examinee.transaction do
     priority_point = rand(3)
     average_point = (rand(3..9.5) * 4).round(0).to_f/4
     created_at = Time.now.to_s(:db)
-    encrypted_password = "$2a$11$d1BsAV0zZMR2/EeFmic5cuHUlqw0F.8o2a0g7iWKA1KSiakjscGei"
     if gender[rand(2)] == "boy"
       name = ho[rand(16)] + nam_name[rand(758)]
     else
@@ -109,7 +110,6 @@ Examinee.transaction do
           'birthday', 'year', 'group_graduated_exam_id', 'encourage_point',
           'priority_point', 'average_point', 'created_at', 'updated_at')
           VALUES #{inserts.join(", ")}"
-  CONN = ActiveRecord::Base.connection
   CONN.execute sql
   puts 'done examinee'
 end

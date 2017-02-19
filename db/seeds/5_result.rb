@@ -1,10 +1,10 @@
 Result.delete_all
 Result.reset_pk_sequence
-CONN = ActiveRecord::Base.connection
+# CONN = ActiveRecord::Base.connection
 Result.transaction do
   result_inserts = []
   TIMES.times do |m|
-    puts m
+    puts "5 - Tao thanh cong result #{m+1}"
     math = (rand(0..10.0) * 4).round(0).to_f/4
     literature = (rand(0..9.0) * 4).round(0).to_f/4
     english = (rand(0..10.0) * 4).round(0).to_f/4
