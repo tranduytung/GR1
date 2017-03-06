@@ -1,5 +1,5 @@
 def check_graduted result, graduate_score
-  @group_graduated_exam = GroupGraduatedExam. find_by(
+  @group_graduated_exam = GroupGraduatedExam.find_by(
     id: result.examinee.group_graduated_exam_id)
   @exam_graduated_all = @group_graduated_exam.to_exam_graduated
   @exam_graduated_all.each do |exam|

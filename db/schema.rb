@@ -145,14 +145,18 @@ ActiveRecord::Schema.define(version: 20161218140909) do
   create_table "registers", force: :cascade do |t|
     t.integer  "examinee_id"
     t.integer  "major_id"
-    t.integer  "status",      default: 0
+    t.integer  "group_exam_id"
+    t.integer  "numbering_order"
+    t.float    "review_score"
+    t.integer  "status",          default: 0
     t.integer  "aspiration"
     t.integer  "year"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
   add_index "registers", ["examinee_id"], name: "index_registers_on_examinee_id"
+  add_index "registers", ["group_exam_id"], name: "index_registers_on_group_exam_id"
   add_index "registers", ["major_id"], name: "index_registers_on_major_id"
 
   create_table "results", force: :cascade do |t|

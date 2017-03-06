@@ -1,0 +1,27 @@
+<%byebug%>
+<tr>
+  <td class="center">
+    <%= major.code %>
+  </td>
+  <td style="padding: 0px">
+    <% if major.major_infos.count > 1 %>
+    <table class="table table-bordered" style="margin: 0px">
+      <% major.major_infos.each do |major_info| %>
+      <tr>
+        <td><%= major_info.name %></td>
+      </tr>
+      <% end %>
+    </table>
+    <% else %>
+      <div style="padding: 5px 0px 5px 5px">
+        <%= major.major_infos.first.name %>
+      </div>
+    <% end %>
+  </td>
+  <td class="center"><%= major.target %></td>
+  <td class="center">diem chuan</td>
+  <td>
+    <%= link_to t("major.show_register"), registers_universities_major_path(major),
+      class: "btn btn-info icon-trash icon-white" %>
+  </td>
+</tr>

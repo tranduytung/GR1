@@ -54,6 +54,7 @@ Rails.application.routes.draw do
 
   namespace :universities do
     resources :majors do
+      collection {get :benchmarks}
       collection {get :export_file_excel}
       collection {post :import_file_excel}
     end

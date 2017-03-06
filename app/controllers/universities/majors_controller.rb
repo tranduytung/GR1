@@ -72,6 +72,10 @@ class Universities::MajorsController < ApplicationController
     end
   end
 
+  def benchmarks
+    @majors = current_university.majors
+  end
+
   private
   def major_params
     params.require(:major).permit(:code, :target, :benchmark1, :benchmark2,
