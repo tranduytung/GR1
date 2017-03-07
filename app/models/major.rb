@@ -40,8 +40,20 @@ class Major < ActiveRecord::Base
       raise "Unknown file type: #{file.original_filename}"
     end
   end
-  private
 
+  def cal_recommend_benchmark
+    registers = self.registers.order(review_score: :DESC)
+    if self.target >= registers.count
+      return registers.last.review_score
+    end
+    score = registers[self.target].review_score
+    while registers.cal_benchmark(score).count > self.target
+      score += 0.25
+    end
+    return score
+  end
+
+  private
   def major_infos_name
     major_infos.each do |major_info|
       if major_info.name.blank? && !major_info.destroy

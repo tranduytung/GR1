@@ -1,0 +1,58 @@
+<%= form_for :recomment_benchmark, method: :get do |f| %>
+  <%= f.select :major_id,
+    options_from_collection_for_select(@majors, :id, :code), {}, class: "form-control" %>
+  <div class="actions center">
+    <%= f.submit "Check", class: "btn btn-primary" %>
+  </div>
+<% end %>
+<% unless @major.nil? %>
+  <% @major.major_infos.each do |major_info| %>
+    <%= major_info.name %>
+    <hr>
+  <% end %>
+  <%= @major.target %>
+  <hr>
+  <% @major.major_group_exams.each do |major_group_exam| %>
+  <% group_exam = GroupExam.find_by id: major_group_exam.group_exam_id %>
+    <div class="col-md-<%= (12/@major.major_group_exams.count).to_i %>">
+      <h4>
+      <%= (t("math")+"(#{group_exam.math})") unless group_exam.math == 0 %>
+      <%= (t("literature")+"(#{group_exam.literature})") unless group_exam.literature == 0 %>
+      <%= (t("english")+"(#{group_exam.english})") unless group_exam.english == 0 %>
+      <%= (t("physical")+"(#{group_exam.physical})") unless group_exam.physical == 0 %>
+      <%= (t("chemistry")+"(#{group_exam.chemistry})") unless group_exam.chemistry == 0 %>
+      <%= (t("biological")+"(#{group_exam.biological})") unless group_exam.biological == 0 %>
+      <%= (t("history")+"(#{group_exam.history})") unless group_exam.history == 0 %>
+      <%= (t("geography")+"(#{group_exam.geography})") unless group_exam.geography == 0 %>
+      </h4>
+      <table class="table table-bordered margin-0">
+        <thead>
+          <tr>
+            <th class="center">Score</th>
+            <th class="center">number</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @registers = @major.registers.where(group_exam_id:
+            major_group_exam.group_exam_id) %>
+          <% if @registers.count > 0 %>
+            <% @max_score = @registers.maximum(:review_score) %>
+            <% @min_score = @registers.minimum(:review_score) %>
+            <% while @max_score >= @min_score %>
+              <% @count = @registers.cal_benchmark(@max_score).count %>
+              <% if @count > @major.target %>
+                <tr style="background-color: #f2f2f2">
+              <% else %>
+                <tr>
+              <% end %>
+                <td><%= @max_score %></td>
+                <td><%= @count %></td>
+              </tr>
+              <% @max_score -= 0.25 %>
+            <% end %>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  <% end %>
+<% end %>
