@@ -13,6 +13,8 @@ class University < ActiveRecord::Base
   validates :code, presence: true
   # validates :password, presence:true
 
+  before_save {self.code = code.downcase}
+
   def self.import(file)
     spreadsheet = open_spreadsheet(file)
     header = spreadsheet.row(1)

@@ -1,12 +1,12 @@
 class RegistersController < ApplicationController
   load_and_authorize_resource
   def new
-    register_major current_examinee.registers.aspiration_1,
-      params[:major_id], params[:aspiration] if params[:aspiration] == "1"
-    register_major current_examinee.registers.aspiration_2,
-      params[:major_id], params[:aspiration] if params[:aspiration] == "2"
-    register_major current_examinee.registers.aspiration_3,
-      params[:major_id], params[:aspiration] if params[:aspiration] == "3"
+    register_major current_examinee, params[:major_id],
+      params[:aspiration], params[:group_exam_id] if params[:aspiration] == "1"
+    register_major current_examinee, params[:major_id],
+      params[:aspiration], params[:group_exam_id] if params[:aspiration] == "2"
+    register_major current_examinee, params[:major_id],
+      params[:aspiration], params[:group_exam_id] if params[:aspiration] == "3"
     redirect_to examinee_registers_path(current_examinee)
   end
 
