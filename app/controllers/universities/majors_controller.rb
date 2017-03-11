@@ -72,8 +72,11 @@ class Universities::MajorsController < ApplicationController
     end
   end
 
-  def benchmarks
+  def recomment_benchmarks
     @majors = current_university.majors
+    unless params[:recomment_benchmark].nil?
+      @major = Major.find_by id: params[:recomment_benchmark][:major_id]
+    end
   end
 
   private
