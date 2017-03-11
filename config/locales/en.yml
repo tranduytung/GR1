@@ -70,6 +70,7 @@ en:
     all: "All Examinees"
     name: "Name"
     email: "Email"
+    log_in: "Examinee Login"
 
   admin:
     edit: "Edit"

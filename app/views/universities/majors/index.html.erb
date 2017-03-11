@@ -1,6 +1,8 @@
-<h1>Majors#index</h1>
-  <%= link_to "export_csv", export_file_excel_universities_majors_path(format: 'xlsx') %>
-  <%= link_to "export_group", export_file_excel_universities_major_group_exams_path(format: 'xlsx') %>
+<div class="box box-primary">
+  <div class="box-body box-profile">
+<h2 class="text-center">Majors#index</h2>
+ <!--  <%= link_to "export_csv", export_file_excel_universities_majors_path(format: 'xlsx') %>
+  <%= link_to "export_group", export_file_excel_universities_major_group_exams_path(format: 'xlsx') %> -->
   <%= form_tag import_file_excel_universities_majors_path, class:'form-inline', multipart: true do %>
       <div class="form-group">
         <%= label_tag 'select_file_excel', nil, class: 'sr-only' %>
@@ -22,6 +24,10 @@
         <%= submit_tag "Import Excel for Major Group Exam" , class: 'btn btn-default' %>
       </div>
   <% end %>
+</div>
+</div>
+<div class="box box-primary">
+      <div class="box-body box-profile">
 <table class="table table-bordered margin-0">
   <thead>
     <tr>
@@ -36,3 +42,5 @@
     <%= render @majors %>
   </tbody>
 </table>
+</div>
+</div>

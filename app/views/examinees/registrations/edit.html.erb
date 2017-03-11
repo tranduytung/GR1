@@ -1,72 +1,80 @@
 <% provide(:title, @examinee.name) %>
 <div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <h2>Edit <%= resource_name.to_s.humanize %></h2>
-
-    <%= form_for(resource, as: resource_name,
-      url: registration_path(resource_name), html: { method: :put }) do |f| %>
-      <%= devise_error_messages! %>
-
-      <div class="field">
-        Name: <%= current_examinee.name %>
-      </div>
-
-      <div class="field">
-        Chung Minh Thu: <%= current_examinee.people_id %>
-      </div>
-
-      <div class="field">
-        Ma So Du Thi: <%= current_examinee.student_id %>
-      </div>
-
-      <div class="field">
-        <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true, class: "form-control" %>
-      </div>
-
-      <div class="field">
-        <%= f.label :phone %><br />
-        <%= f.text_field :phone, autofocus: true, class: "form-control" %>
-      </div>
-
-      <div class="field">
-        <%= f.label :home_town %><br />
-        <%= f.text_field :home_town, autofocus: true, class: "form-control" %>
-      </div>
-
-      <div class="field">
-        <%= f.label :hight_school %><br />
-        <%= f.text_field :hight_school, autofocus: true, class: "form-control" %>
-      </div>
-
-      <div class="field">
-        <%= f.label :birthday %><br />
-        <%= f.date_field :birthday, autofocus: true, class: "form-control" %>
-      </div>
-
-      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-        <div>
-          Currently waiting confirmation for: <%= resource.unconfirmed_email %>
+  <div class="col-md-3 col-md-offset-1">
+    <div class="box box-primary">
+      <div class="box-body box-profile">
+        <div class="list-group list-group-unbordered">
+          <div class="list-group-item">
+            Name: <%= current_examinee.name %>
+          </div>
+          <div class="list-group-item">
+            Chung Minh Thu: <%= current_examinee.people_id %>
+          </div>
+          <div class="list-group-item">
+            Ma So Du Thi: <%= current_examinee.student_id %>
+          </div>
         </div>
-      <% end %>
-
-      <div class="field">
-        <%= f.label :password %>
-        <i>(leave blank if you don't want to change it)</i><br/>
-        <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
       </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="box box-primary">
+      <div class="box-body box-profile">
+        <h3 class="text-center">Edit <%= resource_name.to_s.humanize %></h3>
+        <%= form_for(resource, as: resource_name,
+          url: registration_path(resource_name), html: { method: :put }) do |f| %>
+          <%= devise_error_messages! %>
 
-      <%= f.label :password_confirmation %><br/>
-      <%= f.password_field :password_confirmation, autocomplete: "off",
-        class: "form-control" %>
+          <div class="field">
+            <%= f.label :email %><br />
+            <%= f.email_field :email, autofocus: true, class: "form-control" %>
+          </div>
 
-      <%= f.label :current_password %>
-      <%= f.password_field :current_password, autocomplete: "off",
-        class: "form-control" %>
+          <div class="field">
+            <%= f.label :phone %><br />
+            <%= f.text_field :phone, autofocus: true, class: "form-control" %>
+          </div>
 
-      <div class="actions">
-        <%= f.submit t("examinee.edit"), class: "btn btn-primary" %>
+          <div class="field">
+            <%= f.label :home_town %><br />
+            <%= f.text_field :home_town, autofocus: true, class: "form-control" %>
+          </div>
+
+          <div class="field">
+            <%= f.label :hight_school %><br />
+            <%= f.text_field :hight_school, autofocus: true, class: "form-control" %>
+          </div>
+
+          <div class="field">
+            <%= f.label :birthday %><br />
+            <%= f.date_field :birthday, autofocus: true, class: "form-control" %>
+          </div>
+
+          <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+            <div>
+              Currently waiting confirmation for: <%= resource.unconfirmed_email %>
+            </div>
+          <% end %>
+
+          <div class="field">
+            <%= f.label :password %>
+            <i>(leave blank if you don't want to change it)</i><br/>
+            <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+          </div>
+
+          <%= f.label :password_confirmation %><br/>
+          <%= f.password_field :password_confirmation, autocomplete: "off",
+            class: "form-control" %>
+
+          <%= f.label :current_password %>
+          <%= f.password_field :current_password, autocomplete: "off",
+            class: "form-control" %>
+          <br>
+          <div class="actions text-center">
+            <%= f.submit t("examinee.edit"), class: "btn btn-primary" %>
+          </div>
+        <% end %>
       </div>
-    <% end %>
+    </div>
   </div>
 </div>

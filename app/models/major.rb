@@ -6,6 +6,7 @@ class Major < ActiveRecord::Base
   has_many :major_infos, :dependent => :destroy
   validates :year, presence: true
   validates :code, presence: true
+  validates :target, presence: true
   validate :major_infos_name
 
   enum register_status: {end: 0, aspiration_1: 1, aspiration_2: 2, aspiration_3: 3}

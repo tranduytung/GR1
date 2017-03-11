@@ -20,3 +20,9 @@
 //= require fusioncharts/fusioncharts
 //= require fusioncharts/fusioncharts.charts
 //= require fusioncharts/themes/fusioncharts.theme.fint
+//= require adminlte
+$(document).on('ready', function() {
+  setTimeout(function() {
+    $('.alert').fadeOut('normal');
+  }, 3000);
+});

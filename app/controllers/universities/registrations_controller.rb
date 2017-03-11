@@ -47,7 +47,7 @@ class Universities::RegistrationsController < Devise::RegistrationsController
   def configure_account_update_params
     devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:email,
       :phone, :address, :web_site, :current_password,
-      :password, :password_confirmation) }
+      :password, :password_confirmation, :code, :name) }
   end
 
   def after_update_path_for(resource)

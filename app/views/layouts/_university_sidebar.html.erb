@@ -1,0 +1,37 @@
+<aside class="main-sidebar">
+  <% if university_signed_in? %>
+  <section class="sidebar">
+    <!-- sidebar menu: : style can be found in sidebar.less -->
+    <ul class="sidebar-menu">
+      <li class="header">MAIN NAVIGATION</li>
+      <li>
+        <%= link_to universities_majors_path do %>
+          <i class="fa fa-dashboard"></i> <span>Quan li chuyen nganh</span>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to universities_registers_path do %>
+          <i class="fa fa-dashboard"></i> <span>Quan li danh sach tuyen sinh</span>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to recomment_benchmarks_universities_majors_path do %>
+          <i class="fa fa-dashboard"></i> <span>Goi y diem chuan</span>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to "" do %>
+          <i class="fa fa-dashboard"></i> <span>Quan li diem chuan</span>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to "" do %>
+          <i class="fa fa-dashboard"></i> <span>Quan li danh sach trung tuyen</span>
+        <% end %>
+      </li>
+    </ul>
+  </section>
+  <% else %>
+    <%= render "layouts/guest_sidebar" %>
+  <% end %>
+</aside>

@@ -1,20 +1,21 @@
 <% provide :title, t("university.all") %>
-<div class="row">
-  <h1><%= t "university.all" %></h1>
-  <hr/>
-  <table class="table table-bordered">
-    <thead>
-      <tr>
-        <th class="center"><%= t "examinee.code" %></th>
-        <th class="center"><%= t "examinee.name" %></th>
-        <th class="center"><%= t "admin.actions" %></th>
-      </tr>
-    </thead>
-    <tbody>
-      <%= render @universities %>
-    </tbody>
-  </table>
-  <div class="text-center">
-    <%= paginate @universities %>
+<div class="box box-primary">
+  <div class="box-body box-profile">
+    <h2 class="center"><%= t "university.all" %></h2>
+    <table id="example2"  class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th class="center"><%= t "examinee.code" %></th>
+          <th class="center"><%= t "examinee.name" %></th>
+          <th class="center"><%= t "admin.actions" %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render @universities %>
+      </tbody>
+    </table>
+    <div class="text-center">
+      <%= paginate @universities %>
+    </div>
   </div>
 </div>

@@ -1,0 +1,38 @@
+<div class="box box-primary">
+  <div class="box-body box-profile">
+    <h2 class="profile-username text-center">
+      <%= @examinee.name %>
+    </h2>
+    <hr>
+    <div class="list-group list-group-unbordered">
+      <div class="list-group-item">
+        <span class="glyphicon glyphicon-user"></span>
+        People ID: <%= @examinee.people_id %>
+      </div>
+      <div class="list-group-item">
+        <span class="glyphicon glyphicon-credit-card"></span>
+        Student ID: <%= @examinee.student_id %>
+      </div>
+      <div class="list-group-item">
+        <span class="glyphicon glyphicon-envelope"></span>
+        Email: <%= @examinee.email %>
+      </div>
+      <div class="list-group-item">
+        <span class=" glyphicon glyphicon-earphone"></span>
+        Phone: <%= @examinee.phone %>
+      </div>
+      <div class="list-group-item">
+        <span class="glyphicon glyphicon-envelope"></span>
+        Birthday: <%= @examinee.birthday %>
+      </div>
+      <div class="list-group-item">
+        <span class="glyphicon glyphicon-home"></span>
+        Home_town: <%= @examinee.home_town %>
+      </div>
+      <div class="list-group-item">
+        <span class="glyphicon glyphicon-book"></span>
+        Hight_school: <%= @examinee.hight_school %>
+      </div>
+    </div>
+  </div>
+</div>

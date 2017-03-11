@@ -1,33 +1,41 @@
 <div class="row">
-  <div class="col-md-offset-2 col-md-10">
+  <div class="col-md-3">
     <%= render "search_form" %>
-    <% unless @majors.empty? %>
-      <table class="table table-bordered">
-        <thead>
-          <tr>
-            <th class="center"><%= t "examinee.code" %></th>
-            <th class="center"><%= t "examinee.name" %></th>
-            <th class="center"><%= t "examinee.major" %></th>
-            <th class="center"><%= t "admin.actions" %></th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @majors.each do |major_info| %>
-            <tr>
-              <td class="center"><%= major_info.university.code %></td>
-              <td class="center"><%= link_to major_info.university.name,
-                 university_path(major_info.university) %></td>
-              <td class="center"><%= major_info.name %></td>
-              <td><%= link_to "Show", university_major_path(
-                major_info.university, major_info.major), class: "btn btn-primary"%>
-              </td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
-      <div class="text-center">
-        <%= paginate @majors %>
+  </div>
+  <div  class="col-md-9">
+    <div class="box box-primary">
+      <div class="box-body box-profile">
+        <% unless @majors.empty? %>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th class="center"><%= t "examinee.major_code" %></th>
+                <th class="center"><%= t "examinee.major" %></th>
+                <th class="center"><%= t "examinee.code" %></th>
+                <th class="center"><%= t "examinee.name" %></th>
+                <th class="center"><%= t "admin.actions" %></th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @majors.each do |major_info| %>
+                <tr>
+                  <td class="center"><%= major_info.major.code %></td>
+                  <td class="center"><%= major_info.name %></td>
+                  <td class="center"><%= major_info.university.code %></td>
+                  <td class="center"><%= link_to major_info.university.name,
+                     university_path(major_info.university) %></td>
+                  <td><%= link_to "Show", university_major_path(
+                    major_info.university, major_info.major), class: "btn btn-primary"%>
+                  </td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+          <div class="text-center">
+            <%= paginate @majors %>
+          </div>
+        <% end %>
       </div>
-    <% end %>
+    </div>
   </div>
 </div>

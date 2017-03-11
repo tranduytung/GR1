@@ -3,6 +3,17 @@
   <td class="center"><%= register.examinee.student_id %></td>
   <td class="center"><%= register.examinee.name %></td>
   <td class="center"><%= register.major.code %></td>
+  <td>
+    <% group_exam = GroupExam.find_by id: register.group_exam_id %>
+    <%= (t("math")+"(#{group_exam.math})") unless group_exam.math == 0 %>
+    <%= (t("literature")+"(#{group_exam.literature})") unless group_exam.literature == 0 %>
+    <%= (t("english")+"(#{group_exam.english})") unless group_exam.english == 0 %>
+    <%= (t("physical")+"(#{group_exam.physical})") unless group_exam.physical == 0 %>
+    <%= (t("chemistry")+"(#{group_exam.chemistry})") unless group_exam.chemistry == 0 %>
+    <%= (t("biological")+"(#{group_exam.biological})") unless group_exam.biological == 0 %>
+    <%= (t("history")+"(#{group_exam.history})") unless group_exam.history == 0 %>
+    <%= (t("geography")+"(#{group_exam.geography})") unless group_exam.geography == 0 %>
+  </td>
   <td class="center"><%= register.aspiration %></td>
   <td class="center"><%= register.status %></td>
   <td class="center"><%= register.year %></td>

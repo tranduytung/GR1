@@ -1,0 +1,59 @@
+<aside class="main-sidebar">
+  <% if examinee_signed_in? %>
+  <section class="sidebar">
+    <!-- sidebar menu: : style can be found in sidebar.less -->
+    <ul class="sidebar-menu">
+
+        <li class="header">MAIN NAVIGATION</li>
+        <li>
+          <%= link_to major_searchs_path do %>
+            <i class="fa fa-dashboard"></i> <span>Tim kiem chuyen nganh</span>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to examinees_registers_path do %>
+            <i class="fa fa-dashboard"></i> <span>Danh sach dang ki</span>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to universities_path do %>
+            <i class="fa fa-dashboard"></i> <span>Danh sach truong dai hoc</span>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to by_graduated_charts_path do %>
+            <i class="fa fa-pie-chart"></i><span>Ti le tot nghiep</span>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to by_home_town_charts_path do %>
+            <i class="fa fa-pie-chart"></i><span>Thong ke theo vung</span>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to by_graduate_score_charts_path do %>
+            <i class="fa fa-pie-chart"></i><span>Thong ke theo diem TN</span>
+          <% end %>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-pie-chart"></i>
+            <span>Thong ke theo mon thi</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li>
+              <%= link_to by_exam_score_charts_path do %>
+                <i class="fa fa-circle-o"></i>Math
+              <% end %>
+            <li>
+          </ul>
+        </li>
+    </ul>
+  </section>
+  <% else %>
+    <%= render "layouts/guest_sidebar" %>
+  <% end %>
+</aside>

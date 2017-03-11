@@ -1,0 +1,21 @@
+<div class="box box-primary">
+  <div class="box-body box-profile">
+    <h2 class="profile-username text-center"><%= t :result_graduated %></h2>
+    <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th class="center"><%= t :exam %></th>
+            <th class="center"><%= t :point %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @exam_graduated_all.each do |exam| %>
+            <tr>
+              <td class="center"><%= exam.name %></td>
+              <td class="center"><%= @result.send exam.name.downcase %></td>
+            </tr>
+          <% end %>
+        </tbody>
+    </table>
+  </div>
+</div>

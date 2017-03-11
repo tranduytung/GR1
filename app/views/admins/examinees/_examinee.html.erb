@@ -1,6 +1,8 @@
 <tr>
+  <td class="center"><%= examinee.people_id %></td>
+  <td class="center"><%= examinee.student_id %></td>
   <td class="center"><%= examinee.name %></td>
-  <td class="center"><%= examinee.email %></td>
+  <td class="center"><%= examinee.birthday.to_date %></td>
   <td>
     <%= link_to t("admin.show"), admins_examinee_path(examinee),
       class: "btn btn-info icon-trash icon-white" %>

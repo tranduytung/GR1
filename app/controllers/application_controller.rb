@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
+  layout :layout_by_resource
   include ExamineesHelper
   include RegistersHelper
   include CanCan::ControllerAdditions
@@ -25,6 +26,17 @@ class ApplicationController < ActionController::Base
     end
   end
   protected
+  def layout_by_resource
+    if (devise_controller? && resource_name == :admin) || admin_signed_in?
+      "admin_application"
+    elsif (devise_controller? && resource_name == :examinee) || examinee_signed_in?
+      "examinee_application"
+    elsif (devise_controller? && resource_name == :university) || university_signed_in?
+      "university_application"
+    else
+      "application"
+    end
+  end
   def current_ability
     if admin_signed_in?
       @current_ability ||= Ability.new(current_admin)

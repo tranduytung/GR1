@@ -1,15 +1,19 @@
-<h1><%= @university.name %></h1>
-  <table class="table table-bordered margin-0">
-    <thead>
-      <tr>
-        <th class="center"><%= t "major.code" %></th>
-        <th class="center"><%= t "major_info.name" %></th>
-        <th class="center"><%= t "major_info.target" %></th>
-        <th class="center"><%= t "major_info.group_exams" %></th>
-        <th class="center"><%= "Action" %></th>
-      </tr>
-    </thead>
-    <tbody>
-      <%= render @majors %>
-    </tbody>
-  </table>
+<div class="box box-primary">
+  <div class="box-body box-profile">
+    <h2 class="text-center"><%= @university.name %></h2>
+    <table class="table table-bordered margin-0">
+      <thead>
+        <tr>
+          <th class="center"><%= t "major.code" %></th>
+          <th class="center"><%= t "major_info.name" %></th>
+          <th class="center"><%= t "major_info.target" %></th>
+          <th class="center"><%= t "major_info.group_exams" %></th>
+          <th class="center"><%= "Action" %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render @majors %>
+      </tbody>
+    </table>
+  </div>
+</div>

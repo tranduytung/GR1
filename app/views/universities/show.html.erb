@@ -1,59 +1,64 @@
-<h1>Thong tin chi tiet truong dai hoc</h1>
 <div class="row">
-  <aside class="col-md-6">
-    <section class="user_info">
-      <h1>
-        Name: <%= @university.name %>
-      </h1>
-      <hr>
-      <div class="list-group">
-        <div class="list-group-item">
-          <span class="glyphicon glyphicon-user"></span>
-          Code: <%= @university.code %>
-        </div>
-        <div class="list-group-item">
-          <span class="glyphicon glyphicon-envelope"></span>
-          Email: <%= @university.email %>
-        </div>
-        <div class="list-group-item">
-          <span class="glyphicon glyphicon-envelope"></span>
-          Phone: <%= @university.phone %>
-        </div>
-        <div class="list-group-item">
-          <span class="glyphicon glyphicon-envelope"></span>
-          Address: <%= @university.address %>
-        </div>
-        <div class="list-group-item">
-          <span class="glyphicon glyphicon-envelope"></span>
-          Website: <%= @university.web_site %>
-        </div>
-      </div>
-    </section>
-  </aside>
   <div class="col-md-6">
-  <br>
-  <br>
-  <br>
-  <br>
-    <div class="list-group">
-    <% if university_signed_in? %>
-    <div class="list-group-item">
-      <%= link_to "Quan li chuyen nganh", universities_majors_path, class: "btn btn-success" %>
+    <div class="box box-primary">
+      <div class="box-body box-profile">
+        <h3 class="text-center">
+          Name: <%= @university.name %>
+        </h3>
+        <div class="list-group list-group-unbordered">
+          <div class="list-group-item">
+            <span class="glyphicon glyphicon-user"></span>
+            Code: <%= @university.code %>
+          </div>
+          <div class="list-group-item">
+            <span class="glyphicon glyphicon-envelope"></span>
+            Email: <%= @university.email %>
+          </div>
+          <div class="list-group-item">
+            <span class="glyphicon glyphicon-envelope"></span>
+            Phone: <%= @university.phone %>
+          </div>
+          <div class="list-group-item">
+            <span class="glyphicon glyphicon-envelope"></span>
+            Address: <%= @university.address %>
+          </div>
+          <div class="list-group-item">
+            <span class="glyphicon glyphicon-envelope"></span>
+            Website: <%= @university.web_site %>
+          </div>
+        </div>
       </div>
-      <div class="list-group-item">
-      <%= link_to "Quan li danh sach tuyen sinh", "", class: "btn btn-success" %>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="box box-primary">
+      <div class="box-body box-profile">
+        <div class="list-group list-group-unbordered">
+        <% if university_signed_in? %>
+        <div class="list-group-item">
+          <%= link_to "Quan li chuyen nganh", universities_majors_path, class: "btn btn-success" %>
+          </div>
+          <div class="list-group-item">
+          <%= link_to "Quan li danh sach tuyen sinh", "", class: "btn btn-success" %>
+          </div>
+          <div class="list-group-item">
+          <%= link_to "Quan li diem chuan", "", class: "btn btn-success" %>
+          </div>
+          <div class="list-group-item">
+          <%= link_to "Quan li danh sach thi sinh trung tuyen", "", class: "btn btn-success" %>
+          </div>
+          <% else %>
+          <div class="list-group-item">
+            <%= link_to "Xem thong tin tuyen sinh", university_majors_path(@university),
+              class: "btn btn-success" %>
+          </div>
+          <div class="list-group-item">
+            <%= link_to "Xem chuyen nganh", university_majors_path(@university),
+              class: "btn btn-success" %>
+          </div>
+        <% end %>
+        </div>
       </div>
-      <div class="list-group-item">
-      <%= link_to "Quan li diem chuan", "", class: "btn btn-success" %>
-      </div>
-      <div class="list-group-item">
-      <%= link_to "Quan li danh sach thi sinh trung tuyen", "", class: "btn btn-success" %>
-      </div>
-      <% else %>
-      <div class="list-group-item">
-      <%= link_to "Xem chuyen nganh", university_majors_path(@university), class: "btn btn-success" %>
-      </div>
-    <% end %>
     </div>
   </div>
 </div>

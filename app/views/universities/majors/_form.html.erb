@@ -1,5 +1,6 @@
 <%= form_for [:universities, @major] do |f| %>
   <%= render "shared/error_messages", object: @major %>
+  <div class="row">
   <div class="col-md-6">
     <%= f.label :code %>
     <%= f.text_field :code, autofocus: true, class: "form-control" %>
@@ -14,25 +15,26 @@
     <%= f.label :benchmark1 %>
     <%= f.number_field :benchmark1, autofocus: true, class: "form-control" %>
   </div>
-  <%= f.label :major_infos, "Majors'name" %>
   <div class="col-md-6">
-  <table class="table table-bordered table-striped table-condensed major-table">
-    <thead>
-      <tr>
-        <th class="center"><%= t "product.name" %></th>
-        <th class="center"><%= t "product.action" %></th>
-      </tr>
-    </thead>
-    <tbody>
-      <%= f.fields_for :major_infos do |major_info| %>
-        <%= render "major_info_row", f: major_info %>
-      <% end %>
-    </tbody>
+    <%= f.label :major_infos, "Majors'name" %>
+    <table class="table table-bordered table-striped table-condensed major-table">
+      <thead>
+        <tr>
+          <th class="center"><%= t "product.name" %></th>
+          <th class="center"><%= t "product.action" %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= f.fields_for :major_infos do |major_info| %>
+          <%= render "major_info_row", f: major_info %>
+        <% end %>
+      </tbody>
+    </table>
     <%= link_to_add_row "Them chuyen nganh", f, :major_infos %>
-  </table>
   </div>
-
-  <div class="actions center">
+  </div>
+  <br>
+  <div class="text-center">
     <%= f.submit "Edit Major", class: "btn btn-primary" %>
   </div>
 <% end %>

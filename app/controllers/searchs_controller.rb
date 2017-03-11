@@ -4,7 +4,7 @@ class SearchsController < ApplicationController
     if params[:q].nil?
       @majors = []
     else
-      @majors = @search.result.page(params[:page]).per 10
+      @majors = @search.result.page(params[:page]).per 5
     end
   end
 end
