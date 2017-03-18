@@ -51,14 +51,13 @@ class ChartsController < ApplicationController
 
   def by_graduated
     @chart = Fusioncharts::Chart.new({
-        width: "800px",
-        height: "500px",
+        width: "100%",
+        height: "70%",
         type: "pie2d",
         renderAt: "chartContainer",
         dataFormat: 'json',
         dataSource: {
           chart: {
-            caption: "Thong ke ti le tot nghiep",
             theme: "fint",
             numberPrefix: "Thi sinh: ",
             valueBorderColor: "#666666",
@@ -97,12 +96,11 @@ class ChartsController < ApplicationController
       type: 'scrollstackedcolumn2d',
       dataFormat: 'json',
       renderAt: 'chartContainer',
-      width: '1100',
-      height: '600',
+      width: '100%',
+      height: '500',
       dataFormat: 'json',
       dataSource: {
         chart: {
-          caption: "Thong ke theo vung",
           subCaptio: "Nam 2016",
           captionFontSize: "30",
           subcaptionFontSize: "20",

@@ -1,23 +1,26 @@
-<div class="input-group">
-  <%= search_form_for @search, url: major_searchs_path do |f| %>
-    <div class="row">
-      <div class="large-5 small-4 col-sm-3">
+<div class="box box-primary">
+  <div class="box-body box-profile">
+    <%= search_form_for @search, url: major_searchs_path do |f| %>
+      <div>
         <%= f.label :university_code_cont, "Ma Truong"%>
         <%= f.text_field :university_code_cont, placeholder:
-          "Nhap ma truong dai hoc", class: "form-control" %>
+          "Nhap ma truong dai hoc. vd: bka", class: "form-control" %>
       </div>
-      <div class="large-6 small-6 col-sm-6">
+      <br>
+      <div>
         <%= f.label :university_name_cont, "Ten Truong"%>
         <%= f.text_field :university_name_cont, placeholder:
           "Nhap ten truong dai hoc", class: "form-control" %>
       </div>
-      <div class="large-6 small-6 col-sm-6">
+      <br>
+      <div>
         <%= f.label :name_cont, "Ten Chuyen nganh"%>
         <%= f.text_field :name_cont,
           placeholder: "Nhap ten chuyen nganh", class: "form-control" %>
       </div>
-    </div>
-    <%= f.submit "Search", class: "btn btn-primary"%>
-  <% end %>
+      <br>
+      <%= f.submit "Search", class: "btn btn-primary"%>
+    <% end %>
+  </div>
 </div>
 

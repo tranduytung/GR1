@@ -1,0 +1,59 @@
+<aside class="main-sidebar">
+  <% if admin_signed_in? %>
+    <section class="sidebar">
+      <ul class="sidebar-menu">
+        <li class="header">MAIN NAVIGATION</li>
+        <li>
+          <% @register_time = RegisterTime.find_by year: Time.now.year %>
+          <%= link_to edit_admins_register_time_path(@register_time) do %>
+            <i class="fa fa-dashboard"></i> <span>Quan li thoi gian dang ki</span>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to admins_examinees_path do %>
+            <i class="fa fa-dashboard"></i> <span>Quan li thi sinh</span>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to admins_universities_path do %>
+            <i class="fa fa-dashboard"></i> <span>Quan li truong dai hoc</span>
+          <% end %>
+        </li>
+
+        <li>
+          <%= link_to by_graduated_charts_path do %>
+            <i class="fa fa-pie-chart"></i><span>Ti le tot nghiep</span>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to by_home_town_charts_path do %>
+            <i class="fa fa-pie-chart"></i><span>Thong ke theo vung</span>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to by_graduate_score_charts_path do %>
+            <i class="fa fa-pie-chart"></i><span>Thong ke theo diem TN</span>
+          <% end %>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-pie-chart"></i>
+            <span>Thong ke theo mon thi</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li>
+              <%= link_to by_exam_score_charts_path do %>
+                <i class="fa fa-circle-o"></i>Math
+              <% end %>
+            <li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+  <% else %>
+    <%= render "layouts/guest_sidebar" %>
+  <% end %>
+</aside>

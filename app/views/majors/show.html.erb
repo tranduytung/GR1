@@ -1,113 +1,106 @@
 <div class="col-md-6">
-  <div class="well">
-    Code: <%= @major.code %>
-  </div>
-  <div class="well">
-    Year: <%= @major.year %>
-  </div>
-  <div class="well">
-    Target: <%= @major.target %>
-  </div>
-  <div class="well">
-    Diem NV 1: <%= @major.benchmark1 %><br>
-    Han nop hs:
-    <% if !register_time.nil? &&
-      !register_time.start_aspiration_1.nil? %>
-      <%= register_time.start_aspiration_1 %>
-    <% end %>
-    <br>
-    <% if examinee_signed_in? && !register_time.nil? &&
-      !register_time.start_aspiration_1.nil? &&
-      Time.now >= register_time.start_aspiration_1 &&
-      Time.now <= register_time.end_aspiration_1 %>
-      <%= link_to "Dang ki", new_examinee_register_path(current_examinee,
-        major_id: @major, aspiration: 1), class: "btn btn-primary" %>
-    <% end %>
-  </div>
-  <div class="well">
-    Diem NV 2: <%= @major.benchmark2 %><br>
-    Han nop hs:
-    <% if !register_time.nil? &&
-      !register_time.start_aspiration_2.nil? %>
-      <%= register_time.start_aspiration_2 %>
-    <% end %>
-    <% if examinee_signed_in? && !register_time.nil? &&
-      !register_time.start_aspiration_2.nil? &&
-      Time.now >= register_time.start_aspiration_2 &&
-      Time.now <= register_time.end_aspiration_2 %>
-      <%= link_to "Dang ki", "", class: "btn btn-primary" %>
-    <% end %>
-  </div>
-  <div class="well">
-    Diem NV 3: <%= @major.benchmark3 %><br>
-    Han nop hs:
-    <% if !register_time.nil? &&
-      !register_time.start_aspiration_3.nil? %>
-      <%= register_time.start_aspiration_3 %>
-    <% end %>
-    <% if examinee_signed_in? && !register_time.nil? &&
-      !register_time.start_aspiration_3.nil? &&
-      Time.now >= register_time.start_aspiration_3 &&
-      Time.now <= register_time.end_aspiration_3 %>
-      <%= link_to "Dang ki", "", class: "btn btn-primary" %>
-    <% end %>
+  <div class="box box-primary">
+    <div class="box-body box-profile">
+      <div class="list-group list-group-unbordered">
+        <div class="list-group-item">
+          Code: <%= @major.code %>
+        </div>
+        <div class="list-group-item">
+          Year: <%= @major.year %>
+        </div>
+        <div class="list-group-item">
+          Target: <%= @major.target %>
+        </div>
+        <div class="list-group-item">
+          Diem NV 1:
+          <%= @major.benchmark1.nil? ? "Chua co deim chuan" : @major.benchmark1%>
+        </div>
+        <div class="list-group-item">
+          Han nop hs:
+          <% if !register_time.nil? &&
+            !register_time.start_aspiration_1.nil? %>
+            <%= register_time.start_aspiration_1 %>
+          <% end %>
+          <br>
+          <% if examinee_signed_in? && !register_time.nil? &&
+            !register_time.start_aspiration_1.nil? &&
+            Time.now >= register_time.start_aspiration_1 &&
+            Time.now <= register_time.end_aspiration_1 %>
+          <% end %>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 <div class="col-md-6">
-  <table class="table table-bordered table-striped table-condensed major-table">
-    <thead>
-      <tr>
-        <th class="center">STT</th>
-        <th class="center"><%= t "product.name" %></th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @major.major_infos.each_with_index do |major_info, index| %>
-        <tr class="well">
-          <td><%= index+1 %></td>
-          <td><%= major_info.name %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+  <div class="box box-primary">
+    <div class="box-body box-profile">
+      <table class="table table-bordered table-striped table-condensed major-table">
+        <thead>
+          <tr>
+            <th class="center">STT</th>
+            <th class="center"><%= t "product.name" %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @major.major_infos.each_with_index do |major_info, index| %>
+            <tr class="well">
+              <td><%= index+1 %></td>
+              <td><%= major_info.name %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>
 <div class="col-md-6">
-  <table class="table table-bordered table-striped table-condensed major-table">
-    <thead>
-      <tr>
-        <th class="center">STT</th>
-        <th class="center"><%= t "product.group_exam" %></th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      <% a = 0 %>
-      <% @major.major_group_exams.each_with_index do |major_group_exam, index| %>
-      <% group_exam = GroupExam.find_by id: major_group_exam.group_exam_id %>
-        <tr class="well">
-          <td><%= index+1 %></td>
-          <td><%= (t("math")+"(#{group_exam.math})") unless group_exam.math == 0 %>
-              <%= (t("literature")+"(#{group_exam.literature})") unless group_exam.literature == 0 %>
-              <%= (t("english")+"(#{group_exam.english})") unless group_exam.english == 0 %>
-              <%= (t("physical")+"(#{group_exam.physical})") unless group_exam.physical == 0 %>
-              <%= (t("chemistry")+"(#{group_exam.chemistry})") unless group_exam.chemistry == 0 %>
-              <%= (t("biological")+"(#{group_exam.biological})") unless group_exam.biological == 0 %>
-              <%= (t("history")+"(#{group_exam.history})") unless group_exam.history == 0 %>
-              <%= (t("geography")+"(#{group_exam.geography})") unless group_exam.geography == 0 %>
-            </td>
-          <td>
-            <% if examinee_signed_in? && !register_time.nil? &&
-              !register_time.start_aspiration_1.nil? &&
-              Time.now >= register_time.start_aspiration_1 &&
-              Time.now <= register_time.end_aspiration_1 %>
-              <%= link_to "Dang ki", new_examinee_register_path(current_examinee,
-                major_id: @major, aspiration: 1,
-                group_exam_id: major_group_exam.group_exam_id),
-                class: "btn btn-primary" %>
-            <% end %>
-          </td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+  <div class="box box-primary">
+    <div class="box-body box-profile">
+      <table class="table table-bordered table-striped table-condensed major-table">
+        <thead>
+          <tr>
+            <th class="center">STT</th>
+            <th class="center"><%= t "product.group_exam" %></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% a = 0 %>
+          <% @major.major_group_exams.each_with_index do |major_group_exam, index| %>
+          <% group_exam = GroupExam.find_by id: major_group_exam.group_exam_id %>
+            <tr class="well">
+              <td><%= index+1 %></td>
+              <td><%= (t("math")+"(#{group_exam.math})") unless group_exam.math == 0 %>
+                  <%= (t("literature")+"(#{group_exam.literature})") unless
+                    group_exam.literature == 0 %>
+                  <%= (t("english")+"(#{group_exam.english})") unless
+                    group_exam.english == 0 %>
+                  <%= (t("physical")+"(#{group_exam.physical})") unless group_exam.physical == 0 %>
+                  <%= (t("chemistry")+"(#{group_exam.chemistry})") unless
+                    group_exam.chemistry == 0 %>
+                  <%= (t("biological")+"(#{group_exam.biological})") unless
+                    group_exam.biological == 0 %>
+                  <%= (t("history")+"(#{group_exam.history})") unless
+                    group_exam.history == 0 %>
+                  <%= (t("geography")+"(#{group_exam.geography})") unless
+                    group_exam.geography == 0 %>
+                </td>
+              <td>
+                <% if examinee_signed_in? && !register_time.nil? &&
+                  !register_time.start_aspiration_1.nil? &&
+                  Time.now >= register_time.start_aspiration_1 &&
+                  Time.now <= register_time.end_aspiration_1 %>
+                  <%= link_to "Dang ki", new_examinees_register_path(current_examinee,
+                    major_id: @major, aspiration: 1,
+                    group_exam_id: major_group_exam.group_exam_id),
+                    class: "btn btn-primary" %>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>

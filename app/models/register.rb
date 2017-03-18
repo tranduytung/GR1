@@ -13,7 +13,7 @@ class Register < ActiveRecord::Base
   private
   def reset_numbering_order
     count = examinee.registers.count + 1
-    examinee.registers.order(created_at: :ASC).each do |register|
+    examinee.registers.order(created_at: :DESC).each do |register|
       register.update_attributes numbering_order: (count -= 1)
       # count = count - 1
     end

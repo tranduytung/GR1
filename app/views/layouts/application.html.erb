@@ -7,14 +7,16 @@
     <%= csrf_meta_tags %>
     <%= render "layouts/shim" %>
   </head>
-  <body>
+  <body class="hold-transition skin-blue sidebar-mini">
+  <div class="wrapper">
     <%= render "layouts/header"%>
-    <div class="container">
+    <%= render "layouts/main_sidebar" %>
+    <div class="content-wrapper">
       <% flash.each do |message_type, message| %>
-        <div class="alert alert-<%= message_type %>"><%= message %></div>
+        <div class="alert w3-round-xxlarge alert-<%= message_type %>"><%= message %></div>
       <% end %>
       <%= yield %>
     </div>
-    <%= render "layouts/footer" %>
+  </div>
   </body>
 </html>

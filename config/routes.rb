@@ -69,15 +69,15 @@ Rails.application.routes.draw do
     resources :registers
   end
 
-  resources :examinees, only: :show do
-    resources :registers
-  end
   resources :universities, only: [:show, :index]
   resources :universities, only: [:show] do
     resources :majors, only: [:index, :show]
   end
 
-
+  namespace :examinees do
+    resources :registers, only: [:new, :index]
+  end
+  resources :examinees, only: :show
   root to: "static_pages#home"
   get "home" => "static_pages#home"
 
@@ -93,6 +93,7 @@ Rails.application.routes.draw do
       collection {get :export_file_excel}
     end
     resources :register_times, only: [:edit, :update]
+    root :to => "static_pages#index"
   end
 
   resources :searchs do

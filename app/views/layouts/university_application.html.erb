@@ -1,0 +1,22 @@
+<html>
+  <head>
+  <title><%= full_title yield :title %></title>
+    <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
+    <%= csrf_meta_tags %>
+    <%= render "layouts/shim" %>
+  </head>
+  <body class="hold-transition skin-blue sidebar-mini">
+  <div class="wrapper">
+    <%= render "layouts/university_header"%>
+    <%= render "layouts/university_sidebar" %>
+    <div class="content-wrapper">
+      <% flash.each do |message_type, message| %>
+        <div class="alert w3-round-xxlarge alert-<%= message_type %>"><%= message %></div>
+      <% end %>
+      <%= yield %>
+    </div>
+  </div>
+  </body>
+</html>

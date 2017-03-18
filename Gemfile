@@ -26,6 +26,8 @@ gem "ransack"
 gem "chartkick"
 gem 'fusioncharts-rails'
 gem 'config'
+gem 'rails-assets-adminlte', source: 'https://rails-assets.org'
+gem 'font-awesome-sass'
 
 group :development, :test do
   gem "byebug"
