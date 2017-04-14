@@ -1,0 +1,21 @@
+wb = xlsx_package.workbook
+wb.add_worksheet(name: "Major") do |sheet|
+    sheet.add_row ["code", "math", "literature", "english", "physical",
+      "chemistry", "biological", "history", "geography", "benchmark"]
+    @majors.each do |major|
+      major.major_group_exams.each do |major_group_exam|
+        group_exam = GroupExam.find_by id: major_group_exam.group_exam_id
+        sheet.add_row [
+          major.code,
+          group_exam.math,
+          group_exam.literature,
+          group_exam.english,
+          group_exam.physical,
+          group_exam.chemistry,
+          group_exam.biological,
+          group_exam.history,
+          group_exam.geography,
+          major_group_exam.cal_benchmark_score]
+        end
+    end
+end

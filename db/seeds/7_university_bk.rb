@@ -8,11 +8,7 @@ kt11 = bka.majors.create(
   code: "KT11",
   year: 2017,
   target: 200,
-  benchmark1: rand(10)+17,
-  benchmark2: rand(10)+10,
-  benchmark3: rand(10)+5,
   register_status: 1,
-  last_year_benchmark: rand(10)+10
 )
 kt11.major_infos.create(
   name: "Kỹ thuật cơ điện tử")
@@ -27,11 +23,7 @@ kt12 = bka.majors.create(
   code: "KT12",
   year: 2017,
   target: 750,
-  benchmark1: rand(10)+17,
-  benchmark2: rand(10)+10,
-  benchmark3: rand(10)+5,
   register_status: 1,
-  last_year_benchmark: rand(10)+10
 )
 kt12.major_infos.create(
   name: "Kỹ thuật cơ khí (cơ khí chế tạo và cơ khí động lực)")
@@ -50,11 +42,7 @@ kt13 = bka.majors.create(
   code: "KT13",
   year: 2017,
   target: 150,
-  benchmark1: rand(10)+17,
-  benchmark2: rand(10)+10,
-  benchmark3: rand(10)+5,
   register_status: 1,
-  last_year_benchmark: rand(10)+10
 )
 kt13.major_infos.create(
   name: "Kỹ thuật nhiệt")
@@ -69,11 +57,7 @@ kt14 = bka.majors.create(
   code: "KT14",
   year: 2017,
   target: 180,
-  benchmark1: rand(10)+17,
-  benchmark2: rand(10)+10,
-  benchmark3: rand(10)+5,
   register_status: 1,
-  last_year_benchmark: rand(10)+10
 )
 kt14.major_infos.create(
   name: "Kỹ thuật vật liệu")
@@ -90,11 +74,7 @@ cn1 = bka.majors.create(
   code: "CN1",
   year: 2017,
   target: 300,
-  benchmark1: rand(10)+17,
-  benchmark2: rand(10)+10,
-  benchmark3: rand(10)+5,
   register_status: 1,
-  last_year_benchmark: rand(10)+10
 )
 cn1.major_infos.create(
   name: "Công nghệ chế tạo máy")
@@ -113,11 +93,7 @@ kt21 = bka.majors.create(
   code: "KT21",
   year: 2017,
   target: 450,
-  benchmark1: rand(10)+17,
-  benchmark2: rand(10)+10,
-  benchmark3: rand(10)+5,
   register_status: 1,
-  last_year_benchmark: rand(10)+10
 )
 kt21.major_infos.create(
   name: "Kỹ thuật điện tử-truyền thông")
@@ -132,11 +108,7 @@ kt22 = bka.majors.create(
   code: "KT22",
   year: 2017,
   target: 400,
-  benchmark1: rand(10)+17,
-  benchmark2: rand(10)+10,
-  benchmark3: rand(10)+5,
   register_status: 1,
-  last_year_benchmark: rand(10)+10
 )
 kt22.major_infos.create(
   name: "Kỹ thuật máy tính")
@@ -161,11 +133,7 @@ kt23 = bka.majors.create(
   code: "KT23",
   year: 2017,
   target: 150,
-  benchmark1: rand(10)+17,
-  benchmark2: rand(10)+10,
-  benchmark3: rand(10)+5,
   register_status: 1,
-  last_year_benchmark: rand(10)+10
 )
 kt23.major_infos.create(
   name: "Toán-Tin")
@@ -182,11 +150,7 @@ kt24 = bka.majors.create(
   code: "KT24",
   year: 2017,
   target: 470,
-  benchmark1: rand(10)+17,
-  benchmark2: rand(10)+10,
-  benchmark3: rand(10)+5,
   register_status: 1,
-  last_year_benchmark: rand(10)+10
 )
 kt24.major_infos.create(
   name: "Kỹ thuật Điện-điện tử")
@@ -203,11 +167,7 @@ cn2 = bka.majors.create(
   code: "CN2",
   year: 2017,
   target: 400,
-  benchmark1: rand(10)+17,
-  benchmark2: rand(10)+10,
-  benchmark3: rand(10)+5,
   register_status: 1,
-  last_year_benchmark: rand(10)+10
 )
 cn2.major_infos.create(
   name: "Công nghệ KT Điều khiển và tự động hóa")
@@ -228,11 +188,7 @@ kt31 = bka.majors.create(
   code: "KT31",
   year: 2017,
   target: 750,
-  benchmark1: rand(10)+17,
-  benchmark2: rand(10)+10,
-  benchmark3: rand(10)+5,
   register_status: 1,
-  last_year_benchmark: rand(10)+10
 )
 kt31.major_infos.create(
   name: "Công nghệ sinh học")
@@ -258,11 +214,7 @@ kt32 = bka.majors.create(
   code: "KT32",
   year: 2017,
   target: 50,
-  benchmark1: rand(10)+17,
-  benchmark2: rand(10)+10,
-  benchmark3: rand(10)+5,
   register_status: 1,
-  last_year_benchmark: rand(10)+10
 )
 kt32.major_infos.create(
   name: "Hóa học (cử nhân)")
@@ -280,11 +232,7 @@ kt33 = bka.majors.create(
   code: "KT33",
   year: 2017,
   target: 50,
-  benchmark1: rand(10)+17,
-  benchmark2: rand(10)+10,
-  benchmark3: rand(10)+5,
   register_status: 1,
-  last_year_benchmark: rand(10)+10
 )
 kt33.major_infos.create(
   name: "Kỹ thuật in và truyền thông")
@@ -301,11 +249,7 @@ cn3 = bka.majors.create(
   code: "CN3",
   year: 2017,
   target: 50,
-  benchmark1: rand(10)+17,
-  benchmark2: rand(10)+10,
-  benchmark3: rand(10)+5,
   register_status: 1,
-  last_year_benchmark: rand(10)+10
 )
 cn3.major_infos.create(
   name: "Công nghệ thực phẩm")
@@ -323,11 +267,7 @@ kt41 = bka.majors.create(
   code: "KT41",
   year: 2017,
   target: 170,
-  benchmark1: rand(10)+17,
-  benchmark2: rand(10)+10,
-  benchmark3: rand(10)+5,
   register_status: 1,
-  last_year_benchmark: rand(10)+10
 )
 kt41.major_infos.create(
   name: "Kỹ thuật dệt")
@@ -346,11 +286,7 @@ kt42 = bka.majors.create(
   code: "KT42",
   year: 2017,
   target: 50,
-  benchmark1: rand(10)+17,
-  benchmark2: rand(10)+10,
-  benchmark3: rand(10)+5,
   register_status: 1,
-  last_year_benchmark: rand(10)+10
 )
 kt42.major_infos.create(
   name: "Sư phạm kỹ thuật công nghiệp (cử nhân)")
@@ -364,11 +300,7 @@ kt51 = bka.majors.create(
   code: "KT51",
   year: 2017,
   target: 120,
-  benchmark1: rand(10)+17,
-  benchmark2: rand(10)+10,
-  benchmark3: rand(10)+5,
   register_status: 1,
-  last_year_benchmark: rand(10)+10
 )
 kt51.major_infos.create(
   name: "Vật lý kỹ thuật")
@@ -382,11 +314,7 @@ kt52 = bka.majors.create(
   code: "KT52",
   year: 2017,
   target: 100,
-  benchmark1: rand(10)+17,
-  benchmark2: rand(10)+10,
-  benchmark3: rand(10)+5,
   register_status: 1,
-  last_year_benchmark: rand(10)+10
 )
 kt52.major_infos.create(
   name: "Kỹ thuật hạt nhân")
@@ -401,11 +329,7 @@ kq1 = bka.majors.create(
   code: "KQ1",
   year: 2017,
   target: 160,
-  benchmark1: rand(10)+17,
-  benchmark2: rand(10)+10,
-  benchmark3: rand(10)+5,
   register_status: 1,
-  last_year_benchmark: rand(10)+10
 )
 kq1.major_infos.create(
   name: "Kinh tế công nghiệp")
@@ -424,11 +348,7 @@ kq2 = bka.majors.create(
   code: "KQ2",
   year: 2017,
   target: 80,
-  benchmark1: rand(10)+17,
-  benchmark2: rand(10)+10,
-  benchmark3: rand(10)+5,
   register_status: 1,
-  last_year_benchmark: rand(10)+10
 )
 kq2.major_infos.create(
   name: "Quản trị kinh doanh")
@@ -445,11 +365,7 @@ kq3 = bka.majors.create(
   code: "KQ3",
   year: 2017,
   target: 80,
-  benchmark1: rand(10)+17,
-  benchmark2: rand(10)+10,
-  benchmark3: rand(10)+5,
   register_status: 1,
-  last_year_benchmark: rand(10)+10
 )
 kq3.major_infos.create(
   name: "Kế toán")
@@ -468,11 +384,7 @@ ta1 = bka.majors.create(
   code: "TA1",
   year: 2017,
   target: 80,
-  benchmark1: rand(10)+17,
-  benchmark2: rand(10)+10,
-  benchmark3: rand(10)+5,
   register_status: 1,
-  last_year_benchmark: rand(10)+10
 )
 ta1.major_infos.create(
   name: "Tiếng Anh KHKT và công nghệ")
@@ -483,11 +395,7 @@ ta2 = bka.majors.create(
   code: "TA2",
   year: 2017,
   target: 80,
-  benchmark1: rand(10)+17,
-  benchmark2: rand(10)+10,
-  benchmark3: rand(10)+5,
   register_status: 1,
-  last_year_benchmark: rand(10)+10
 )
 ta2.major_infos.create(
   name: "Tiếng Anh chuyên nghiệp quốc tế")
@@ -498,11 +406,7 @@ tt1 = bka.majors.create(
   code: "TT1",
   year: 2017,
   target: 120,
-  benchmark1: rand(10)+17,
-  benchmark2: rand(10)+10,
-  benchmark3: rand(10)+5,
   register_status: 1,
-  last_year_benchmark: rand(10)+10
 )
 tt1.major_infos.create(
   name: "Chương trình tiên tiến ngành Điện-Điện tử")
@@ -512,15 +416,12 @@ tt1.major_group_exams.create(
 tt1.major_group_exams.create(
   group_exam_id: 3
   )
+
 tt2 = bka.majors.create(
   code: "TT2",
   year: 2017,
   target: 80,
-  benchmark1: rand(10)+17,
-  benchmark2: rand(10)+10,
-  benchmark3: rand(10)+5,
   register_status: 1,
-  last_year_benchmark: rand(10)+10
 )
 tt2.major_infos.create(
   name: "Chương trình tiên tiến ngành Cơ Điện tử")
@@ -534,11 +435,7 @@ tt3 = bka.majors.create(
   code: "TT3",
   year: 2017,
   target: 40,
-  benchmark1: rand(10)+17,
-  benchmark2: rand(10)+10,
-  benchmark3: rand(10)+5,
   register_status: 1,
-  last_year_benchmark: rand(10)+10
 )
 tt3.major_infos.create(
   name: "Chương trình tiên tiến ngành Khoa học và Kỹ thuật vật liệu")
@@ -552,11 +449,7 @@ tt4 = bka.majors.create(
   code: "TT4",
   year: 2017,
   target: 50,
-  benchmark1: rand(10)+17,
-  benchmark2: rand(10)+10,
-  benchmark3: rand(10)+5,
   register_status: 1,
-  last_year_benchmark: rand(10)+10
 )
 tt4.major_infos.create(
   name: "Chương trình tiên tiến ngành Kỹ thuật Y sinh")
@@ -570,11 +463,7 @@ tt5 = bka.majors.create(
   code: "TT5",
   year: 2017,
   target: 180,
-  benchmark1: rand(10)+17,
-  benchmark2: rand(10)+10,
-  benchmark3: rand(10)+5,
   register_status: 1,
-  last_year_benchmark: rand(10)+10
 )
 tt5.major_infos.create(
   name: "Chương trình tiên tiến Công nghệ thông tin Việt-Nhật")
@@ -590,11 +479,7 @@ qt11 = bka.majors.create(
   code: "QT11",
   year: 2017,
   target: 80,
-  benchmark1: rand(10)+17,
-  benchmark2: rand(10)+10,
-  benchmark3: rand(10)+5,
   register_status: 1,
-  last_year_benchmark: rand(10)+10
 )
 qt11.major_infos.create(
   name: "Cơ điện tử - NUT (ĐH Nagaoka - Nhật Bản)")
@@ -611,11 +496,7 @@ qt12 = bka.majors.create(
   code: "QT12",
   year: 2017,
   target: 50,
-  benchmark1: rand(10)+17,
-  benchmark2: rand(10)+10,
-  benchmark3: rand(10)+5,
   register_status: 1,
-  last_year_benchmark: rand(10)+10
 )
 qt12.major_infos.create(
   name: "Điện tử -Viễn thông - LUH (ĐH Leibniz Hannover - Đức)")
@@ -632,11 +513,7 @@ qt13 = bka.majors.create(
   code: "QT13",
   year: 2017,
   target: 50,
-  benchmark1: rand(10)+17,
-  benchmark2: rand(10)+10,
-  benchmark3: rand(10)+5,
   register_status: 1,
-  last_year_benchmark: rand(10)+10
 )
 qt13.major_infos.create(
   name: "Hệ thống thông tin – G.INP (ĐH Grenoble – Pháp)")
@@ -653,11 +530,7 @@ qt14 = bka.majors.create(
   code: "QT14",
   year: 2017,
   target: 50,
-  benchmark1: rand(10)+17,
-  benchmark2: rand(10)+10,
-  benchmark3: rand(10)+5,
   register_status: 1,
-  last_year_benchmark: rand(10)+10
 )
 qt14.major_infos.create(
   name: "Công nghệ thông tin - LTU (ĐH La Trobe – Úc)")
@@ -674,11 +547,7 @@ qt15 = bka.majors.create(
   code: "QT15",
   year: 2017,
   target: 50,
-  benchmark1: rand(10)+17,
-  benchmark2: rand(10)+10,
-  benchmark3: rand(10)+5,
   register_status: 1,
-  last_year_benchmark: rand(10)+10
 )
 qt15.major_infos.create(
   name: "Kỹ thuật phần mềm – VUW IT (ĐH Victoria - New Zealand)")
@@ -695,11 +564,7 @@ qt21 = bka.majors.create(
   code: "QT21",
   year: 2017,
   target: 50,
-  benchmark1: rand(10)+17,
-  benchmark2: rand(10)+10,
-  benchmark3: rand(10)+5,
   register_status: 1,
-  last_year_benchmark: rand(10)+10
 )
 qt21.major_infos.create(
   name: "Quản trị kinh doanh - VUW (ĐH Victoria - New Zealand)")
@@ -716,11 +581,7 @@ qt31 = bka.majors.create(
   code: "QT31",
   year: 2017,
   target: 50,
-  benchmark1: rand(10)+17,
-  benchmark2: rand(10)+10,
-  benchmark3: rand(10)+5,
   register_status: 1,
-  last_year_benchmark: rand(10)+10
 )
 qt31.major_infos.create(
   name: "Quản trị kinh doanh – TROY BA (ĐH Troy - Hoa Kỳ)")
@@ -737,11 +598,7 @@ qt32 = bka.majors.create(
   code: "QT32",
   year: 2017,
   target: 50,
-  benchmark1: rand(10)+17,
-  benchmark2: rand(10)+10,
-  benchmark3: rand(10)+5,
   register_status: 1,
-  last_year_benchmark: rand(10)+10
 )
 qt32.major_infos.create(
   name: "Khoa học máy tính – TROY - IT (ĐH Troy - Hoa Kỳ)")
@@ -758,11 +615,7 @@ qt33 = bka.majors.create(
   code: "QT33",
   year: 2017,
   target: 50,
-  benchmark1: rand(10)+17,
-  benchmark2: rand(10)+10,
-  benchmark3: rand(10)+5,
   register_status: 1,
-  last_year_benchmark: rand(10)+10
 )
 qt33.major_infos.create(
   name: "Quản trị kinh doanh - UPMF (ĐH Pierre Mendes France – Pháp)")
@@ -779,11 +632,7 @@ qt34 = bka.majors.create(
   code: "QT34",
   year: 2017,
   target: 50,
-  benchmark1: rand(10)+17,
-  benchmark2: rand(10)+10,
-  benchmark3: rand(10)+5,
   register_status: 1,
-  last_year_benchmark: rand(10)+10
 )
 qt34.major_infos.create(
   name: "Quản lý công nghiệp Chuyên ngành Kỹ thuật hệ thống công nghiệp(Industrial System Engineering)")
