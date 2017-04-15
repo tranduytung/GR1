@@ -40,10 +40,14 @@ Examinee.graduated.order(:created_at).each do |examinee|
   while major_id_3 == major_id_4
     major_id_4 = rand(m_2)
   end
-  group_exam_id_1 = university_1.majors[major_id_1].major_group_exams.first.group_exam_id
-  group_exam_id_2 = university_1.majors[major_id_2].major_group_exams.last.group_exam_id
-  group_exam_id_3 = university_2.majors[major_id_3].major_group_exams.first.group_exam_id
-  group_exam_id_4 = university_2.majors[major_id_4].major_group_exams.last.group_exam_id
+  major_group_exams_1 = university_1.majors[major_id_1].major_group_exams.order("RANDOM()")
+  major_group_exams_2 = university_1.majors[major_id_2].major_group_exams.order("RANDOM()")
+  major_group_exams_3 = university_2.majors[major_id_3].major_group_exams.order("RANDOM()")
+  major_group_exams_4 = university_2.majors[major_id_4].major_group_exams.order("RANDOM()")
+  group_exam_id_1 = major_group_exams_1.first.group_exam_id
+  group_exam_id_2 = major_group_exams_2.first.group_exam_id
+  group_exam_id_3 = major_group_exams_3.first.group_exam_id
+  group_exam_id_4 = major_group_exams_4.first.group_exam_id
 
   group_exam_1 = GroupExam.find_by id: group_exam_id_1
   group_exam_2 = GroupExam.find_by id: group_exam_id_2

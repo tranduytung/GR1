@@ -53,6 +53,10 @@ Rails.application.routes.draw do
   end
 
   namespace :universities do
+    resources :benchmarks do
+      collection {get :export_file_excel}
+      collection {post :import_file_excel}
+    end
     resources :majors do
       collection {get :recomment_benchmarks}
       collection {get :export_file_excel}
