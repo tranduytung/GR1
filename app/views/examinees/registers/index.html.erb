@@ -13,7 +13,12 @@
           <th class="center"><%= "Status" %></th>
           <th class="center"><%= "Group Exam" %></th>
           <th class="center"><%= "Score" %></th>
-          <th class="center"><%= t "product.action" %></th>
+          <% if !register_time.nil? &&
+            !register_time.start_aspiration_1.nil? &&
+            Time.now >= register_time.start_aspiration_1 &&
+            Time.now <= register_time.end_aspiration_1 %>
+            <th class="center"><%= t "product.action" %></th>
+          <% end %>
         </tr>
       </thead>
       <tbody>
@@ -22,9 +27,16 @@
         <% end %>
       </tbody>
     </table>
-    <div class="text-center">
-      <%= f.submit "Submit", class: "btn btn-primary" %>
-    </div>
+    <% if !register_time.nil? &&
+      !register_time.start_aspiration_1.nil? &&
+      Time.now >= register_time.start_aspiration_1 &&
+      Time.now <= register_time.end_aspiration_1 %>
+
+      <div class="text-center">
+        <%= f.submit "Submit", class: "btn btn-primary" %>
+      </div>
+
+    <% end %>
   <% end %>
   </div>
 </div>
