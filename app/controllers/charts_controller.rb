@@ -4,8 +4,8 @@ class ChartsController < ApplicationController
 
   def graduated
     # render json: Examinee.group(:graduated).count
-    result = [["Graduate", Examinee.all.where(graduated: true).count],
-    ["Not Graduate", Examinee.all.where(graduated: false).count]]
+    result = [[t("chart.graduate"), Examinee.all.where(graduated: true).count],
+    [t("chart.not_graduate"), Examinee.all.where(graduated: false).count]]
     render json: result
   end
 
@@ -59,7 +59,7 @@ class ChartsController < ApplicationController
         dataSource: {
           chart: {
             theme: "fint",
-            numberPrefix: "Thi sinh: ",
+            numberPrefix: t("chart.examinee"),
             valueBorderColor: "#666666",
             valueBorderAlpha: "100",
             valueBorderPadding: "5",
@@ -71,11 +71,11 @@ class ChartsController < ApplicationController
             valueFontSize: "15"
         },
         data: [{
-            label: "Graduated",
+            label: t("chart.graduate"),
             color: "008ee4",
             value: Examinee.all.where(graduated: true).count
             },{
-            label: "Not Graduated",
+            label: t("chart.not_graduate"),
             color: "f8bd19",
             value: Examinee.all.where(graduated: false).count
         }]
@@ -101,12 +101,12 @@ class ChartsController < ApplicationController
       dataFormat: 'json',
       dataSource: {
         chart: {
-          subCaptio: "Nam 2016",
+          subCaptio: "Năm 2016",
           captionFontSize: "30",
           subcaptionFontSize: "20",
           subcaptionFontBold: "0",
-          xaxisname: "Vung dia ly",
-          yaxisname: "So thi sinh",
+          xaxisname: "Tỉnh/ Thành phố",
+          yaxisname: "Thí sinh",
           showvalues: "1",
           numberprefix: "",
           legendBgAlpha: "0",
@@ -138,12 +138,12 @@ class ChartsController < ApplicationController
           }],
         dataset: [
           {
-            seriesname: "Graduated",
+            seriesname: t("chart.graduate"),
             color: "008ee4",
             data: @graduated_value
           },
           {
-            seriesname: "Not Graduated",
+            seriesname: t("chart.not_graduate"),
             color: "f8bd19",
             data: @not_graduated_value
           }

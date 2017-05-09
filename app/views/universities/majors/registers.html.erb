@@ -1,11 +1,13 @@
 <div class="box box-primary">
   <div class="box-body box-profile">
     <h2 class="text-center" >Registers NV1</h2>
-    <h3>Number: <%= @major.registers.count %> examinees</h3>
-    <h3>Target: <%= @major.target %> examinees</h3>
+    <h4><%= t("major.number") %>: <%= @major.registers.count %>
+      <%= t("examinee.examinees") %></h4>
+    <h4><%= t("major.target") %>: <%= @major.target %>
+      <%= t("examinee.examinees") %></h4>
     <% @major.major_group_exams.each do |major_group_exam| %>
       <% group_exam = GroupExam.find_by id: major_group_exam.group_exam_id %>
-      <h3><%= (t("math")+"(#{group_exam.math})") unless group_exam.math == 0 %>
+      <h4><%= (t("math")+"(#{group_exam.math})") unless group_exam.math == 0 %>
       <%= (t("literature")+"(#{group_exam.literature})") unless group_exam.literature == 0 %>
       <%= (t("english")+"(#{group_exam.english})") unless group_exam.english == 0 %>
       <%= (t("physical")+"(#{group_exam.physical})") unless group_exam.physical == 0 %>
@@ -13,13 +15,13 @@
       <%= (t("biological")+"(#{group_exam.biological})") unless group_exam.biological == 0 %>
       <%= (t("history")+"(#{group_exam.history})") unless group_exam.history == 0 %>
       <%= (t("geography")+"(#{group_exam.geography})") unless group_exam.geography == 0 %>
-      Gom co
+      <%= t("include") %>
       <%= @major.registers.where(group_exam_id: major_group_exam.group_exam_id).count %>
-      thi sinh dang ki
-      </h3>
+      <%= t("examinee_register") %>
+      </h4>
     <% end %>
-    <%= link_to "export_csv", export_registers_universities_major_path(@major,
-      format: 'xlsx'), class: "btn btn-primary" %>
+    <%= link_to t("export_excel"), export_registers_universities_major_path(
+      @major, format: 'xlsx'), class: "btn btn-primary" %>
   </div>
 </div>
 <div class="box box-primary">
@@ -27,13 +29,14 @@
     <table class="table table-bordered margin-0">
       <thead>
         <tr>
-          <th class="center"><%= t "people_id" %></th>
-          <th class="center"><%= t "student_id" %></th>
-          <th class="center"><%= t "name" %></th>
-          <th class="center"><%= t "major_code" %></th>
-          <th class="center"><%= t "aspiration" %></th>
-          <th class="center"><%= t "status" %></th>
-          <th class="center"><%= t "year" %></th>
+          <th class="center"><%= t "examinee.people_id" %></th>
+          <th class="center"><%= t "examinee.student_id" %></th>
+          <th class="center"><%= t "examinee.name" %></th>
+          <th class="center"><%= t "major.code" %></th>
+          <th class="center"><%= t "major.group_exam" %></th>
+          <th class="center"><%= t "major.aspiration" %></th>
+          <th class="center"><%= t "register.status" %></th>
+          <th class="center"><%= t "major.year" %></th>
         </tr>
       </thead>
       <tbody>

@@ -6,21 +6,27 @@
         <li>
           <% @register_time = RegisterTime.find_by year: Time.now.year %>
           <%= link_to edit_admins_register_time_path(@register_time) do %>
-            <i class="fa fa-dashboard"></i> <span>Quan li thoi gian dang ki</span>
+            <i class="fa fa-dashboard"></i> <span><%= t("admin.manage_time") %></span>
           <% end %>
         </li>
         <li>
           <%= link_to admins_examinees_path do %>
-            <i class="fa fa-dashboard"></i> <span>Quan li thi sinh</span>
+            <i class="fa fa-dashboard"></i>
+            <span><%= t("admin.manage_examinee") %></span>
           <% end %>
         </li>
         <li>
           <%= link_to admins_universities_path do %>
-            <i class="fa fa-dashboard"></i> <span>Quan li truong dai hoc</span>
+            <i class="fa fa-dashboard"></i>
+            <span><%= t("admin.manage_university") %></span>
           <% end %>
         </li>
-
         <li>
+          <%= link_to "" do %>
+            <i class="fa fa-pie-chart"></i><span>Thống kê tốt nghiệp</span>
+          <% end %>
+        </li>
+        <!-- <li>
           <%= link_to by_graduated_charts_path do %>
             <i class="fa fa-pie-chart"></i><span>Ti le tot nghiep</span>
           <% end %>
@@ -50,7 +56,7 @@
               <% end %>
             <li>
           </ul>
-        </li>
+        </li> -->
       </ul>
     </section>
   <% else %>

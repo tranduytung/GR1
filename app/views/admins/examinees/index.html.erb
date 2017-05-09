@@ -4,22 +4,23 @@
   <div class="col-md-4">
     <div class="box box-primary">
       <div class="box-body box-profile">
-      Co tong cong: <%= Examinee.count %> thi sinh
-
+        <%= t("admin.examinee.count_all") %>
+        <%= Examinee.count %>
+        <%= t("admin.examinee.examinees")%>
       </div>
     </div>
     <div class="box box-primary">
       <div class="box-body box-profile">
-        <%= link_to "export_csv", export_file_excel_admins_examinees_path(format: 'xlsx'),
-          class: "btn btn-primary" %>
+        <%= link_to t("export_excel"), export_file_excel_admins_examinees_path(
+          format: 'xlsx'), class: "btn btn-primary" %>
         <hr>
         <%= form_tag import_file_excel_admins_examinees_path, class:'form-inline', multipart: true do %>
           <div class="form-group">
-            <%= label_tag 'select_file_excel', nil, class: 'sr-only' %>
+            <%= label_tag t('select_file_excel'), nil, class: 'sr-only' %>
             <%= file_field_tag :file , class: 'btn btn-default' %>
             <br>
-            <%= label_tag 'import_excel', nil, class: 'sr-only' %>
-            <%= submit_tag "Import Excel" , class: 'btn btn-primary' %>
+            <%= label_tag t('import_excel'), nil, class: 'sr-only' %>
+            <%= submit_tag t("import_excel") , class: 'btn btn-primary' %>
           </div>
         <% end %>
       </div>

@@ -2,23 +2,23 @@
   <%= render "shared/error_messages", object: @major %>
   <div class="row">
   <div class="col-md-6">
-    <%= f.label :code %>
+    <%= f.label :code, t("major.code") %>
     <%= f.text_field :code, autofocus: true, class: "form-control" %>
 
-    <%= f.label :year %>
+    <%= f.label :year, t("major.year") %>
     <%= f.text_field :year, autofocus: true, class: "form-control",
       disabled: true %>
 
-    <%= f.label :target %>
+    <%= f.label :target, t("major.target") %>
     <%= f.number_field :target, class:'form-control' %>
   </div>
   <div class="col-md-6">
-    <%= f.label :major_infos, "Majors'name" %>
+    <%= f.label :major_infos, t("major.name") %>
     <table class="table table-bordered table-striped table-condensed major-table">
       <thead>
         <tr>
-          <th class="center"><%= t "product.name" %></th>
-          <th class="center"><%= t "product.action" %></th>
+          <th class="center"><%= t "name" %></th>
+          <th class="center"><%= t "major.action" %></th>
         </tr>
       </thead>
       <tbody>
@@ -27,11 +27,11 @@
         <% end %>
       </tbody>
     </table>
-    <%= link_to_add_row "Them chuyen nganh", f, :major_infos %>
+    <%= link_to_add_row t("major.add_row"), f, :major_infos %>
   </div>
   </div>
   <br>
   <div class="text-center">
-    <%= f.submit "Edit Major", class: "btn btn-primary" %>
+    <%= f.submit t("major.save_change"), class: "btn btn-primary" %>
   </div>
 <% end %>

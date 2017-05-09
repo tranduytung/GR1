@@ -6,7 +6,7 @@
         <%= f.select :major_id, options_from_collection_for_select(@majors, :id, :code),
           {}, class: "form-control" %>
         <div class="actions center">
-          <%= f.submit "Check", class: "btn btn-primary" %>
+          <%= f.submit t("check"), class: "btn btn-primary" %>
         </div>
       <% end %>
     </div>
@@ -18,7 +18,7 @@
           <%= index+1 %>- <%= major_info.name %>
           <hr>
         <% end %>
-        Target: <%= @major.target %>
+        <%= t("major.target") %>: <%= @major.target %>
       <% end %>
     </div>
   </div>
@@ -43,8 +43,8 @@
           <table class="table table-bordered margin-0">
             <thead>
               <tr>
-                <th class="center">Score</th>
-                <th class="center">number</th>
+                <th class="center"><%= t("major.score") %></th>
+                <th class="center"><%= t("major.number") %></th>
               </tr>
             </thead>
             <!-- <tbody>

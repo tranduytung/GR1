@@ -49,7 +49,7 @@
     <%= major.registers.where(status: 2).count %>
   </td>
   <td>
-    <%= link_to t("benchmark.show"), "#",
+    <%= link_to t("major.show"), universities_major_path(major),
       class: "btn btn-info icon-trash icon-white" %>
   </td>
 </tr>

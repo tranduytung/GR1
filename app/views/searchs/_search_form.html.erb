@@ -2,24 +2,29 @@
   <div class="box-body box-profile">
     <%= search_form_for @search, url: major_searchs_path do |f| %>
       <div>
-        <%= f.label :university_code_cont, "Ma Truong"%>
-        <%= f.text_field :university_code_cont, placeholder:
-          "Nhap ma truong dai hoc. vd: bka", class: "form-control" %>
+        <%= f.label :major_code_cont, t("major.code") %>
+        <%= f.text_field :major_code_cont,
+          placeholder: t("major.input_code"), class: "form-control" %>
       </div>
-      <br>
       <div>
-        <%= f.label :university_name_cont, "Ten Truong"%>
-        <%= f.text_field :university_name_cont, placeholder:
-          "Nhap ten truong dai hoc", class: "form-control" %>
-      </div>
-      <br>
-      <div>
-        <%= f.label :name_cont, "Ten Chuyen nganh"%>
+        <%= f.label :name_cont, t("major.name") %>
         <%= f.text_field :name_cont,
-          placeholder: "Nhap ten chuyen nganh", class: "form-control" %>
+          placeholder: t("major.input_name"), class: "form-control" %>
+      </div>
+      <div>
+        <%= f.label :university_code_cont, t("university.code") %>
+        <%= f.text_field :university_code_cont, placeholder:
+          "Nhập mã trường đại học. Vd: bka", class: "form-control" %>
       </div>
       <br>
-      <%= f.submit "Search", class: "btn btn-primary"%>
+      <div>
+        <%= f.label :university_name_cont, t("university.name") %>
+        <%= f.text_field :university_name_cont, placeholder:
+          "Nhập tên trường đại học", class: "form-control" %>
+      </div>
+      <br>
+      <br>
+      <%= f.submit t("search_major"), class: "btn btn-primary"%>
     <% end %>
   </div>
 </div>
