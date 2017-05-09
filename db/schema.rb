@@ -130,14 +130,16 @@ ActiveRecord::Schema.define(version: 20161218140909) do
 
   create_table "register_times", force: :cascade do |t|
     t.integer  "year"
+    t.datetime "start_university_manage"
+    t.datetime "end_university_manage"
     t.datetime "start_aspiration_1"
     t.datetime "end_aspiration_1"
-    t.datetime "start_aspiration_2"
-    t.datetime "end_aspiration_2"
-    t.datetime "start_aspiration_3"
-    t.datetime "end_aspiration_3"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "start_update_benchmark_1"
+    t.datetime "end_update_benchmark_1"
+    t.datetime "start_admission_1"
+    t.datetime "end_admission_1"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
   create_table "registers", force: :cascade do |t|
