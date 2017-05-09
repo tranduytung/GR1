@@ -1,8 +1,19 @@
 <%= form_for [:admins, @register_time] do |f| %>
   <%= render "shared/error_messages", object: @register_time %>
-
+  <div class="col-md-8 col-md-offset-2">
   <%= f.number_field :year, value: Time.now.year, class: "form-control text-center", disabled: true %>
-  <div class="col-md-4">
+  </div>
+  <div class="col-md-8 col-md-offset-2">
+    <div class="col-md-6">
+      <%= f.label :start_university_manage %>
+      <%= f.date_field :start_university_manage, class: "form-control" %>
+    </div>
+    <div class="col-md-6">
+      <%= f.label :end_university_manage %>
+      <%= f.date_field :end_university_manage, class: "form-control" %>
+    </div>
+  </div>
+  <div class="col-md-8 col-md-offset-2">
     <div class="col-md-6">
       <%= f.label :start_aspiration_1 %>
       <%= f.date_field :start_aspiration_1, class: "form-control" %>
@@ -12,26 +23,27 @@
       <%= f.date_field :end_aspiration_1, class: "form-control" %>
     </div>
   </div>
-  <div class="col-md-4">
+  <div class="col-md-8 col-md-offset-2">
     <div class="col-md-6">
-      <%= f.label :start_aspiration_2 %>
-      <%= f.date_field :start_aspiration_2, class: "form-control" %>
+      <%= f.label :start_update_benchmark_1 %>
+      <%= f.date_field :start_update_benchmark_1, class: "form-control" %>
     </div>
     <div class="col-md-6">
-      <%= f.label :end_aspiration_2 %>
-      <%= f.date_field :end_aspiration_2, class: "form-control" %>
-    </div>
-  </div>
-  <div class="col-md-4">
-    <div class="col-md-6">
-      <%= f.label :start_aspiration_3 %>
-      <%= f.date_field :start_aspiration_3, class: "form-control" %>
-    </div>
-    <div class="col-md-6">
-      <%= f.label :end_aspiration_3 %>
-      <%= f.date_field :end_aspiration_3, class: "form-control" %>
+      <%= f.label :end_update_benchmark_1 %>
+      <%= f.date_field :end_update_benchmark_1, class: "form-control" %>
     </div>
   </div>
-  <br>
+  <div class="col-md-8 col-md-offset-2">
+    <div class="col-md-6">
+      <%= f.label :start_admission_1 %>
+      <%= f.date_field :start_admission_1, class: "form-control" %>
+    </div>
+    <div class="col-md-6">
+      <%= f.label :end_admission_1 %>
+      <%= f.date_field :end_admission_1, class: "form-control" %>
+    </div>
+  </div>
+  <div class="col-md-8 col-md-offset-2">
   <%= f.submit "Submit", class: "btn btn-primary" %>
+  </div>
 <% end %>
