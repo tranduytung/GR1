@@ -19,8 +19,12 @@
     <%= (t("geography")+"(#{group_exam.geography})") unless group_exam.geography == 0 %>
   </td>
   <td><%= ff.object.review_score %></td>
-
-  <%= ff.hidden_field :_destroy, class: 'check-remove' %>
   <%= ff.hidden_field :major_id, value: ff.object.major.id %>
-  <td><%= link_to t(:remove), '#', class: 'remove_row' %></td>
+  <% if !register_time.nil? &&
+    !register_time.start_aspiration_1.nil? &&
+    Time.now >= register_time.start_aspiration_1 &&
+    Time.now <= register_time.end_aspiration_1 %>
+    <%= ff.hidden_field :_destroy, class: 'check-remove' %>
+    <td><%= link_to t(:remove), '#', class: 'remove_row' %></td>
+  <% end %>
 </tr>

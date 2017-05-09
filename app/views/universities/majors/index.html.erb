@@ -1,6 +1,13 @@
 <div class="box box-primary">
   <div class="box-body box-profile">
 <h2 class="text-center">Majors#index</h2>
+
+<!-- University can update whene before register time -->
+<% if !register_time.nil? &&
+  ((!register_time.start_aspiration_1.nil? &&
+  Time.now < register_time.start_aspiration_1) ||
+  register_time.start_aspiration_1.nil?) %>
+
  <!--  <%= link_to "export_csv", export_file_excel_universities_majors_path(format: 'xlsx') %> -->
   <%= link_to "export_group", export_file_excel_universities_major_group_exams_path(format: 'xlsx') %>
   <%= link_to "export_benchmark", export_file_excel_universities_benchmarks_path(format: 'xlsx') %>
@@ -25,6 +32,7 @@
         <%= submit_tag "Import Excel for Major Group Exam" , class: 'btn btn-default' %>
       </div>
   <% end %>
+<% end %>
 </div>
 </div>
 <div class="box box-primary">

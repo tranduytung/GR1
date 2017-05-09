@@ -2,7 +2,7 @@
   <td class="center">
     <%= major.code %>
   </td>
-  <td style="padding: 0px">
+  <td style="padding: 0px; width: 35%">
     <% if major.major_infos.count > 1 %>
     <table class="table table-bordered" style="margin: 0px">
       <% major.major_infos.each do |major_info| %>
@@ -19,10 +19,7 @@
   </td>
   <td class="center"><%= major.target %></td>
   <td style="padding: 0px">
-    <table class="table table-bordered" style="margin:0px">
     <% major.major_group_exams.each_with_index do |major_group_exam, index| %>
-      <tr>
-      <td>
       <% group_exam = GroupExam.find_by id: major_group_exam.group_exam_id %>
       <%= index+1 %>.
       <%= (t("math")+"(#{group_exam.math})") unless group_exam.math == 0 %>
@@ -33,20 +30,28 @@
       <%= (t("biological")+"(#{group_exam.biological})") unless group_exam.biological == 0 %>
       <%= (t("history")+"(#{group_exam.history})") unless group_exam.history == 0 %>
       <%= (t("geography")+"(#{group_exam.geography})") unless group_exam.geography == 0 %>
-      </td>
-      <td>
-        <%= major_group_exam.benchmark1 %>
-      </td>
-      <td>
-        <%= major.registers.where(group_exam_id:
-          major_group_exam.group_exam_id, status: 2).count %>
-      </td>
-      </tr>
+      <br>
     <% end %>
-    </table>
   </td>
   <td>
-    <%= link_to t("benchmark.show"), "#",
+    <%= link_to t("major.show_register"), registers_universities_major_path(major),
       class: "btn btn-info icon-trash icon-white" %>
   </td>
+  <td>
+    <%= link_to t("admin.show"), universities_major_path(major),
+      class: "btn btn-info icon-trash icon-white" %>
+  </td>
+  <% if !register_time.nil? &&
+    ((!register_time.start_aspiration_1.nil? &&
+    Time.now < register_time.start_aspiration_1) || register_time.start_aspiration_1.nil?) %>
+  <td>
+    <%= link_to t("admin.edit"), edit_universities_major_path(major),
+      class: "btn btn-info icon-trash icon-white" %>
+  </td>
+  <td>
+    <%= link_to t("admin.delete"), universities_major_path(major),
+      method: :delete, data: {confirm: t("admin.confirm")},
+      class: "btn btn-danger icon-trash icon-white" %>
+  </td>
+  <% end %>
 </tr>

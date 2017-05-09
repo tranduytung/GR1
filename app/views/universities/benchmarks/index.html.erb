@@ -24,11 +24,14 @@
       <th class="center"><%= t "major_info.name" %></th>
       <th class="center"><%= t "major_info.target" %></th>
       <th class="center"><%= t "major_info.group_exams" %></th>
+      <th class="center"><%= t "major_info.total" %></th>
       <th class="center", colspan="4"><%= t "admin.actions" %></th>
     </tr>
   </thead>
   <tbody>
-    <%= render @majors %>
+    <% @majors.each do |major| %>
+      <%= render "major", major: major%>
+    <% end %>
   </tbody>
 </table>
 </div>
