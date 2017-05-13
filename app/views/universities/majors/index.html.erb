@@ -10,6 +10,7 @@
 
  <!--  <%= link_to "export_csv", export_file_excel_universities_majors_path(format: 'xlsx') %> -->
   <%= link_to "export_group", export_file_excel_universities_major_group_exams_path(format: 'xlsx') %>
+  <br>
   <%= link_to "export_benchmark", export_file_excel_universities_benchmarks_path(format: 'xlsx') %>
   <%= form_tag import_file_excel_universities_majors_path, class:'form-inline', multipart: true do %>
       <div class="form-group">
@@ -18,7 +19,8 @@
       </div>
       <div class="form-group">
         <%= label_tag 'import_excel', nil, class: 'sr-only' %>
-        <%= submit_tag "Import Excel for Major" , class: 'btn btn-default' %>
+        <%= submit_tag t("university.import_excel_major"),
+          class: 'btn btn-primary' %>
       </div>
   <% end %>
 
@@ -29,7 +31,8 @@
       </div>
       <div class="form-group">
         <%= label_tag 'import_excel', nil, class: 'sr-only' %>
-        <%= submit_tag "Import Excel for Major Group Exam" , class: 'btn btn-default' %>
+        <%= submit_tag t("university.import_excel_major_group_exam"),
+          class: 'btn btn-primary' %>
       </div>
   <% end %>
 <% end %>
@@ -41,9 +44,9 @@
   <thead>
     <tr>
       <th class="center"><%= t "major.code" %></th>
-      <th class="center"><%= t "major_info.name" %></th>
-      <th class="center"><%= t "major_info.target" %></th>
-      <th class="center"><%= t "major_info.group_exams" %></th>
+      <th class="center"><%= t "major.name" %></th>
+      <th class="center"><%= t "major.target" %></th>
+      <th class="center"><%= t "major.group_exam" %></th>
       <th class="center", colspan="4"><%= t "admin.actions" %></th>
     </tr>
   </thead>

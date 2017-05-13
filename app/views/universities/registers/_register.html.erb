@@ -14,7 +14,7 @@
     <%= (t("history")+"(#{group_exam.history})") unless group_exam.history == 0 %>
     <%= (t("geography")+"(#{group_exam.geography})") unless group_exam.geography == 0 %>
   </td>
-  <td class="center"><%= register.aspiration %></td>
-  <td class="center"><%= register.status %></td>
+  <td class="center"><%= t("#{register.aspiration}") %></td>
+  <td class="center"><%= t("#{register.status}") %></td>
   <td class="center"><%= register.year %></td>
 </tr>

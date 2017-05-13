@@ -24,7 +24,8 @@
               <!-- User image -->
               <li class="user-header-tung">
                 <p>
-                  People Id: <%= current_examinee.people_id %><br>
+                  <%= t("examinee.people_id") %>:
+                  <%= current_examinee.people_id %><br>
                   <small><%= current_examinee.birthday.to_date %></small>
                 </p>
               </li>

@@ -3,13 +3,13 @@
     <div class="box-body box-profile">
       <div class="list-group list-group-unbordered">
         <div class="list-group-item">
-          Code: <%= @major.code %>
+          <%= t("major.code") %>: <%= @major.code %>
         </div>
         <div class="list-group-item">
-          Year: <%= @major.year %>
+          <%= t("major.year") %>: <%= @major.year %>
         </div>
           <div class="list-group-item">
-            Target: <%= @major.target %>
+            <%= t("major.target") %>: <%= @major.target %>
         </div>
       </div>
     </div>
@@ -22,7 +22,7 @@
         <thead>
           <tr>
             <th class="center">STT</th>
-            <th class="center"><%= t "product.name" %></th>
+            <th class="center"><%= t "major.name" %></th>
           </tr>
         </thead>
         <tbody>
@@ -42,7 +42,7 @@
         <thead>
           <tr>
             <th class="center">STT</th>
-            <th class="center"><%= t "product.group_exam" %></th>
+            <th class="center"><%= t "major.group_exam" %></th>
           </tr>
         </thead>
         <tbody>

@@ -9,10 +9,10 @@
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
-                <th class="center"><%= t "examinee.major_code" %></th>
-                <th class="center"><%= t "examinee.major" %></th>
-                <th class="center"><%= t "examinee.code" %></th>
-                <th class="center"><%= t "examinee.name" %></th>
+                <th class="center"><%= t "major.code" %></th>
+                <th class="center"><%= t "major.name" %></th>
+                <th class="center"><%= t "university.code" %></th>
+                <th class="center"><%= t "university.name" %></th>
                 <th class="center"><%= t "admin.actions" %></th>
               </tr>
             </thead>
@@ -24,7 +24,7 @@
                   <td class="center"><%= major_info.university.code %></td>
                   <td class="center"><%= link_to major_info.university.name,
                      university_path(major_info.university) %></td>
-                  <td><%= link_to "Show", university_major_path(
+                  <td><%= link_to t("show"), university_major_path(
                     major_info.university, major_info.major), class: "btn btn-primary"%>
                   </td>
                 </tr>

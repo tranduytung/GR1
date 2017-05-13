@@ -3,32 +3,32 @@
   <div class="col-md-6 col-md-offset-3">
     <div class="box box-primary">
       <div class="box-body box-profile">
-        <h3 class="text-center">Edit <%= resource_name.to_s.humanize %></h3>
+        <h3 class="text-center"><%= @university.name %></h3>
         <%= form_for(resource, as: resource_name,
           url: registration_path(resource_name), html: { method: :put }) do |f| %>
           <%= devise_error_messages! %>
           <div class="field">
-            <%= f.label :code %><br />
+            <%= f.label :code, t("university.code") %><br />
             <%= f.text_field :code, autofocus: true, class: "form-control" %>
           </div>
           <div class="field">
-            <%= f.label :name %><br />
+            <%= f.label :name, t("university.name") %><br />
             <%= f.text_field :name, autofocus: true, class: "form-control" %>
           </div>
           <div class="field">
-            <%= f.label :email %><br />
+            <%= f.label :email, t("university.email") %><br />
             <%= f.email_field :email, autofocus: true, class: "form-control" %>
           </div>
           <div class="field">
-            <%= f.label :phone %><br />
+            <%= f.label :phone, t("university.phone") %><br />
             <%= f.text_field :phone, autofocus: true, class: "form-control" %>
           </div>
           <div class="field">
-            <%= f.label :address %><br />
+            <%= f.label :address, t("university.address") %><br />
             <%= f.text_field :address, autofocus: true, class: "form-control" %>
           </div>
           <div class="field">
-            <%= f.label :web_site %><br />
+            <%= f.label :web_site, t("university.web_site") %><br />
             <%= f.text_field :web_site, autofocus: true, class: "form-control" %>
           </div>
           <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -36,22 +36,24 @@
               <%= resource.unconfirmed_email %></div>
           <% end %>
           <div class="field">
-            <%= f.label :password %><i>(leave blank if you don't want to change it)</i>
+            <%= f.label :password, t("password") %><i><%= t(:let_blank)%></i>
             <br />
             <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
           </div>
           <div class="field">
-            <%= f.label :password_confirmation %><br />
+            <%= f.label :password_confirmation, t("password_confirmation") %>
+            <br />
             <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control"  %>
           </div>
           <div class="field">
-            <%= f.label :current_password %>
-            <i>(we need your current password to confirm your changes)</i><br />
+            <%= f.label :current_password, t("current_password") %>
+            <i><%= t("need_current_passwprd") %></i><br />
             <%= f.password_field :current_password, autocomplete: "off",
               class: "form-control"  %>
           </div>
-          <div class="actions">
-            <%= f.submit "Update" %>
+          <br>
+          <div class="actions text-center">
+            <%= f.submit t("university.save_change"), class: "btn btn-primary" %>
           </div>
     <% end %>
     </div>

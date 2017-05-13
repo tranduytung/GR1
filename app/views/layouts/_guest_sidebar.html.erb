@@ -4,15 +4,22 @@
     <li class="header">MAIN NAVIGATION</li>
     <li>
       <%= link_to major_searchs_path do %>
-        <i class="fa fa-dashboard"></i> <span>Tim kiem chuyen nganh</span>
+        <i class="fa fa-dashboard"></i>
+        <span><%= t("search_major") %></span>
       <% end %>
     </li>
     <li>
       <%= link_to universities_path do %>
-        <i class="fa fa-dashboard"></i> <span>Danh sach truong dai hoc</span>
+        <i class="fa fa-dashboard"></i>
+        <span><%= t("university.all") %></span>
       <% end %>
     </li>
     <li>
+      <%= link_to "" do %>
+        <i class="fa fa-pie-chart"></i><span>Thống kê tốt nghiệp</span>
+      <% end %>
+    </li>
+    <!-- <li>
       <%= link_to by_graduated_charts_path do %>
         <i class="fa fa-pie-chart"></i><span>Ti le tot nghiep</span>
       <% end %>
@@ -42,6 +49,6 @@
           <% end %>
         <li>
       </ul>
-    </li>
+    </li> -->
   </ul>
 </section>

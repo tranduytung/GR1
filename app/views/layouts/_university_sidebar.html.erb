@@ -6,27 +6,32 @@
       <li class="header">MAIN NAVIGATION</li>
       <li>
         <%= link_to universities_majors_path do %>
-          <i class="fa fa-dashboard"></i> <span>Quan li chuyen nganh</span>
+          <i class="fa fa-dashboard"></i>
+          <span><%= t("university.manage_major") %></span>
         <% end %>
       </li>
       <li>
         <%= link_to universities_registers_path do %>
-          <i class="fa fa-dashboard"></i> <span>Quan li danh sach tuyen sinh</span>
+          <i class="fa fa-dashboard"></i>
+          <span><%= t("university.manage_registers") %></span>
         <% end %>
       </li>
       <li>
         <%= link_to recomment_benchmarks_universities_majors_path do %>
-          <i class="fa fa-dashboard"></i> <span>Goi y diem chuan</span>
+          <i class="fa fa-dashboard"></i>
+          <span><%= t("university.recomment_benchmarks") %></span>
         <% end %>
       </li>
       <li>
         <%= link_to universities_benchmarks_path do %>
-          <i class="fa fa-dashboard"></i> <span>Quan li diem chuan</span>
+          <i class="fa fa-dashboard"></i>
+          <span><%= t("university.manage_benchmarks") %></span>
         <% end %>
       </li>
       <li>
         <%= link_to "" do %>
-          <i class="fa fa-dashboard"></i> <span>Quan li danh sach trung tuyen</span>
+          <i class="fa fa-dashboard"></i>
+          <span><%= t("university.manage_registers_elect") %></span>
         <% end %>
       </li>
     </ul>
