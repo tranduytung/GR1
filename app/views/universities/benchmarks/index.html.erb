@@ -1,17 +1,22 @@
 <div class="box box-primary">
   <div class="box-body box-profile">
 <h2 class="text-center"><%= t("university.manage_benchmarks") %></h2>
-  <%= link_to t("university.export_benchmark"),
-    export_file_excel_universities_benchmarks_path(format: 'xlsx') %>
-  <%= form_tag import_file_excel_universities_benchmarks_path, class:'form-inline', multipart: true do %>
-      <div class="form-group">
-        <%= label_tag 'select_file_excel', nil, class: 'sr-only' %>
-        <%= file_field_tag :file , class: 'btn btn-default' %>
-      </div>
-      <div class="form-group">
-        <%= label_tag 'import_excel', nil, class: 'sr-only' %>
-        <%= submit_tag t("import_excel") , class: 'btn btn-default' %>
-      </div>
+<% if !register_time.nil? && !register_time.start_update_benchmark_1.nil? &&
+  !register_time.end_update_benchmark_1.nil? &&
+  Time.now >= register_time.start_update_benchmark_1 &&
+  Time.now <= register_time.end_update_benchmark_1 %>
+    <%= link_to t("university.export_benchmark"),
+      export_file_excel_universities_benchmarks_path(format: 'xlsx') %>
+    <%= form_tag import_file_excel_universities_benchmarks_path, class:'form-inline', multipart: true do %>
+        <div class="form-group">
+          <%= label_tag 'select_file_excel', nil, class: 'sr-only' %>
+          <%= file_field_tag :file , class: 'btn btn-default' %>
+        </div>
+        <div class="form-group">
+          <%= label_tag 'import_excel', nil, class: 'sr-only' %>
+          <%= submit_tag t("import_excel") , class: 'btn btn-default' %>
+        </div>
+    <% end %>
   <% end %>
 </div>
 </div>
@@ -30,7 +35,7 @@
   </thead>
   <tbody>
     <% @majors.each do |major| %>
-      <%= render "major", major: major%>
+      <%= render "major", major: major %>
     <% end %>
   </tbody>
 </table>

@@ -100,7 +100,7 @@
                   !register_time.start_aspiration_1.nil? &&
                   Time.now >= register_time.start_aspiration_1 &&
                   Time.now <= register_time.end_aspiration_1 %>
-                  <%= link_to "Dang ki", new_examinees_register_path(current_examinee,
+                  <%= link_to "Đăng kí", new_examinees_register_path(current_examinee,
                     major_id: @major, aspiration: 1,
                     group_exam_id: major_group_exam.group_exam_id),
                     class: "btn btn-primary" %>

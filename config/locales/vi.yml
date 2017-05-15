@@ -172,7 +172,7 @@ vi:
     score: "Điểm"
     number: "Số lượng ứng tuyển"
     aspiration: "Nguyện vọng"
-    benchmark_last_year: "Điểm chuẩn 2015"
+    benchmark_last_year: "Điểm chuẩn 2016"
 
   register:
     status: "Trạng thái đăng kí"
@@ -190,7 +190,6 @@ vi:
   check: "Kiểm tra"
   include: "Gồm có"
   examinee_register: "thí sinh ứng tuyển"
-  aspiration_1: "Nguyện vọng 1"
   registered: "Đã đăng kí"
   not_register: "Chưa đăng kí"
   elect: "Trúng tuyển"

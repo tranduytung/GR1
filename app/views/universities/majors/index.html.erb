@@ -1,12 +1,12 @@
 <div class="box box-primary">
   <div class="box-body box-profile">
-<h2 class="text-center">Majors#index</h2>
+<h2 class="text-center"><%= t("major.all") %></h2>
 
 <!-- University can update whene before register time -->
-<% if !register_time.nil? &&
-  ((!register_time.start_aspiration_1.nil? &&
-  Time.now < register_time.start_aspiration_1) ||
-  register_time.start_aspiration_1.nil?) %>
+<% if !register_time.nil? && !register_time.start_university_manage.nil? &&
+  !register_time.end_university_manage.nil? &&
+  Time.now >= register_time.start_university_manage &&
+  Time.now <= register_time.end_university_manage %>
 
  <!--  <%= link_to "export_csv", export_file_excel_universities_majors_path(format: 'xlsx') %> -->
   <%= link_to "export_group", export_file_excel_universities_major_group_exams_path(format: 'xlsx') %>

@@ -41,9 +41,10 @@
     <%= link_to t("admin.show"), universities_major_path(major),
       class: "btn btn-info icon-trash icon-white" %>
   </td>
-  <% if !register_time.nil? &&
-    ((!register_time.start_aspiration_1.nil? &&
-    Time.now < register_time.start_aspiration_1) || register_time.start_aspiration_1.nil?) %>
+  <% if !register_time.nil? && !register_time.start_university_manage.nil? &&
+    !register_time.end_university_manage.nil? &&
+    Time.now >= register_time.start_university_manage &&
+    Time.now <= register_time.end_university_manage %>
   <td>
     <%= link_to t("admin.edit"), edit_universities_major_path(major),
       class: "btn btn-info icon-trash icon-white" %>
