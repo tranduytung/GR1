@@ -3,7 +3,8 @@ neu = University.create!(
   code: "NEU",
   email: "neu@gmail.com",
   password: "123456",
-  password_confirmation: "123456")
+  password_confirmation: "123456",
+  city: "Hà Nội")
 d310101 = neu.majors.create(
   code: "D310101",
   year: 2017,
@@ -13,13 +14,16 @@ d310101 = neu.majors.create(
 d310101.major_infos.create(
   name: "Kinh tế")
 d310101.major_group_exams.create(
-  group_exam_id: 2
+  group_exam_id: 2,
+  benchmark1_last_year: 24
   )
 d310101.major_group_exams.create(
-  group_exam_id: 3
+  group_exam_id: 3,
+  benchmark1_last_year: 25
   )
 d310101.major_group_exams.create(
-  group_exam_id: 1
+  group_exam_id: 1,
+  benchmark1_last_year: 24.5
   )
 d310104 = neu.majors.create(
   code: "D310104",
@@ -30,13 +34,16 @@ d310104 = neu.majors.create(
 d310104.major_infos.create(
   name: "Kinh tế đầu tư (dự kiến)")
 d310104.major_group_exams.create(
-  group_exam_id: 2
+  group_exam_id: 2,
+  benchmark1_last_year: 24
   )
 d310104.major_group_exams.create(
-  group_exam_id: 3
+  group_exam_id: 3,
+  benchmark1_last_year: 25
   )
 d310104.major_group_exams.create(
-  group_exam_id: 1
+  group_exam_id: 1,
+  benchmark1_last_year: 24.5
   )
 
 d310106 = neu.majors.create(
@@ -48,13 +55,16 @@ d310106 = neu.majors.create(
 d310106.major_infos.create(
   name: "Kinh tế quốc tế")
 d310106.major_group_exams.create(
-  group_exam_id: 2
+  group_exam_id: 2,
+  benchmark1_last_year: 24
   )
 d310106.major_group_exams.create(
-  group_exam_id: 3
+  group_exam_id: 3,
+  benchmark1_last_year: 25
   )
 d310106.major_group_exams.create(
-  group_exam_id: 1
+  group_exam_id: 1,
+  benchmark1_last_year: 24.5
   )
 
 d340101 = neu.majors.create(
@@ -66,13 +76,16 @@ d340101 = neu.majors.create(
 d340101.major_infos.create(
   name: "Quản trị kinh doanh")
 d340101.major_group_exams.create(
-  group_exam_id: 2
+  group_exam_id: 2,
+  benchmark1_last_year: 24
   )
 d340101.major_group_exams.create(
-  group_exam_id: 3
+  group_exam_id: 3,
+  benchmark1_last_year: 25
   )
 d340101.major_group_exams.create(
-  group_exam_id: 1
+  group_exam_id: 1,
+  benchmark1_last_year: 24.5
   )
 
 d340107 = neu.majors.create(
@@ -84,13 +97,16 @@ d340107 = neu.majors.create(
 d340107.major_infos.create(
   name: "Quản trị khách sạn")
 d340107.major_group_exams.create(
-  group_exam_id: 2
+  group_exam_id: 2,
+  benchmark1_last_year: 24
   )
 d340107.major_group_exams.create(
-  group_exam_id: 3
+  group_exam_id: 3,
+  benchmark1_last_year: 25
   )
 d340107.major_group_exams.create(
-  group_exam_id: 1
+  group_exam_id: 1,
+  benchmark1_last_year: 24.5
   )
 
 d340103 = neu.majors.create(
@@ -102,13 +118,16 @@ d340103 = neu.majors.create(
 d340103.major_infos.create(
   name: "Quản trị dịch vụ du lịch và lữ hành")
 d340103.major_group_exams.create(
-  group_exam_id: 2
+  group_exam_id: 2,
+  benchmark1_last_year: 24
   )
 d340103.major_group_exams.create(
-  group_exam_id: 3
+  group_exam_id: 3,
+  benchmark1_last_year: 25
   )
 d340103.major_group_exams.create(
-  group_exam_id: 1
+  group_exam_id: 1,
+  benchmark1_last_year: 24.5
   )
 
 d340404 = neu.majors.create(
@@ -120,13 +139,16 @@ d340404 = neu.majors.create(
 d340404.major_infos.create(
   name: "Quản trị nhân lực")
 d340404.major_group_exams.create(
-  group_exam_id: 2
+  group_exam_id: 2,
+  benchmark1_last_year: 24
   )
 d340404.major_group_exams.create(
-  group_exam_id: 3
+  group_exam_id: 3,
+  benchmark1_last_year: 25
   )
 d340404.major_group_exams.create(
-  group_exam_id: 1
+  group_exam_id: 1,
+  benchmark1_last_year: 24.5
   )
 
 
@@ -139,13 +161,16 @@ d340120 = neu.majors.create(
 d340120.major_infos.create(
   name: "Kinh doanh quốc tế")
 d340120.major_group_exams.create(
-  group_exam_id: 2
+  group_exam_id: 2,
+  benchmark1_last_year: 24
   )
 d340120.major_group_exams.create(
-  group_exam_id: 3
+  group_exam_id: 3,
+  benchmark1_last_year: 25
   )
 d340120.major_group_exams.create(
-  group_exam_id: 1
+  group_exam_id: 1,
+  benchmark1_last_year: 24.5
   )
 
 d340121 = neu.majors.create(
@@ -157,13 +182,16 @@ d340121 = neu.majors.create(
 d340121.major_infos.create(
   name: "Kinh doanh thương mại")
 d340121.major_group_exams.create(
-  group_exam_id: 2
+  group_exam_id: 2,
+  benchmark1_last_year: 24
   )
 d340121.major_group_exams.create(
-  group_exam_id: 3
+  group_exam_id: 3,
+  benchmark1_last_year: 25
   )
 d340121.major_group_exams.create(
-  group_exam_id: 1
+  group_exam_id: 1,
+  benchmark1_last_year: 24.5
   )
 
 d340201 = neu.majors.create(
@@ -175,13 +203,16 @@ d340201 = neu.majors.create(
 d340201.major_infos.create(
   name: "Tài chính - Ngân hàng")
 d340201.major_group_exams.create(
-  group_exam_id: 2
+  group_exam_id: 2,
+  benchmark1_last_year: 24
   )
 d340201.major_group_exams.create(
-  group_exam_id: 3
+  group_exam_id: 3,
+  benchmark1_last_year: 25
   )
 d340201.major_group_exams.create(
-  group_exam_id: 1
+  group_exam_id: 1,
+  benchmark1_last_year: 24.5
   )
 
 d340202 = neu.majors.create(
@@ -193,13 +224,16 @@ d340202 = neu.majors.create(
 d340202.major_infos.create(
   name: "Bảo hiểm")
 d340202.major_group_exams.create(
-  group_exam_id: 2
+  group_exam_id: 2,
+  benchmark1_last_year: 24
   )
 d340202.major_group_exams.create(
-  group_exam_id: 1
+  group_exam_id: 1,
+  benchmark1_last_year: 24.5
   )
 d340202.major_group_exams.create(
-  group_exam_id: 3
+  group_exam_id: 3,
+  benchmark1_last_year: 25
   )
 
 d340301 = neu.majors.create(
@@ -211,13 +245,16 @@ d340301 = neu.majors.create(
 d340301.major_infos.create(
   name: "Kế toán")
 d340301.major_group_exams.create(
-  group_exam_id: 2
+  group_exam_id: 2,
+  benchmark1_last_year: 24
   )
 d340301.major_group_exams.create(
-  group_exam_id: 1
+  group_exam_id: 1,
+  benchmark1_last_year: 24.5
   )
 d340301.major_group_exams.create(
-  group_exam_id: 3
+  group_exam_id: 3,
+  benchmark1_last_year: 25
   )
 
 d340115 = neu.majors.create(
@@ -229,13 +266,16 @@ d340115 = neu.majors.create(
 d340115.major_infos.create(
   name: "Marketing")
 d340115.major_group_exams.create(
-  group_exam_id: 2
+  group_exam_id: 2,
+  benchmark1_last_year: 24
   )
 d340115.major_group_exams.create(
-  group_exam_id: 1
+  group_exam_id: 1,
+  benchmark1_last_year: 24.5
   )
 d340115.major_group_exams.create(
-  group_exam_id: 3
+  group_exam_id: 3,
+  benchmark1_last_year: 25
   )
 
 d340116 = neu.majors.create(
@@ -247,13 +287,16 @@ d340116 = neu.majors.create(
 d340116.major_infos.create(
   name: "Bất động sản")
 d340116.major_group_exams.create(
-  group_exam_id: 2
+  group_exam_id: 2,
+  benchmark1_last_year: 24
   )
 d340116.major_group_exams.create(
-  group_exam_id: 1
+  group_exam_id: 1,
+  benchmark1_last_year: 24.5
   )
 d340116.major_group_exams.create(
-  group_exam_id: 3
+  group_exam_id: 3,
+  benchmark1_last_year: 25
   )
 
 d340405 = neu.majors.create(
@@ -265,13 +308,16 @@ d340405 = neu.majors.create(
 d340405.major_infos.create(
   name: "Hệ thống thông tin quản lý")
 d340405.major_group_exams.create(
-  group_exam_id: 2
+  group_exam_id: 2,
+  benchmark1_last_year: 24
   )
 d340405.major_group_exams.create(
-  group_exam_id: 3
+  group_exam_id: 3,
+  benchmark1_last_year: 25
   )
 d340405.major_group_exams.create(
-  group_exam_id: 2
+  group_exam_id: 2,
+  benchmark1_last_year: 24
   )
 
 d380101 = neu.majors.create(
@@ -283,13 +329,16 @@ d380101 = neu.majors.create(
 d380101.major_infos.create(
   name: "Luật")
 d380101.major_group_exams.create(
-  group_exam_id: 2
+  group_exam_id: 2,
+  benchmark1_last_year: 24
   )
 d380101.major_group_exams.create(
-  group_exam_id: 3
+  group_exam_id: 3,
+  benchmark1_last_year: 25
   )
 d380101.major_group_exams.create(
-  group_exam_id: 1
+  group_exam_id: 1,
+  benchmark1_last_year: 24.5
   )
 d480101 = neu.majors.create(
   code: "D480101",
@@ -300,13 +349,16 @@ d480101 = neu.majors.create(
 d480101.major_infos.create(
   name: "Khoa học máy tính (Công nghệ thông tin)")
 d480101.major_group_exams.create(
-  group_exam_id: 2
+  group_exam_id: 2,
+  benchmark1_last_year: 24
   )
 d480101.major_group_exams.create(
-  group_exam_id: 3
+  group_exam_id: 3,
+  benchmark1_last_year: 25
   )
 d380101.major_group_exams.create(
-  group_exam_id: 1
+  group_exam_id: 1,
+  benchmark1_last_year: 24.5
   )
 d620115 = neu.majors.create(
   code: "D620115",
@@ -317,13 +369,16 @@ d620115 = neu.majors.create(
 d620115.major_infos.create(
   name: "Kinh tế nông nghiệp")
 d620115.major_group_exams.create(
-  group_exam_id: 2
+  group_exam_id: 2,
+  benchmark1_last_year: 24
   )
 d620115.major_group_exams.create(
-  group_exam_id: 3
+  group_exam_id: 3,
+  benchmark1_last_year: 25
   )
 d620115.major_group_exams.create(
-  group_exam_id: 1
+  group_exam_id: 1,
+  benchmark1_last_year: 24.5
   )
 
 d110105 = neu.majors.create(
@@ -335,13 +390,16 @@ d110105 = neu.majors.create(
 d110105.major_infos.create(
   name: "Thống kê kinh tếp")
 d110105.major_group_exams.create(
-  group_exam_id: 2
+  group_exam_id: 2,
+  benchmark1_last_year: 24
   )
 d110105.major_group_exams.create(
-  group_exam_id: 3
+  group_exam_id: 3,
+  benchmark1_last_year: 25
   )
 d110105.major_group_exams.create(
-  group_exam_id: 1
+  group_exam_id: 1,
+  benchmark1_last_year: 24.5
   )
 
 d110106 = neu.majors.create(
@@ -353,13 +411,16 @@ d110106 = neu.majors.create(
 d110106.major_infos.create(
   name: "Toán ứng dụng trong kinh tế")
 d110106.major_group_exams.create(
-  group_exam_id: 2
+  group_exam_id: 2,
+  benchmark1_last_year: 24
   )
 d110106.major_group_exams.create(
-  group_exam_id: 3
+  group_exam_id: 3,
+  benchmark1_last_year: 25
   )
 d110106.major_group_exams.create(
-  group_exam_id: 1
+  group_exam_id: 1,
+  benchmark1_last_year: 24.5
   )
 
 d110107 = neu.majors.create(
@@ -371,13 +432,16 @@ d110107 = neu.majors.create(
 d110107.major_infos.create(
   name: "Kinh tế tài nguyên")
 d110107.major_group_exams.create(
-  group_exam_id: 2
+  group_exam_id: 2,
+  benchmark1_last_year: 24
   )
 d110107.major_group_exams.create(
-  group_exam_id: 3
+  group_exam_id: 3,
+  benchmark1_last_year: 25
   )
 d110107.major_group_exams.create(
-  group_exam_id: 1
+  group_exam_id: 1,
+  benchmark1_last_year: 24.5
   )
 
 d110109 = neu.majors.create(
@@ -389,13 +453,16 @@ d110109 = neu.majors.create(
 d110109.major_infos.create(
   name: "Quản trị kinh doanh học bằng tiếng Anh (E-BBA)")
 d110109.major_group_exams.create(
-  group_exam_id: 2
+  group_exam_id: 2,
+  benchmark1_last_year: 24
   )
 d110109.major_group_exams.create(
-  group_exam_id: 3
+  group_exam_id: 3,
+  benchmark1_last_year: 25
   )
 d110109.major_group_exams.create(
-  group_exam_id: 1
+  group_exam_id: 1,
+  benchmark1_last_year: 24.5
   )
 
 d310103 = neu.majors.create(
@@ -407,13 +474,16 @@ d310103 = neu.majors.create(
 d310103.major_infos.create(
   name: "Quản lý công và chính sách bằng tiếng Anh (E- PMP)(dự kiến)")
 d310103.major_group_exams.create(
-  group_exam_id: 2
+  group_exam_id: 2,
+  benchmark1_last_year: 24
   )
 d310103.major_group_exams.create(
-  group_exam_id: 3
+  group_exam_id: 3,
+  benchmark1_last_year: 25
   )
 d310103.major_group_exams.create(
-  group_exam_id: 1
+  group_exam_id: 1,
+  benchmark1_last_year: 24.5
   )
 
 d220201 = neu.majors.create(
@@ -425,6 +495,7 @@ d220201 = neu.majors.create(
 d220201.major_infos.create(
   name: "Ngôn ngữ Anh")
 d220201.major_group_exams.create(
-  group_exam_id: 6
+  group_exam_id: 6,
+  benchmark1_last_year: 29
   )
 puts("Hoan thanh dai hoc KTQD")

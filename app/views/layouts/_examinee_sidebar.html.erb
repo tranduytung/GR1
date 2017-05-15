@@ -11,6 +11,11 @@
           <% end %>
         </li>
         <li>
+          <%= link_to major_examinees_suggestions_path do %>
+            <i class="fa fa-dashboard"></i> <span><%= t("suggest_major") %></span>
+          <% end %>
+        </li>
+        <li>
           <%= link_to examinees_registers_path do %>
             <i class="fa fa-dashboard"></i>
             <span><%= t("examinee.list_register") %></span>

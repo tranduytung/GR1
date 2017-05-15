@@ -7,6 +7,7 @@ class CreateUniversities < ActiveRecord::Migration
       t.string :phone
       t.string :address
       t.string :web_site
+      t.string :city
 
       t.timestamps null: false
     end

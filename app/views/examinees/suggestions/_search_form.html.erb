@@ -1,0 +1,38 @@
+<div class="box box-primary">
+  <div class="box-body box-profile">
+    <%= search_form_for @search, url: major_examinees_suggestions_path do |f| %>
+      <div>
+        <%= f.label :name_cont, t("major.name") %>
+        <%= f.text_field :name_cont,
+          placeholder: t("major.input_name"), class: "form-control" %>
+      </div>
+      <div>
+        <%= f.label :university_code_cont, t("university.code") %>
+        <%= f.text_field :university_code_cont, placeholder:
+          "Nhập mã trường đại học. Vd: bka", class: "form-control" %>
+      </div>
+      <div>
+        <%= f.label :university_name_cont, t("university.name") %>
+        <%= f.text_field :university_name_cont, placeholder:
+          "Nhập tên trường đại học", class: "form-control" %>
+      </div>
+      <div>
+        <%= f.label :university_city_cont, t("university.city") %>
+        <%= f.text_field :university_city_cont, placeholder:
+          "Nhập tên vung mien", class: "form-control" %>
+      </div>
+      <div>
+        <%= f.label :group_exam, t("major.group_exam") %>
+        <%= select_tag :group_exam, options_for_select(
+          @group_exams.collect{|p| [name_group(p), p.id]}, @group_exam),
+          {:include_blank => true} %>
+        <%= cal_review_score(current_examinee.result,
+          @group_exam) if @group_exam.present? %>
+      </div>
+      <br>
+      <br>
+      <%= f.submit t("search_major"), class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
+

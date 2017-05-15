@@ -84,9 +84,10 @@ Examinee.transaction do
     while n.length < 7
       n = "0" + n
     end
-    n = "A"+n
+    n = "cmt_15"+ n
+    m = "sbd_"+ n
     people_id = n
-    student_id = n
+    student_id = m
     home_town = tinh[rand(62)]
     hight_school = ("Trường Trung học phổ thông chuyên "|| "Trường Trung học phổ thông")+home_town
     group_exam = rand(3) + 1

@@ -80,6 +80,9 @@ Rails.application.routes.draw do
 
   namespace :examinees do
     resources :registers, only: [:new, :index]
+    resources :suggestions do
+    collection {get :major}
+  end
   end
   resources :examinees, only: :show
   root to: "static_pages#home"

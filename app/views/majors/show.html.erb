@@ -58,6 +58,7 @@
           <tr>
             <th class="center">STT</th>
             <th class="center"><%= t "major.group_exam" %></th>
+            <th class="center"><%= t "major.benchmark_last_year" %></th>
             <% if !register_time.nil? &&
               !register_time.start_aspiration_1.nil? &&
               Time.now > register_time.end_aspiration_1  %>
@@ -87,6 +88,7 @@
                   <%= (t("geography")+"(#{group_exam.geography})") unless
                     group_exam.geography == 0 %>
               </td>
+              <td><%= major_group_exam.benchmark1_last_year %></td>
               <% if !register_time.nil? &&
                 !register_time.start_aspiration_1.nil? &&
                 Time.now > register_time.end_aspiration_1 %>

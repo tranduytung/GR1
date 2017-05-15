@@ -98,9 +98,10 @@ ActiveRecord::Schema.define(version: 20161218140909) do
   create_table "major_group_exams", force: :cascade do |t|
     t.integer  "major_id"
     t.integer  "group_exam_id"
-    t.float    "benchmark1",    default: 0.0
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.float    "benchmark1",           default: 0.0
+    t.float    "benchmark1_last_year", default: 0.0
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
   end
 
   add_index "major_group_exams", ["group_exam_id"], name: "index_major_group_exams_on_group_exam_id"
@@ -182,6 +183,7 @@ ActiveRecord::Schema.define(version: 20161218140909) do
     t.string   "phone"
     t.string   "address"
     t.string   "web_site"
+    t.string   "city"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "email",                  default: "", null: false

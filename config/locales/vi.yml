@@ -63,6 +63,8 @@ vi:
   remember_me: "Lưu mật khẩu"
   aspiration: "Nguyện vọng"
   year: "Năm"
+  suggest_major: "Gợi ý chuyên ngành"
+  access_denied: "Không có quyền truy cập"
 
   message:
     logged_in_successful: "Bạn đã đăng nhập thành công"
@@ -170,6 +172,7 @@ vi:
     score: "Điểm"
     number: "Số lượng ứng tuyển"
     aspiration: "Nguyện vọng"
+    benchmark_last_year: "Điểm chuẩn 2015"
 
   register:
     status: "Trạng thái đăng kí"

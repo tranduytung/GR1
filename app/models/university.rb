@@ -39,6 +39,6 @@ class University < ActiveRecord::Base
   end
 
   def self.accessible_attributes
-    ["name", "code", "email"]
+    ["name", "code", "email", "city"]
   end
 end
