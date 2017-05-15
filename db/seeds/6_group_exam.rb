@@ -60,3 +60,24 @@ GroupExam.create!(
   history: 0,
   geography: 0
   )
+GroupExam.create!(
+  math: 0,
+  literature: 1,
+  english: 1,
+  physical: 0,
+  chemistry: 0,
+  biological: 0,
+  history: 1,
+  geography: 0
+  )
+
+GroupExam.create!(
+  math: 0,
+  literature: 1,
+  english: 0,
+  physical: 0,
+  chemistry: 0,
+  biological: 0,
+  history: 1,
+  geography: 1
+  )

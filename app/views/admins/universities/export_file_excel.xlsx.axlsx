@@ -1,11 +1,12 @@
 wb = xlsx_package.workbook
 wb.add_worksheet(name: "Examinee") do |sheet|
-    sheet.add_row ["id", "code", "name", "email"]
+    sheet.add_row ["id", "code", "name", "email", "city"]
     @universities.each do |university|
         sheet.add_row [
           university.id,
           university.code,
           university.name,
-          university.email]
+          university.email,
+          university.city]
     end
 end

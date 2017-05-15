@@ -1,0 +1,8 @@
+University.delete_all
+University.reset_pk_sequence
+Major.delete_all
+Major.reset_pk_sequence
+MajorInfo.delete_all
+MajorInfo.reset_pk_sequence
+MajorGroupExam.delete_all
+MajorGroupExam.reset_pk_sequence

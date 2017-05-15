@@ -44,4 +44,17 @@ module ApplicationHelper
   def register_time
     @register_time = RegisterTime.find_by year: Time.now.year
   end
+
+  def name_group group
+    result = ""
+    result += t("math") + "(#{group.math})" unless group.math == 0
+    result += t("literature") + "(#{group.literature})" unless group.literature == 0
+    result += t("english") + "(#{group.english})" unless group.english == 0
+    result += t("physical") + "(#{group.physical})" unless group.physical == 0
+    result += t("chemistry") + "(#{group.chemistry})" unless group.chemistry == 0
+    result += t("biological") + "(#{group.biological})" unless group.biological == 0
+    result += t("history") + "(#{group.history})" unless group.history == 0
+    result += t("geography") + "(#{group.geography})" unless group.geography == 0
+    return result
+  end
 end

@@ -4,6 +4,7 @@ class CreateMajorGroupExams < ActiveRecord::Migration
       t.references :major, index: true, foreign_key: true
       t.references :group_exam, index: true, foreign_key: true
       t.float :benchmark1, default: 0
+      t.float :benchmark1_last_year, default: 0
 
       t.timestamps null: false
     end
