@@ -52,8 +52,9 @@ vi:
   from: "Từ"
   to: "Đến"
   university_manage: "Trường đại học quản lí"
-  aspiration_1: "Thí sinh đăng kí NV1"
+  examinee_aspiration_1: "Thí sinh đăng kí NV1"
   update_benchmark_1: "Trường ĐH cập nhật điểm chuẩn NV1"
+  aspiration_1: "NV1"
   end_admission_1: "Thí sinh ứng tuyển NV1"
   password: "Mật khẩu"
   let_blank: "Để trống nếu không muốn thay đổi"
@@ -65,11 +66,12 @@ vi:
   year: "Năm"
   suggest_major: "Gợi ý chuyên ngành"
   access_denied: "Không có quyền truy cập"
-  admission: "Đã chấp nhận"
-  not_admission: "Không chấp nhận"
-  admission_1: "Chấp nhận"
+  admission: "Nhập học"
+  not_admission: "Không nhập học"
+  admission_1: "Nhập học"
   cancel: "Hủy bỏ"
   action: "Công cụ"
+  manage_admission_1: "Quản lí thí sinh nhập học"
 
   message:
     logged_in_successful: "Bạn đã đăng nhập thành công"
@@ -145,6 +147,9 @@ vi:
     import_excel_major_group_exam: "Nhập file tổ hợp điểm chuyên ngành"
     edit: "Sửa thông tin"
     save_change: "Lưu thay đổi"
+    manage_registers_admission: "Quản lý danh sách nhập học"
+    export_elect: "Xuất file excel danh sách thí sinh trúng tuyển"
+    export_admission: "Xuất file excel danh sách thí sinh nhập học"
 
   chart:
     by_math: "Thống kê theo môn toán"

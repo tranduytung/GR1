@@ -1,0 +1,33 @@
+<div class="box box-primary">
+  <div class="box-body box-profile">
+    <h2 class="text-center">Registers NV1</h2>
+    <% if !register_time.nil? && !register_time.start_update_benchmark_1.nil? &&
+      !register_time.end_update_benchmark_1.nil? &&
+      Time.now >= register_time.end_update_benchmark_1 %>
+      <%= link_to t("university.export_elect"),
+          export_elect_excel_universities_registers_path(format: 'xlsx') %>
+    <% end %>
+    <%= render "search_elect_form" %>
+    <hr>
+    <table class="table table-bordered margin-0">
+      <thead>
+        <tr>
+          <th class="center"><%= t "people_id" %></th>
+          <th class="center"><%= t "student_id" %></th>
+          <th class="center"><%= t "name" %></th>
+          <th class="center"><%= t "major.code" %></th>
+          <th class="center"><%= t "major.group_exam" %></th>
+          <th class="center"><%= t "aspiration" %></th>
+          <th class="center"><%= t "major.status" %></th>
+          <th class="center"><%= t "major.year" %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render @registers %>
+      </tbody>
+    </table>
+    <div class="text-center">
+      <%= paginate @registers %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+wb = xlsx_package.workbook
+wb.add_worksheet(name: "Major") do |sheet|
+  sheet.add_row ["major_code", "people_id", "student_id", "name", "group_exam",
+    "aspiration", "status", "score", "year"]
+  @registers.each do |register|
+    group_exam = GroupExam.find_by id: register.group_exam_id
+    sheet.add_row [
+      register.major.code,
+      register.examinee.people_id,
+      register.examinee.student_id,
+      register.examinee.name,
+      name_group(group_exam),
+      t("#{register.aspiration}"),
+      t("#{register.status}"),
+      register.review_score,
+      register.year]
+  end
+end

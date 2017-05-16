@@ -7,6 +7,8 @@ class RegisterTime < ActiveRecord::Base
   validates :end_update_benchmark_1, presence: true, on: :update
   validates :start_admission_1, presence: true, on: :update
   validates :end_admission_1, presence: true, on: :update
+  validates :start_manage_admission_1, presence: true, on: :update
+  validates :end_manage_admission_1, presence: true, on: :update
   validate :aspiration
 
   private
@@ -14,7 +16,8 @@ class RegisterTime < ActiveRecord::Base
     unless start_university_manage.nil? || end_university_manage.nil? ||
       start_aspiration_1.nil? || end_aspiration_1.nil? ||
       start_update_benchmark_1.nil? || end_update_benchmark_1.nil? ||
-      start_admission_1.nil? || end_admission_1.nil?
+      start_admission_1.nil? || end_admission_1.nil? ||
+      start_manage_admission_1.nil? || end_manage_admission_1.nil?
 
       errors.add(:base, "university_manage") if
         end_university_manage <= start_university_manage
@@ -30,6 +33,8 @@ class RegisterTime < ActiveRecord::Base
         end_aspiration_1 >= start_update_benchmark_1
       errors.add(:base, "end_update_benchmark_1 start_admission_1") if
         end_update_benchmark_1 >= start_admission_1
+      errors.add(:base, "end_update_benchmark_1 start_admission_1") if
+        end_admission_1 >= start_manage_admission_1
     end
   end
 end

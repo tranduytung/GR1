@@ -11,6 +11,44 @@ class Universities::RegistersController < ApplicationController
     # @registers = current_university.registers.aspiration_1
   end
 
+  def elect
+    @registers = current_university.registers.where(status: 2)
+    @search = @registers.ransack params[:q]
+    if params[:q].nil?
+      @registers = @registers.page(params[:page]).per 10
+    else
+      @registers = @search.result.page(params[:page]).per 10
+    end
+  end
+
+  def export_elect_excel
+    @registers = current_university.registers.where(status: 2)
+    @date = Date.today.to_date
+    respond_to do |format|
+      format.html
+      format.xlsx {render xlsx: 'export_elect_excel', filename: "#{current_university.code}_elect_#{@date}.xlsx"}
+    end
+  end
+
+  def admission
+    @registers = current_university.registers.where(status: 4)
+    @search = @registers.ransack params[:q]
+    if params[:q].nil?
+      @registers = @registers.page(params[:page]).per 10
+    else
+      @registers = @search.result.page(params[:page]).per 10
+    end
+  end
+
+  def export_admission_excel
+    @registers = current_university.registers.where(status: 4)
+    @date = Date.today.to_date
+    respond_to do |format|
+      format.html
+      format.xlsx {render xlsx: 'export_admission_excel', filename: "#{current_university.code}_admission_#{@date}.xlsx"}
+    end
+  end
+
   def export_file_excel
     @majors = current_university.majors
     @date = Date.today.to_date

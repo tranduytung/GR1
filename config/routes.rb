@@ -70,7 +70,12 @@ Rails.application.routes.draw do
       collection {get :export_file_excel}
       collection {post :import_file_excel}
     end
-    resources :registers
+    resources :registers do
+      collection {get :elect}
+      collection {get :export_elect_excel}
+      collection {get :admission}
+      collection {get :export_admission_excel}
+    end
   end
 
   resources :universities, only: [:show, :index]

@@ -55,10 +55,11 @@ class MajorGroupExam < ActiveRecord::Base
   end
 
   def cal_benchmark_score
-    @count_get = (self.major.target / self.major.major_group_exams.count).to_i
+    @count_get = (self.major.target.to_f / self.major.major_group_exams.count).to_i
     @registers = self.major.registers.where(group_exam_id:
       self.group_exam_id).group(:review_score).count
     @benchmark = cal_score_by @registers, @count_get
+    return @benchmark
   end
 
   private
@@ -70,5 +71,6 @@ class MajorGroupExam < ActiveRecord::Base
       return score_before if result >= count
       score_before = score
     end
+    return score_before
   end
 end

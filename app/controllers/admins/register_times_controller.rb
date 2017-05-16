@@ -19,7 +19,8 @@ class Admins::RegisterTimesController < ApplicationController
     params.require(:register_time).permit(:year, :start_aspiration_1,
       :end_aspiration_1, :start_university_manage, :end_university_manage,
       :start_update_benchmark_1, :end_update_benchmark_1,
-      :start_admission_1, :end_admission_1)
+      :start_admission_1, :end_admission_1,
+      :start_manage_admission_1, :end_manage_admission_1)
   end
 end
 

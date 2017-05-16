@@ -29,9 +29,15 @@
         <% end %>
       </li>
       <li>
-        <%= link_to "" do %>
+        <%= link_to elect_universities_registers_path do %>
           <i class="fa fa-dashboard"></i>
           <span><%= t("university.manage_registers_elect") %></span>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to admission_universities_registers_path do %>
+          <i class="fa fa-dashboard"></i>
+          <span><%= t("university.manage_registers_admission") %></span>
         <% end %>
       </li>
     </ul>

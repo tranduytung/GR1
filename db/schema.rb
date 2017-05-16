@@ -139,6 +139,8 @@ ActiveRecord::Schema.define(version: 20161218140909) do
     t.datetime "end_update_benchmark_1"
     t.datetime "start_admission_1"
     t.datetime "end_admission_1"
+    t.datetime "start_manage_admission_1"
+    t.datetime "end_manage_admission_1"
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
   end

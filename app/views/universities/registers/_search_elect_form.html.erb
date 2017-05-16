@@ -1,0 +1,15 @@
+<div class="row">
+  <%= search_form_for @search, url: elect_universities_registers_path do |f| %>
+    <div class="col-md-4">
+      <%= f.text_field :major_code_cont, placeholder:
+        t("major.input_code"), class: "form-control" %>
+    </div>
+    <div class="col-md-4">
+      <%= f.text_field :examinee_people_id_cont, placeholder:
+        t("major.input_examinee_id"), class: "form-control" %>
+    </div>
+    <div class="col-md-3">
+      <%= f.submit "Search", class: "btn btn-primary"%>
+    </div>
+<% end %>
+</div>

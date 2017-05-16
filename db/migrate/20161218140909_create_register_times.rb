@@ -10,6 +10,8 @@ class CreateRegisterTimes < ActiveRecord::Migration
       t.datetime :end_update_benchmark_1
       t.datetime :start_admission_1
       t.datetime :end_admission_1
+      t.datetime :start_manage_admission_1
+      t.datetime :end_manage_admission_1
 
       t.timestamps null: false
     end
