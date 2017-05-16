@@ -22,6 +22,21 @@ class Examinees::RegistersController < ApplicationController
     end
   end
 
+  def admission
+    @register = Register.find_by(id: params[:register])
+    @register.examinee.registers.where(status: 2).update_all status: 5
+    @register.examinee.registers.where(status: 4).update_all status: 5
+    @register.update_attributes status: 4
+    redirect_to examinees_registers_path
+  end
+
+  def cancel
+    @register = Register.find_by(id: params[:register])
+    @register.examinee.registers.where(status: 5).update_all status: 2
+    @register.update_attributes status: 2
+    redirect_to examinees_registers_path
+  end
+
   private
   def current_examinee_register_params
     params.require(:examinee).permit registers_attributes: [:id,

@@ -65,6 +65,11 @@ vi:
   year: "Năm"
   suggest_major: "Gợi ý chuyên ngành"
   access_denied: "Không có quyền truy cập"
+  admission: "Đã chấp nhận"
+  not_admission: "Không chấp nhận"
+  admission_1: "Chấp nhận"
+  cancel: "Hủy bỏ"
+  action: "Công cụ"
 
   message:
     logged_in_successful: "Bạn đã đăng nhập thành công"

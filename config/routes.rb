@@ -80,6 +80,10 @@ Rails.application.routes.draw do
 
   namespace :examinees do
     resources :registers, only: [:new, :index]
+    resources :registers do
+      collection {get :admission}
+      collection {get :cancel}
+    end
     resources :suggestions do
     collection {get :major}
   end

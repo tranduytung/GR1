@@ -3,7 +3,7 @@ class Register < ActiveRecord::Base
   belongs_to :major
   has_one :university, :through => :major
   validates :year, presence: true
-  enum status: [:not_register, :registered, :elect, :not_elect]
+  enum status: [:not_register, :registered, :elect, :not_elect, :admission, :not_admission]
   enum aspiration: {aspiration_1: 1, aspiration_2: 2, aspiration_3: 3}
 
   scope :cal_benchmark,->score{where("review_score >= ?", score)}

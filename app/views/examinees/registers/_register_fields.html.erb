@@ -1,5 +1,4 @@
 <tr>
-  <td><%= ff.object.numbering_order %></td>
   <td><%= link_to ff.object.major.code,
     university_major_path(ff.object.major.university, ff.object.major) %></td>
   <td><%= link_to ff.object.major.university.name,
@@ -26,5 +25,19 @@
     Time.now <= register_time.end_aspiration_1 %>
     <%= ff.hidden_field :_destroy, class: 'check-remove' %>
     <td><%= link_to t(:remove), '#', class: 'remove_row' %></td>
+  <% end %>
+  <% if !register_time.nil? &&
+    !register_time.start_admission_1.nil? &&
+    Time.now >= register_time.start_admission_1 &&
+    Time.now <= register_time.end_admission_1 %>
+    <td>
+    <% if ff.object.status == "admission" %>
+      <%= link_to t("cancel"), cancel_examinees_registers_path(register: ff.object),
+        class: "btn btn-danger"%>
+    <% elsif ff.object.status == "elect" || ff.object.status == "not_admission" %>
+      <%= link_to t("admission_1"), admission_examinees_registers_path(register: ff.object),
+        class: "btn btn-primary"%>
+    <% end %>
+    </td>
   <% end %>
 </tr>
