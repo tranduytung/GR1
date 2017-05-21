@@ -153,6 +153,13 @@ vi:
 
   chart:
     by_math: "Thống kê theo môn toán"
+    by_literature: "Thống kê theo môn ngữ văn"
+    by_english: "Thống kê theo môn tiếng anh"
+    by_physical: "Thống kê theo môn vật lý"
+    by_chemistry: "Thống kê theo môn hóa học"
+    by_biological: "Thống kê theo môn sinh học"
+    by_history: "Thống kê theo môn lịch sử"
+    by_geography: "Thống kê theo môn địa lý"
     graduate_score: "Thống kê theo điểm tốt nghiệp"
     by_graduated: "Tỉ lệ tốt nghiệp/không tốt nghiệp"
     by_home_town: "Thống kê thao tỉnh thành"
@@ -204,3 +211,7 @@ vi:
   not_register: "Chưa đăng kí"
   elect: "Trúng tuyển"
   not_elect: "Không trúng tuyển"
+  graduated_charts: "Tỉ lệ tốt nghiệp/không tốt nghiệp"
+  home_town_charts: "Thống kê tốt nghiệp theo vùng"
+  graduate_score_charts: "Thống kê tốt nghiệp theo điểm"
+  exam_score_charts: "Thống kê điểm theo các môn thi"

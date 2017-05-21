@@ -1,5 +1,44 @@
-<%= link_to "Ti le tot nghiep", by_graduated_charts_path, class: "btn btn-success" %>
-<%= link_to "Thong ke so thi sinh du thi theo vung", by_home_town_charts_path, class: "btn btn-success" %>
-<%= link_to "Thong ke theo diem tot nghiep", by_graduate_score_charts_path, class: "btn btn-success" %>
-<%= link_to "Thong ke theo diem tung mon", by_exam_score_charts_path, class: "btn btn-success" %>
-
+<div class="row">
+  <div class="col-md-6">
+    <div class="box">
+      <div class="box-header with-border text-center">
+        <%= image_tag "tile_1.png", width: "60%", height: "200px" %>
+        <br>
+        <%= link_to t("graduated_charts"), by_graduated_charts_path,
+          class: "btn btn-success" %>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="box">
+      <div class="box-header with-border text-center">
+        <%= image_tag "vung_1.png", width: "60%", height: "200px" %>
+        <br>
+        <%= link_to t("home_town_charts"), by_home_town_charts_path,
+          class: "btn btn-success" %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6">
+    <div class="box">
+      <div class="box-header with-border text-center">
+        <%= image_tag "diem_1.png", width: "60%", height: "200px" %>
+        <br>
+        <%= link_to t("graduate_score_charts"), by_graduate_score_charts_path,
+          class: "btn btn-success" %>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="box">
+      <div class="box-header with-border text-center">
+        <%= image_tag "monthi_1.png", width: "60%", height: "200px" %>
+        <br>
+        <%= link_to t("exam_score_charts"), by_exam_score_charts_path,
+          class: "btn btn-success" %>
+      </div>
+    </div>
+  </div>
+</div>
