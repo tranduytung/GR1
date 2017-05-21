@@ -24,7 +24,7 @@ class MajorGroupExam < ActiveRecord::Base
     header = spreadsheet.row(1)
     (2..spreadsheet.last_row).each do |i|
       row = Hash[[header, spreadsheet.row(i)].transpose]
-      major =  Major.find_by code: row["code"]
+      major =  Major.find_by code: row["code"], university_id: university_id
       group_exam = GroupExam.find_by math: row["math"],
         literature: row["literature"], english: row["english"],
         physical: row["physical"], chemistry: row["chemistry"],
