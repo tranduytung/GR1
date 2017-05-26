@@ -7,7 +7,7 @@ class MajorGroupExam < ActiveRecord::Base
     header = spreadsheet.row(1)
     (2..spreadsheet.last_row).each do |i|
       row = Hash[[header, spreadsheet.row(i)].transpose]
-      major =  Major.find_by code: row["code"]
+      major =  Major.find_by code: row["code"], university_id: university_id
       major_group_exam = major.major_group_exams.new
       group_exam = GroupExam.find_by math: row["math"],
         literature: row["literature"], english: row["english"],
@@ -15,6 +15,7 @@ class MajorGroupExam < ActiveRecord::Base
         biological: row["biological"], history: row["history"],
         geography: row["geography"]
       major_group_exam.group_exam_id = group_exam.id
+      major_group_exam.benchmark1_last_year = row["benchmark1_last_year"]
       major_group_exam.save!
     end
   end

@@ -6,7 +6,7 @@ class Universities::MajorGroupExamsController < ApplicationController
     @date = Date.today.to_date
     respond_to do |format|
       format.html
-      format.xlsx {render xlsx: 'export_file_excel', filename: "#{current_university.code}majors_group_exam#{@date}.xlsx"}
+      format.xlsx {render xlsx: 'export_file_excel', filename: "#{current_university.code}_majors_group_exam#{@date}.xlsx"}
     end
   end
 
