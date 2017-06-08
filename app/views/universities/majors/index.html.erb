@@ -8,7 +8,7 @@
   Time.now >= register_time.start_university_manage &&
   Time.now <= register_time.end_university_manage %>
 
- <!--  <%= link_to "export_csv", export_file_excel_universities_majors_path(format: 'xlsx') %> -->
+ <%= link_to "export_major", export_file_excel_universities_majors_path(format: 'xlsx') %><br>
   <%= link_to "export_group", export_file_excel_universities_major_group_exams_path(format: 'xlsx') %>
   <br>
   <%= link_to "export_benchmark", export_file_excel_universities_benchmarks_path(format: 'xlsx') %>

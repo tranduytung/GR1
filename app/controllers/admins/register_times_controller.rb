@@ -6,10 +6,10 @@ class Admins::RegisterTimesController < ApplicationController
 
   def update
     if @register_time.update_attributes register_time_params
-      flash[:success] = "Update sucessfull"
+      flash[:success] = "Sửa thời gian các pha thành công"
       redirect_to root_path
     else
-      flash[:danger] = "Update sucessfull"
+      flash[:danger] = "Sửa thời gian các pha thất bại"
       render :edit
     end
   end

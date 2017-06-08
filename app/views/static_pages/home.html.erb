@@ -1,19 +1,114 @@
 <div class="row">
-  <div class="col-sm-3">
-    <%= link_to "Thong Ke", graduate_charts_path, class: "btn btn-success" %>
+  <div class="col-md-8 col-md-offset-2">
+  <div class="box box-primary">
+  <div class="box-body box-profile">
+    <div><h4>1. Quy trình đăng ký xét tuyển của thí sinh:</h4></div>
+    <p style="font-size: 15px;">
+    <span>
+      Bước 1. Thí sinh đăng nhập vào hệ thống để xem điểm thi và điểm tốt nghiệp của mình trong trong mục thông tin cá nhân. Tài khoản là <b>số chứng minh thư</b> và mật khẩu là <b>mã số dự thi</b> của thí sinh
+    </span>
+    </p>
+    <p style="font-size: 15px;">
+    <span>
+      Bước 2. Thí sinh bắt đầu <b>đăng kí xét tuyển đại học</b> từ ngày<b>
+      <% if !@time.nil? && !@time.start_aspiration_1.nil? %>
+        <%= @time.start_aspiration_1.strftime("%d-%m-%Y") %>
+      <% else %>
+        --/--/----
+      <% end %></b>
+      cho đến ngày<b>
+      <% if !@time.nil? && !@time.end_aspiration_1.nil? %>
+        <%= @time.end_aspiration_1.strftime("%d-%m-%Y") %>
+      <% else %>
+        --/--/----
+      <% end %></b>. Trong thời gian này thí sinh có thể sửa lại thông tin đăng kí bất cứ khi nào
+    </span>
+    </p>
+    <p style="font-size: 15px;">
+    <span>
+      Bước 3. Từ<b>
+      <% if !@time.nil? && !@time.start_admission_1.nil? %>
+        <%= @time.start_admission_1.strftime("%d-%m-%Y") %>
+        <% else %>
+          --/--/----
+      <% end %></b>
+      sẽ có kết quả xét tuyển. Thí sinh bắt đầu <b>nhập học</b> từ ngày<b>
+      <% if !@time.nil? && !@time.start_admission_1.nil? %>
+        <%= @time.start_admission_1.strftime("%d-%m-%Y") %>
+        <% else %>
+          --/--/----
+      <% end %></b>
+      cho đến ngày<b>
+      <% if !@time.nil? && !@time.end_admission_1.nil? %>
+        <%= @time.end_admission_1.strftime("%d-%m-%Y") %>
+        <% else %>
+          --/--/----
+      <% end %></b>
+    </span>
+    </p>
   </div>
-  <div class="col-sm-3">
-    <%= link_to "Tim kiem chuyen nganh", major_searchs_path, class: "btn btn-success" %>
   </div>
-  <div class="col-sm-3">
-    <input type="submit" value="Xem thong ke Tuyen sinh">
+  </div>
+<% unless current_university.nil? && current_admin.nil? %>
+  <div class="col-md-8 col-md-offset-2">
+  <div class="box box-primary">
+  <div class="box-body box-profile">
+    <div><h4>2. Đối với trường đại học:</h4></div>
+    <p style="font-size: 15px;">
+    <span>
+      Bước 1. Trường đại học đăng nhập vào hệ thống để xem điểm thi và điểm tốt nghiệp của mình trong trong mục thông tin cá nhân. Tài khoản đã được cung cấp từ trước
+    </span>
+    </p>
+    <p style="font-size: 15px;">
+    <span>
+      Bước 2. Trường đại học bắt đầu <b>quản lí chuyên ngành</b> từ ngày<b>
+      <% if !@time.nil? && !@time.start_university_manage.nil? %>
+        <%= @time.start_university_manage.strftime("%d-%m-%Y") %>
+      <% else %>
+        --/--/----
+      <% end %></b>
+      cho đến ngày<b>
+      <% if !@time.nil? && !@time.end_university_manage.nil? %>
+        <%= @time.end_university_manage.strftime("%d-%m-%Y") %>
+      <% else %>
+        --/--/----
+      <% end %></b>. Trường đại học nên import thông tin bằng fifl excel có format sẵn mà admin đã cung cấp
+    </span>
+    </p>
+    <p style="font-size: 15px;">
+    <span>
+      Bước 3. Trường đại học bắt đầu <b>cập nhật điểm chuẩn</b> từ<b>
+      <% if !@time.nil? && !@time.start_update_benchmark_1.nil? %>
+        <%= @time.start_update_benchmark_1.strftime("%d-%m-%Y") %>
+        <% else %>
+          --/--/----
+      <% end %></b>
+      cho đến ngày<b>
+      <% if !@time.nil? && !@time.end_update_benchmark_1.nil? %>
+        <%= @time.end_update_benchmark_1.strftime("%d-%m-%Y") %>
+        <% else %>
+          --/--/----
+      <% end %></b>
+    </span>
+    </p>
+    <p style="font-size: 15px;">
+    <span>
+      Bước 4. Trường đại học bắt đầu <b>quản lý danh sách thí sinh nhập học</b> từ<b>
+      <% if !@time.nil? && !@time.start_manage_admission_1.nil? %>
+        <%= @time.start_manage_admission_1.strftime("%d-%m-%Y") %>
+        <% else %>
+          --/--/----
+      <% end %></b>
+      cho đến ngày<b>
+      <% if !@time.nil? && !@time.end_manage_admission_1.nil? %>
+        <%= @time.end_manage_admission_1.strftime("%d-%m-%Y") %>
+        <% else %>
+          --/--/----
+      <% end %></b>
+    </span>
+    </p>
+  </div>
+  </div>
   </div>
 </div>
-<% if examinee_signed_in? %>
-  <div class="col-sm-6">
-    <input type="submit" value="Xem tu van chon truong">
-  </div>
-  <div class="col-sm-6">
-    <input type="submit" value="Dang ki vao truong dai hoc">
-  </div>
 <% end %>

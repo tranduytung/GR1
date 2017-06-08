@@ -13,19 +13,19 @@ class Universities::MajorsController < ApplicationController
 
   def update
     if @major.update_attributes major_params
-      flash[:success] = t "admin.examinee.edit_success"
+      flash[:success] = t "university.major.edit_success"
       redirect_to universities_majors_path
     else
-      flash[:danger] = t "admin.examinee.edit_failed"
+      flash[:danger] = t "university.major.edit_failed"
       render :edit
     end
   end
 
   def destroy
     if @major.destroy
-      flash[:success] = t "admin.examinee.delete_success"
+      flash[:success] = t "university.major.delete_success"
     else
-      flash[:danger] = t "admin.examinee.delete_fail"
+      flash[:danger] = t "university.major.delete_fail"
     end
     redirect_to universities_majors_path
   end
@@ -35,7 +35,7 @@ class Universities::MajorsController < ApplicationController
     @date = Date.today.to_date
     respond_to do |format|
       format.html
-      format.xlsx {render xlsx: 'export_file_excel', filename: "#{current_university.code}majors_#{@date}.xlsx"}
+      format.xlsx {render xlsx: 'export_file_excel', filename: "#{current_university.code}_majors_#{@date}.xlsx"}
     end
   end
 

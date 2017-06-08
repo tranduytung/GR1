@@ -19,7 +19,7 @@ class Major < ActiveRecord::Base
     header = spreadsheet.row(1)
     (2..spreadsheet.last_row).each do |i|
       row = Hash[[header, spreadsheet.row(i)].transpose]
-      major_exist =  Major.find_by code: row["code"]
+      major_exist =  Major.find_by code: row["code"], university_id: university_id
       if major_exist.nil?
         major_exist = Major.new
         major_exist.attributes = row.to_hash.slice(*accessible_attributes)

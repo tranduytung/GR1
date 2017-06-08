@@ -14,9 +14,9 @@ class Examinees::RegistersController < ApplicationController
     @current_examinee = current_examinee
     unless params[:examinee].nil?
       if @current_examinee.update_attributes current_examinee_register_params
-        flash[:success] = "update thanh cong"
+        flash[:success] = "Sửa thành công"
       else
-        flash[:success] = "update khong thanh cong"
+        flash[:success] = "Sửa thất bại"
       end
       redirect_to examinees_registers_path
     end
